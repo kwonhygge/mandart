@@ -1,0 +1,113 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color:#ebebeb;
+}
+
+
+/* navbar */
+.navbar-brand{
+    font-family: "Roboto";
+}
+
+.profile-container{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-container img{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    font-family: 'Nanum Gothic';
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+/* signup */
+.signup-con{
+    padding: 100px 500px 0;
+    text-align: center;
+}
+
+.signup-con h1{
+    margin-bottom: 20px;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+/* signin */
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.To-text{
+    font-family: "Roboto";
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.To-text a{
+    font-weight: bold; 
+    color:black; 
+    text-decoration: underline;
+}
+
+
+/* mid-container */
+
+.home-content{
+    font-family: 'Nanum Myeongjo';
+    margin: 5% 0;
+}
+
+.mid-container{
+    padding: 100px 30%;
+    text-align: center;
+}
+
+.start-btn{
+    margin: 5% 0;
+}
+
+/* press container */
+.press-container{
+    background-color: white;
+    height: 300px;
+}
