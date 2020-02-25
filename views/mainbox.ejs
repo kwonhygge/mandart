@@ -1,0 +1,52 @@
+<%- include("partials/header") -%>
+
+<div>
+    <td class="mainBoxContainer">
+        <form action="/mainbox" method="post">
+            <table id="mainBox">
+            
+                <tr>
+                    <td class="arrow"> <button type="submit" name="arrowType" value="TopLeft"><img class="arrow-img" src="/imgs/arrowTop.png"  alt="arrowTopLeft" style=transform:rotate(-45deg)></button></td>
+                    <td class="arrow"> <button type="submit" name="arrowType" value="Top"><img class="arrow-img" src="/imgs/arrowTop.png" alt="arrowTop"></button></td>
+                    <td class="arrow"> <button type="submit" name="arrowType" value="TopRight"><img class="arrow-img" src="/imgs/arrowTop.png" alt="arrowTopRight" style=transform:rotate(45deg)></button></td>
+                    
+                </tr>
+                <tr>
+                    <td class="arrow"> <button type="submit" name="arrowType" value="Left"></button>><img class="arrow-img" src="/imgs/arrowLeft.png" alt="arrowLeft"></button> </td>
+                    <td > 
+                    <table>
+                        <tr>
+                            <td class="mainbox-objectives"><input name="TopLeft" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives"><input name="Top" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives"><input name="TopRight" style=background-color:<%=themeColor%>></td>
+                        </tr>
+                        <tr>
+                            <td class="mainbox-objectives"><input name="Left" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives"><input name="main-objective"></td>
+                            <td class="mainbox-objectives"><input name="Right" style=background-color:<%=themeColor%>></td>
+                        </tr>
+                        <tr>
+                            <td class="mainbox-objectives"><input name="BottomLeft" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives"><input name="Bottom" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives"><input name="BottomRight" style=background-color:<%=themeColor%>></td>
+                        </tr>
+    
+                    </table>
+                    
+                    </td>
+                    <td class="arrow"> <button type="submit" name="arrowRight"><img class="arrow-img" src="/imgs/arrowRight.png" alt="arrowRight"></button> </td>
+                </tr>
+                <tr>
+                    <td class="arrow"> <button type="submit" name="arrowBottomLeft"><img class="arrow-img" src="/imgs/arrowBottom.png" style=transform:rotate(45deg) alt="arrowBottomLeft"></button></td>
+                    <td class="arrow"> <button type="submit" name="arrowBottom"><img class="arrow-img" src="/imgs/arrowBottom.png" alt="arrowBottom"></button></td>
+                    <td class="arrow"> <button type="submit" name="arrowBottomRight"><img class="arrow-img" src="/imgs/arrowBottom.png" style=transform:rotate(-45deg) alt="arrowBottomRight"></button> </td>
+                
+                </tr>
+            </table>
+        </form>
+        
+</div>
+
+
+
+<%- include('partials/footer') %>

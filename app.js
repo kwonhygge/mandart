@@ -42,12 +42,8 @@ const smallBox = new SmallBox({
     plans:["Eat less","Reuse things","Make plan for buying","Distribute accounts"]
 })
 
-const mainBox = new MainBox({
-    title: "2020 objective",
-    mainObjective:"Be Rich",
-    mainPlans:[smallBox.objective]
-})
-
+//themes
+let themeColor = "white"
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -81,7 +77,31 @@ app.get("/create",function(req,res){
 })
 
 app.post("/create",function(req,res){
+    console.log(req.body.theme);
+    themeColor = req.body.theme;
+    const mainBox = new MainBox({
+        title: req.body.titleText
+    })
+    // mainBox.save();
+    res.redirect("/mainbox");
     
+})
+
+// app.get("/create/:themeId",function(req,res){
+//     const requestedThemeId = req.params.themeId;
+
+// })
+
+app.get("/mainbox",function(req,res){
+    res.render("mainbox",{themeColor:themeColor});
+})
+
+app.post("/mainbox",function(req,res){
+    
+})
+
+app.get("/smallbox",function(req,res){
+    res.render("smallbox");
 })
 
 app.listen(3000,function(){

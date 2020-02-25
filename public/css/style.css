@@ -30,6 +30,21 @@ h1{
     font-size: 2.5rem;
 }
 
+/* main */
+
+.small-piece{
+  width:30px;
+  height:30px;
+}
+
+.small-piece div{
+  width:100%;
+  height:100%;
+  background-color: white;
+}
+
+
+
 /* signup */
 .signup-con{
     padding: 100px 500px 0;
@@ -156,4 +171,59 @@ h1{
   width:40px;
   height:40px;
 }
+
+
+/* mainBox */
+#mainBox {
+  margin: 0 auto;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+
+.arrow button{
+  border:none;
+  background-color: transparent;
+}
+
+.arrow-img{
+  width: 30px;
+  height: 30px;
+}
+
+.mainbox-objectives{
+  width:100px;
+  height:100px;
+}
+
+.mainbox-objectives input{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+
+/* smallbox */
+#smallbox{
+  margin: 7% 33%;
+}
+
+.plan{
+  width:150px;
+  height:150px;
+}
+
+.plan textarea{
+  width:100%;
+  height:100%;
+}
+
+.green-objective{
+  width:100%;
+  height:100%;
+  background-color: green;
+
+}
+
+
 
