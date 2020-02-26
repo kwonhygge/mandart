@@ -1,5 +1,6 @@
 //jshint esversion:6
 
+
 //mongoose
 const mongoose = require("mongoose");
 
@@ -42,8 +43,10 @@ const smallBox = new SmallBox({
     plans:["Eat less","Reuse things","Make plan for buying","Distribute accounts"]
 })
 
-//themes
-let themeColor = "white"
+//변수들
+let themeColor = "white";
+
+let smallBoxObjective = "";
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -97,11 +100,24 @@ app.get("/mainbox",function(req,res){
 })
 
 app.post("/mainbox",function(req,res){
-    
+    const arrowName = req.body.arrowType;
+    const values={
+        TopLeft:req.body.TopLeft,
+        Top:req.body.Top,
+        TopRight:req.body.TopRight,
+        Left:req.body.Left,
+        Right:req.body.Right,
+        BottomLeft:req.body.BottomLeft,
+        Bottom:req.body.Bottom,
+        BottomRight:req.body.BottomRight
+    }
+    smallBoxObjective = values[arrowName];
+    res.redirect("/smallbox");
+
 })
 
 app.get("/smallbox",function(req,res){
-    res.render("smallbox");
+    res.render("smallbox",{smallBoxObjective:smallBoxObjective});
 })
 
 app.listen(3000,function(){
