@@ -38,11 +38,6 @@ const mainBoxSchema = new mongoose.Schema({
 const SmallBox = mongoose.model("SmallBox",smallBoxSchema);
 const MainBox = mongoose.model("MainBox",mainBoxSchema);
 
-const smallBox = new SmallBox({
-    objective:"Save money",
-    plans:["Eat less","Reuse things","Make plan for buying","Distribute accounts"]
-})
-
 //변수들
 let themeColor = "white";
 
@@ -101,7 +96,7 @@ app.get("/mainbox",function(req,res){
 
 app.post("/mainbox",function(req,res){
     const arrowName = req.body.arrowType;
-    const values={
+    const mainBox_values={
         TopLeft:req.body.TopLeft,
         Top:req.body.Top,
         TopRight:req.body.TopRight,
@@ -111,13 +106,42 @@ app.post("/mainbox",function(req,res){
         Bottom:req.body.Bottom,
         BottomRight:req.body.BottomRight
     }
-    smallBoxObjective = values[arrowName];
+    smallBoxObjective = mainBox_values[arrowName];
     res.redirect("/smallbox");
 
 })
 
 app.get("/smallbox",function(req,res){
+    const smallBox = new SmallBox({
+        objective: smallBoxObjective
+    });
     res.render("smallbox",{smallBoxObjective:smallBoxObjective});
+})
+
+app.post("/smallbox",function(req,res){
+    console.log(req.body);
+    const smallBoxPlans={
+        TopLeftBox:req.body.TopLeftBox,
+        TopBox:req.body.TopBox,
+        TopRightBox:req.body.TopRightBox,
+        LeftBox:req.body.LeftBox,
+        RightBox:req.body.RightBox,
+        BottomLeftBox:req.body.BottomLeftBox,
+        BottomBox:req.body.BottomBox,
+        BottomRightBox:req.body.BottomRightBox
+    }
+    const smallPlans = Object.values(smallBoxPlans);
+    smallBox.updateOne({objective:smallBoxObjective},{plans:smallPlans},function(err){
+        if(err){
+            console.log(err);
+            
+        }
+        else{
+            console.log("Successfully updated");
+            
+        }
+    });
+    res.redirect("/mainbox");
 })
 
 app.listen(3000,function(){

@@ -1,23 +1,32 @@
 <%- include("partials/header") -%>
+<form action="/smallbox" method="post">
+    <div class="smallBoxContainer">
+        <table id="smallbox">
+            <tr>
+                <td class="plan"><input class="form-control " name="TopLeftBox"></td>
+                <td class="plan"><input class="form-control " name="TopBox"></td>
+                <td class="plan"><input class="form-control " name="TopRightBox"></td>
+            </tr>
+            <tr>
+                <td class="plan"><input class="form-control " name="LeftBox"></td>
+                <td class="plan" > <div class="colored-objective"><h4><%=smallBoxObjective%></h4></div></td>
+                <td class="plan"><input class="form-control " name="RightBox"></td>
+            </tr>
+            <tr>
+                <td class="plan"><input class="form-control " name="BottomLeftBox"></td>
+                <td class="plan"><input class="form-control " name="BottomBox"></td>
+                <td class="plan"><input class="form-control " name="BottomRightBox"></td>
+            </tr>
+        </table>
+    </div>
+    <button class="smallbox-submit-btn" type="submit"><img class="btn-img" src="https://image.flaticon.com/icons/svg/483/483327.svg"></button>  
+</form>
+    <script> 
+        function scrollFunc(){
+            console.log("Hi");
+        }
+        window.addEventListener('scroll',scrollFunc);
 
-<div class="smallBoxContainer">
-    <table id="smallbox">
-        <tr>
-            <td class="plan"><input class="form-control "></td>
-            <td class="plan"><input class="form-control "></td>
-            <td class="plan"><input class="form-control "></td>
-        </tr>
-        <tr>
-            <td class="plan"><input class="form-control "></td>
-            <td class="plan" > <div class="colored-objective"><h4><%=smallBoxObjective%></h4></div></td>
-            <td class="plan"><input class="form-control "></td>
-        </tr>
-        <tr>
-            <td class="plan"><input class="form-control "></td>
-            <td class="plan"><input class="form-control "></td>
-            <td class="plan"><input class="form-control "></td>
-        </tr>
-    </table>
-</div>
+    </script>
 
 <%- include('partials/footer') %>

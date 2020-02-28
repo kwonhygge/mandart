@@ -46,7 +46,16 @@
         </form>
         
 </div>
+<p id="btag">asdf</p>
 
+<script>
+    const x =document.getElementsById('test');
+    x.addEventListener('change',cons);
+    function cons(event){
+        document.getElementById("btag").innerHTML=event.target.value;
+    }
+
+</script>
 
 
 <%- include('partials/footer') %>
