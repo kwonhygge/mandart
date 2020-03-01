@@ -1,112 +1,38 @@
-<%- include('partials/header') %>
+<%- include("partials/header") -%>
+<div id="elementContainer">
 
-<table>
-    <tr>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>b</div></td>
-        <td class="small-piece"><div>c</div></td>
+    <div class="row">
+        <div class="elements-column col-lg-4 col-md-6">
+          <div class="element">
+              <h3 class="title-text">Sample</h3>
+              <button type="button" class="theme-button"><img src="/imgs/theme1.png" alt=""></button>
+            </div>
+        </div>
+    
+        <div class="elements-column col-lg-4 col-md-6">
+            <div class="element">
+                <h3 class="title-text">Sample</h3>
+                <button type="button" class="theme-button"><img src="/imgs/theme1.png" alt=""></button>
+              </div>
+          </div>
+    
+          <div class="elements-column col-lg-4 col-md-6">
+            <div class="element">
+                <h3 class="title-text">Sample</h3>
+                <button type="button" class="theme-button"><img src="/imgs/theme1.png" alt=""></button>
+              </div>
+          </div>
+    
+        
+      </div>
+      <form action="/create" method="get">
+        <div class="plusBtnContainer">
+            <button><img src="imgs/plusBtn.png" alt=""></button>
+        </div>
+    </form>
+      
 
-        <td class="small-piece"><div>d</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td class="small-piece"><div>d</div></td>
+</div>
 
-        <td class="small-piece"><div>d</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td class="small-piece"><div>d</div></td>
-    </tr>
-    <tr>
-        <td class="small-piece"><div>d</div></td>
-        <td>ob1</td>
-        <td class="small-piece"><div>e</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td>ob2</td>
-        <td class="small-piece"><div>e</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td>ob3</td>
-        <td class="small-piece"><div>e</div></td>
-    </tr>
-    <tr>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-    </tr>
-
-    <tr>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-        <td class="small-piece"><div>f</div></td>
-        <td class="small-piece"><div>g</div></td>
-        <td class="small-piece"><div>h</div></td>
-    </tr>
-
-    <tr>
-        <td class="small-piece"><div>d</div></td>
-        <td>ob4</td>
-        <td class="small-piece"><div>e</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td>obobob</td>
-        <td class="small-piece"><div>e</div></td>
-        <td class="small-piece"><div>d</div></td>
-        <td>ob5</td>
-        <td class="small-piece"><div>e</div></td>
-    </tr>
-
-    <tr>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-    </tr>
-
-    <tr>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-    </tr>
-
-    <tr>
-        <td class="small-piece"><div>a</div></td>
-        <td>ob6</td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td>ob7</td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td>ob8</td>
-        <td class="small-piece"><div>a</div></td>
-    </tr>
-    <tr>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-        <td class="small-piece"><div>a</div></td>
-    </tr>
-</table>
 
 <%- include('partials/footer') %>

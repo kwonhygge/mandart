@@ -127,6 +127,40 @@ h1{
     height: 300px;
 }
 
+/* main */
+#elementContainer button{
+  border:none;
+  background-color: transparent;
+}
+
+.element{
+  margin: 10%;
+}
+
+.title-text{
+  text-align: center;
+  font-size: 1.5rem;
+}
+.theme-button{
+  margin: 0 auto;
+  display:block;
+}
+.theme-button img{
+  width:300px;
+  height:300px;
+}
+
+
+.plusBtnContainer{
+  float: right;
+  margin-right:5%;
+  margin-top: 5%;
+}
+.plusBtnContainer img{
+  width:70px;
+  height:70px;
+}
+
 /* create page*/
 .back-btn{
   margin-left: 20%;
