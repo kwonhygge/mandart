@@ -15,11 +15,22 @@ const smallBoxSchema = new mongoose.Schema({
         type: String,
         required: [true,"You need main objective"]
     },
-    plans: [{
-        type: String
+    plans:[{
+        type:String
     }]
 
 });
+
+// const planSchema = new mongoose.Schema({
+//     TopLeftPlan:{type:String},
+//     TopPlan:{type:String},
+//     TopRightPlan:{type:String},
+//     LeftPlan:{type:String},
+//     RightPlan:{type:String},
+//     BottomLeft:{type:String},
+//     Bottom:{type:String},
+//     BottomRight:{type:String}
+// });
 
 const mainBoxSchema = new mongoose.Schema({
     title:{
@@ -40,8 +51,20 @@ const MainBox = mongoose.model("MainBox",mainBoxSchema);
 
 //변수들
 let themeColor = "white";
-
+let mainObjective="";
 let smallBoxObjective = "";
+let title="";
+
+// const plansObject={
+//     TopLeftPlan:"",
+//     TopPlan:"",
+//     TopRightPlan:"",
+//     LeftPlan:"",
+//     RightPlan:"",
+//     BottomLeft:"",
+//     Bottom:"",
+//     BottomRight:""
+// }
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -77,25 +100,21 @@ app.get("/create",function(req,res){
 app.post("/create",function(req,res){
     console.log(req.body.theme);
     themeColor = req.body.theme;
+    title=req.body.titleText;
     const mainBox = new MainBox({
-        title: req.body.titleText
+        title: title
     })
     // mainBox.save();
     res.redirect("/mainbox");
     
 })
 
-// app.get("/create/:themeId",function(req,res){
-//     const requestedThemeId = req.params.themeId;
-
-// })
-
 app.get("/mainbox",function(req,res){
     res.render("mainbox",{themeColor:themeColor});
 })
 
 app.post("/mainbox",function(req,res){
-    const arrowName = req.body.arrowType;
+    const buttonName = req.body.buttonType;
     const mainBox_values={
         TopLeft:req.body.TopLeft,
         Top:req.body.Top,
@@ -106,8 +125,28 @@ app.post("/mainbox",function(req,res){
         Bottom:req.body.Bottom,
         BottomRight:req.body.BottomRight
     }
-    smallBoxObjective = mainBox_values[arrowName];
-    res.redirect("/smallbox");
+    mainObjective=req.body.mainObjective;
+
+    if (buttonName==="Save"){
+        mainBox.updateOne({title:title},{
+            mainPlans:Object.values(mainBox_values),
+            mainObjective:mainObjective
+        },function(err){
+            if(err){
+                console.log(err);
+            }
+            else{
+                console.log("Successfully updated");
+            }
+        })
+        res.redirect("/home");
+    }
+    else{
+        console.log(req.body);
+        smallBoxObjective = mainBox_values[buttonName];
+        res.redirect("/smallbox");
+    }
+    
 
 })
 
@@ -130,15 +169,16 @@ app.post("/smallbox",function(req,res){
         BottomBox:req.body.BottomBox,
         BottomRightBox:req.body.BottomRightBox
     }
+    console.log(smallBoxPlans)
     const smallPlans = Object.values(smallBoxPlans);
     smallBox.updateOne({objective:smallBoxObjective},{plans:smallPlans},function(err){
         if(err){
             console.log(err);
-            
+
         }
         else{
             console.log("Successfully updated");
-            
+
         }
     });
     res.redirect("/mainbox");
