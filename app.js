@@ -1,6 +1,7 @@
 //jshint esversion:6
 
-
+//dotenv
+require("dotenv").config();
 //mongoose
 const mongoose = require("mongoose");
 
@@ -45,6 +46,13 @@ const mainBoxSchema = new mongoose.Schema({
     }]
 })
 
+const userSchema = new mongoose.Schema({
+    email: String,
+    password: String,
+    googleId:String,
+    secret:String
+});
+
 //model 생성
 const SmallBox = mongoose.model("SmallBox",smallBoxSchema);
 const MainBox = mongoose.model("MainBox",mainBoxSchema);
@@ -69,6 +77,13 @@ let title="";
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs=require("ejs");
+//passport
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const session = require('express-session');
+const findOrCreate=require("mongoose-findorcreate");
+
 
 const app = express();
 
@@ -77,12 +92,83 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+//session
+app.use(session({
+    secret: "Our little secret.",
+    resave:false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(findOrCreate);
+
+const User = new mongoose.model("User",userSchema);
+passport.use(User.createStrategy());
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+  });
+
+  passport.deserializeUser(function(id, done) {
+    User.findById(id, function(err, user) {
+      done(err, user);
+    });
+});
+
+passport.use(new GoogleStrategy({
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/mandart",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
+
+
 app.get("/",function(req,res){
     res.render("home");
 });
 
+app.get("/auth/google",
+    passport.authenticate('google',{scope:["profile"]})
+);
+
+app.get('/auth/google/mandart', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/main');
+  });
+
 app.get("/login",function(req,res){
     res.render("login");
+})
+
+app.post("/login",function(req,res){
+    
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+
+    req.login(user,function(err){
+        if(err){
+            console.log(err);
+        }else{
+            passport.authenticate("local")(req,res,function(){
+                res.redirect("/main");
+            });
+        }
+        
+        
+    });
 })
 
 app.get("/signup",function(req,res){
