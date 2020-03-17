@@ -50,18 +50,40 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     googleId:String,
-    secret:String
+    secret:String,
+    mainBox:mainBoxSchema,
+    smallBox:smallBoxSchema
 });
-
-//model 생성
-const SmallBox = mongoose.model("SmallBox",smallBoxSchema);
-const MainBox = mongoose.model("MainBox",mainBoxSchema);
 
 //변수들
 let themeColor = "white";
 let mainObjective="";
 let smallBoxObjective = "";
 let title="";
+let userId = "";
+let mainObjId = "";
+let smallObjId="";
+
+//model 생성
+const SmallBox = mongoose.model("SmallBox",smallBoxSchema);
+const MainBox = mongoose.model("MainBox",mainBoxSchema);
+
+//db 초기화와 저장
+const mainBox = new MainBox({
+    title: title
+})
+mainBox.save(function(err,mainbox){
+    console.log(mainbox);
+    mainObjId=mainbox.id;
+});
+
+const smallBox = new SmallBox({
+    objective: smallBoxObjective
+});
+smallBox.save(function(err,smallbox){
+    smallObjId=smallbox.id;
+});
+
 
 // const plansObject={
 //     TopLeftPlan:"",
@@ -109,6 +131,7 @@ const User = new mongoose.model("User",userSchema);
 passport.use(User.createStrategy());
 
 passport.serializeUser(function(user, done) {
+    userId=user.id;
     done(null, user.id);
   });
 
@@ -130,6 +153,8 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
+
+
 
 
 app.get("/",function(req,res){
@@ -187,10 +212,13 @@ app.post("/create",function(req,res){
     console.log(req.body.theme);
     themeColor = req.body.theme;
     title=req.body.titleText;
-    const mainBox = new MainBox({
-        title: title
+    MainBox.updateOne({ㄴid:mainObjId},{title:title},function(err){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("Mainbox title is Successfully updated")
+        }
     })
-    // mainBox.save();
     res.redirect("/mainbox");
     
 })
@@ -214,7 +242,7 @@ app.post("/mainbox",function(req,res){
     mainObjective=req.body.mainObjective;
 
     if (buttonName==="Save"){
-        mainBox.updateOne({title:title},{
+        MainBox.updateOne({title:title},{
             mainPlans:Object.values(mainBox_values),
             mainObjective:mainObjective
         },function(err){
@@ -225,7 +253,19 @@ app.post("/mainbox",function(req,res){
                 console.log("Successfully updated");
             }
         })
-        res.redirect("/home");
+
+        User.updateOne({id:userId},{
+            mainBox:mainBox,
+            smallBox:smallBox
+        },function(err){
+            if(err){
+                console.log(err);
+            }else{
+                console.log("Successfully updated All");
+            }
+        })
+
+        res.redirect("/main");
     }
     else{
         console.log(req.body);
@@ -237,9 +277,16 @@ app.post("/mainbox",function(req,res){
 })
 
 app.get("/smallbox",function(req,res){
-    const smallBox = new SmallBox({
-        objective: smallBoxObjective
-    });
+    SmallBox.updateOne({id:smallObjId},{objective:smallBoxObjective},function(err){
+        if(err){
+            console.log(err);
+
+        }
+        else{
+            console.log("smallbox objective is Successfully updated");
+
+        }
+    })
     res.render("smallbox",{smallBoxObjective:smallBoxObjective});
 })
 
@@ -257,7 +304,7 @@ app.post("/smallbox",function(req,res){
     }
     console.log(smallBoxPlans)
     const smallPlans = Object.values(smallBoxPlans);
-    smallBox.updateOne({objective:smallBoxObjective},{plans:smallPlans},function(err){
+    SmallBox.updateOne({objective:smallBoxObjective},{plans:smallPlans},function(err){
         if(err){
             console.log(err);
 
