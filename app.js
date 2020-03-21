@@ -63,38 +63,24 @@ let title="";
 let userId = "";
 let mainObjId = "";
 let smallObjId="";
+let mainPlans=[];
+let smallPlans=[];
+
+//mongoose에 저장되는 건 아닌데 글로벌로 만들어놓은 mainobjective와 smallobjective
+const global_mainBox={
+    title:title,
+    mainObjective:mainObjective,
+    mainPlans:mainPlans
+}
+
+const global_smallBox={
+    objective:smallBoxObjective,
+    plans:smallPlans
+}
 
 //model 생성
 const SmallBox = mongoose.model("SmallBox",smallBoxSchema);
 const MainBox = mongoose.model("MainBox",mainBoxSchema);
-
-//db 초기화와 저장
-const mainBox = new MainBox({
-    title: title
-})
-mainBox.save(function(err,mainbox){
-    console.log(mainbox);
-    mainObjId=mainbox.id;
-});
-
-const smallBox = new SmallBox({
-    objective: smallBoxObjective
-});
-smallBox.save(function(err,smallbox){
-    smallObjId=smallbox.id;
-});
-
-
-// const plansObject={
-//     TopLeftPlan:"",
-//     TopPlan:"",
-//     TopRightPlan:"",
-//     LeftPlan:"",
-//     RightPlan:"",
-//     BottomLeft:"",
-//     Bottom:"",
-//     BottomRight:""
-// }
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -105,7 +91,9 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
 const findOrCreate=require("mongoose-findorcreate");
-
+//bcrypt
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const app = express();
 
@@ -212,13 +200,10 @@ app.post("/create",function(req,res){
     console.log(req.body.theme);
     themeColor = req.body.theme;
     title=req.body.titleText;
-    MainBox.updateOne({ㄴid:mainObjId},{title:title},function(err){
-        if(err){
-            console.log(err);
-        }else{
-            console.log("Mainbox title is Successfully updated")
-        }
+    const mainBox = new MainBox({
+        title: title
     })
+    mainBox.save();
     res.redirect("/mainbox");
     
 })
@@ -239,11 +224,12 @@ app.post("/mainbox",function(req,res){
         Bottom:req.body.Bottom,
         BottomRight:req.body.BottomRight
     }
+    mainPlans=Object.values(mainBox_values);
     mainObjective=req.body.mainObjective;
 
     if (buttonName==="Save"){
         MainBox.updateOne({title:title},{
-            mainPlans:Object.values(mainBox_values),
+            mainPlans:mainPlans,
             mainObjective:mainObjective
         },function(err){
             if(err){
@@ -255,8 +241,8 @@ app.post("/mainbox",function(req,res){
         })
 
         User.updateOne({id:userId},{
-            mainBox:mainBox,
-            smallBox:smallBox
+            mainBox:global_mainBox,
+            smallBox:global_smallBox
         },function(err){
             if(err){
                 console.log(err);
@@ -277,33 +263,15 @@ app.post("/mainbox",function(req,res){
 })
 
 app.get("/smallbox",function(req,res){
-    SmallBox.updateOne({id:smallObjId},{objective:smallBoxObjective},function(err){
-        if(err){
-            console.log(err);
-
-        }
-        else{
-            console.log("smallbox objective is Successfully updated");
-
-        }
-    })
+    const smallBox = new SmallBox({
+    objective: smallBoxObjective
+    });
+    smallBox.save();
     res.render("smallbox",{smallBoxObjective:smallBoxObjective});
 })
 
 app.post("/smallbox",function(req,res){
-    console.log(req.body);
-    const smallBoxPlans={
-        TopLeftBox:req.body.TopLeftBox,
-        TopBox:req.body.TopBox,
-        TopRightBox:req.body.TopRightBox,
-        LeftBox:req.body.LeftBox,
-        RightBox:req.body.RightBox,
-        BottomLeftBox:req.body.BottomLeftBox,
-        BottomBox:req.body.BottomBox,
-        BottomRightBox:req.body.BottomRightBox
-    }
-    console.log(smallBoxPlans)
-    const smallPlans = Object.values(smallBoxPlans);
+    smallPlans = req.body.plans;
     SmallBox.updateOne({objective:smallBoxObjective},{plans:smallPlans},function(err){
         if(err){
             console.log(err);
