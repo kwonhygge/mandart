@@ -4,13 +4,11 @@
     <h1>Sign Up</h1>
         
         <div class="card">
-            <form class="sign-up-form">
+            <form class="sign-up-form" action="/signup" method="POST">
             <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <label for="inputName" class="sr-only">Name</label>
-            <input type="name" id="inputName" class="form-control" placeholder="Name" required>
+            <input type="email" name="username" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
             <button class="btn btn-lg btn-dark btn-block" type="submit">Sign Up</button>
             </form>
             
@@ -18,13 +16,6 @@
             <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
               <i class="fab fa-google"></i>
               Sign Up with Google
-            </a>
-          </div>
-
-          <div class="card-body">
-            <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-              <i class="fab fa-facebook"></i>
-              Sign Up with Facebook
             </a>
           </div>
 

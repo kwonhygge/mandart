@@ -112,7 +112,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose,{ usernameField : 'username' });
 userSchema.plugin(findOrCreate);
 
 const User = new mongoose.model("User",userSchema);
@@ -171,21 +171,56 @@ app.post("/login",function(req,res){
         password: req.body.password
     });
 
-    req.login(user,function(err){
+    User.findOne({email:user.username},function(err,foundUser){
         if(err){
             console.log(err);
+
         }else{
-            passport.authenticate("local")(req,res,function(){
-                res.redirect("/main");
-            });
+            if(foundUser){
+                bcrypt.compare(user.password,foundUser.password,function(err,result){
+                    if(result===true){
+                        res.redirect("/main");
+                    }
+                });
+            }
+            else{
+                req.login(user,function(err){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        passport.authenticate("local")(req,res,function(){
+                            res.redirect("/main");
+                        });
+                    }
+                });
+            }
         }
-        
-        
     });
+
+    
 })
 
 app.get("/signup",function(req,res){
     res.render("signup");
+})
+
+app.post("/signup",function(req,res){
+    bcrypt.hash(req.body.password, saltRounds,function(err,hash){
+
+        const newUser = new User({
+            email: req.body.username,
+            password: hash
+        });
+        console.log(newUser);
+
+        newUser.save(function(err){
+            if(err){
+                console.log(err);  
+            }else{
+                res.redirect("/login");
+            }
+        });
+    })
 })
 
 app.get("/main",function(req,res){
@@ -258,8 +293,6 @@ app.post("/mainbox",function(req,res){
         smallBoxObjective = mainBox_values[buttonName];
         res.redirect("/smallbox");
     }
-    
-
 })
 
 app.get("/smallbox",function(req,res){
