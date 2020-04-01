@@ -206,6 +206,13 @@ h1{
   height:40px;
 }
 
+.input,
+.text{
+  display: none;
+}
+.showing{
+  display: block;
+}
 
 /* mainBox */
 #mainBox {

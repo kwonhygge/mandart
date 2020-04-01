@@ -1,10 +1,11 @@
 <%- include("partials/header") -%>
 
 <div>
-    <td class="mainBoxContainer">
-        <form action="/mainbox" method="post">
+
+     <td class="mainBoxContainer">
+            <form action="/mainbox" method="post">
             <table id="mainBox">
-            
+                
                 <tr>
                     <td class="arrow"> <button type="submit" name="buttonType" value="TopLeft"><img class="arrow-img" src="/imgs/arrowTop.png"  alt="arrowTopLeft" style=transform:rotate(-45deg)></button></td>
                     <td class="arrow"> <button type="submit" name="buttonType" value="Top"><img class="arrow-img" src="/imgs/arrowTop.png" alt="arrowTop"></button></td>
@@ -16,19 +17,46 @@
                     <td > 
                     <table id="mainBoxTable">
                         <tr>
-                            <td class="mainbox-objectives"><input maxlength=9 name="TopLeft" style=background-color:<%=themeColor%>></td>
-                            <td class="mainbox-objectives"><input name="Top" style=background-color:<%=themeColor%>></td>
-                            <td class="mainbox-objectives"><input name="TopRight" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives">
+                                <input id="box0" class="input" maxlength=9 name="TopLeft" style=background-color:<%=themeColor%>>
+                            <h5 id = "text0" class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box1" class="input" maxlength=9 name="Top" style=background-color:<%=themeColor%>>
+                                <h5 id = "text1" class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box2" class="input" maxlength=9 name="TopRight" style=background-color:<%=themeColor%>>
+                                <h5 id = "text2" class="text"></h5>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mainbox-objectives"><input name="Left" style=background-color:<%=themeColor%>></td>
-                            <td class="mainbox-objectives"><input name="mainObjective"></td>
-                            <td class="mainbox-objectives"><input name="Right" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives">
+                                <input id="box3" class="input" maxlength=9 name="Left" style=background-color:<%=themeColor%>>
+                                <h5 id = "text3" class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box4" class="input" maxlength=9 name="mainObjective">
+                                <h5 id = "text4" class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box5" class="input" maxlength=9 name="Right" style=background-color:<%=themeColor%>>
+                                <h5 id = "text5" class="text"></h5>
+                            </td>
                         </tr>
                         <tr>
-                            <td class="mainbox-objectives"><input name="BottomLeft" style=background-color:<%=themeColor%>></td>
-                            <td class="mainbox-objectives"><input name="Bottom" style=background-color:<%=themeColor%>></td>
-                            <td class="mainbox-objectives"><input name="BottomRight" style=background-color:<%=themeColor%>></td>
+                            <td class="mainbox-objectives">
+                                <input id="box6" class="input" maxlength=9 name="BottomLeft" style=background-color:<%=themeColor%>>
+                                <h5 id = "text6"class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box7" class="input" maxlength=9 name="Bottom" style=background-color:<%=themeColor%>>
+                                <h5 id = "text7" class="text"></h5>
+                            </td>
+                            <td class="mainbox-objectives">
+                                <input id="box8" class="input" maxlength=9 name="BottomRight" style=background-color:<%=themeColor%>>
+                                <h5 id = "text8" class="text"></h5>
+                            </td>
                         </tr>
     
                     </table>
@@ -46,13 +74,14 @@
 
             <div>
                 <button class="submit-btn" type="submit" name="buttonType" value="Save"><img class="btn-img" src="https://image.flaticon.com/icons/svg/483/483327.svg"></button>
+                <input id="test">Hello</input>
             </div>
-            
         </form>
+        
         
 </div>
 
-<script src="/scripts/mainbox.js"></script>
+<script src="/mainbox.js"></script>
 
 
 <%- include('partials/footer') %>

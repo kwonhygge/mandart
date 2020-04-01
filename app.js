@@ -35,18 +35,21 @@ let themeColor = "white";
 let title="";
 let userId = "";
 
+exports.isTyped = str => str.toUpperCase();
+
 //글로벌 mainobjective와 smallobjective
 let mainBox={
     title:"",
     objective:"",
-    plans:[]
+    plans:["Hello"]
 }
 
 let smallBox={
     objective:"",
     plans:[]
 }
-
+exports.uppercase = str => str.toUpperCase()
+exports.a = 1
 //model 생성
 const express = require("express");
 const bodyParser = require("body-parser");
