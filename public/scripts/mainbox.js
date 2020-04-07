@@ -22,10 +22,10 @@ function loadPlans(){
 
         if(currentPlan === null){
             askForPlan(i);
-            inputArr[i].addEventListener("click",handleClick);
+            inputArr[i].addEventListener("click",clickBox);
         }else{
             paintPlan(currentPlan,i);
-            textArr[i].addEventListener("click",handleClick);
+            textArr[i].addEventListener("click",clickBox);
     }
     }
     
@@ -37,24 +37,28 @@ function convertToDiv(event){
         const value = document.getElementById(clickedID).value;
         if(value!==""){
             savePlan(value);
-            console.log(value);
         }
         init();
-    }
-    
-    
+    }    
 }
 
-function handleClick(event){
+function convertToInput(id){
+    sessionStorage.removeItem(id);
+    init();
+}
+
+function clickBox(event){
     
     clickedID = event.target.id;
     if (event.target.tagName === `H5`){
-        sessionStorage.removeItem(clickedID);
-        console.log("Removed");
-        init();
+        convertToInput(clickedID);
     }else{
         document.addEventListener("click",convertToDiv);
     }
+}
+
+function clickButton(event){
+    event.target.id
 }
 
 function savePlan(plan){
@@ -63,7 +67,6 @@ function savePlan(plan){
 
 function init(){
     loadPlans();
-
 }
 
 init();
