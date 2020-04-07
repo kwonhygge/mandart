@@ -1,11 +1,11 @@
 const inputArr = document.querySelectorAll(".input");
 const textArr = document.querySelectorAll(".text");
-let planID = "";
+let clickedID = "";
 const SHOWING = "showing";
 
 function askForPlan(i){
     inputArr[i].classList.add(SHOWING);
-    inputArr[i].addEventListener("click",handleClick);
+    textArr[i].classList.remove(SHOWING);
 
 }
 
@@ -19,37 +19,50 @@ function paintPlan(plan,i){
 function loadPlans(){
     for (let i=0; i<9;i++){
         let currentPlan = sessionStorage.getItem(`box${i}`);
-    
+
         if(currentPlan === null){
             askForPlan(i);
+            inputArr[i].addEventListener("click",handleClick);
         }else{
             paintPlan(currentPlan,i);
+            textArr[i].addEventListener("click",handleClick);
     }
     }
     
 }
-function handleSubmit(event){
+function convertToDiv(event){
     
-    
-    if(event.target.id !== planID){
+    if(event.target.id !== clickedID){
         event.preventDefault();
-        const value = document.getElementById(planID).value;
-        savePlan(value);
-        window.location.reload();
+        const value = document.getElementById(clickedID).value;
+        if(value!==""){
+            savePlan(value);
+            console.log(value);
+        }
+        init();
     }
+    
+    
 }
 
 function handleClick(event){
-    planID = event.target.id;
+    
+    clickedID = event.target.id;
+    if (event.target.tagName === `H5`){
+        sessionStorage.removeItem(clickedID);
+        console.log("Removed");
+        init();
+    }else{
+        document.addEventListener("click",convertToDiv);
+    }
 }
 
 function savePlan(plan){
-    sessionStorage.setItem(planID,plan);
+    sessionStorage.setItem(clickedID,plan);
 }
 
 function init(){
     loadPlans();
-    document.addEventListener("click",handleSubmit);
 
 }
 
