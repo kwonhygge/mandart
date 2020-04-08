@@ -3,7 +3,10 @@
     <div class="smallBoxContainer">
         <table id="smallbox">
             <tr>
-                <td class="plan"><input class="form-control " name="plans"></td>
+                <td class="plan">
+                    <input class="form-control " name="plans">
+                    <h5><%=%></h5>
+                </td>
                 <td class="plan"><input class="form-control " name="plans"></td>
                 <td class="plan"><input class="form-control " name="plans"></td>
             </tr>
@@ -21,12 +24,6 @@
     </div>
     <button class="smallbox-submit-btn" type="submit"><img class="btn-img" src="https://image.flaticon.com/icons/svg/483/483327.svg"></button>  
 </form>
-    <script> 
-        function scrollFunc(){
-            console.log("Hi");
-        }
-        window.addEventListener('scroll',scrollFunc);
-
-    </script>
+<script src="/scripts/smallbox.js"></script>
 
 <%- include('partials/footer') %>

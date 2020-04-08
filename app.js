@@ -19,13 +19,7 @@ const userSchema = new mongoose.Schema({
         title:String,
         objective:String,
         plans: [{
-            type:String
-        }]
-    },
-    smallBox:{
-        objective:String,
-        plans: [{
-            type:String
+            type:Object
         }]
     }
 });
@@ -37,11 +31,10 @@ let userId = "";
 
 exports.isTyped = str => str.toUpperCase();
 
-//글로벌 mainobjective와 smallobjective
 let mainBox={
     title:"",
     objective:"",
-    plans:["Hello"]
+    plans:[]
 }
 
 let smallBox={
@@ -223,8 +216,7 @@ app.post("/mainbox",function(req,res){
 
     if (buttonName==="Save"){
         User.updateOne({id:userId},{
-            mainBox:mainBox,
-            smallBox:smallBox
+            mainBox:mainBox
         },function(err){
             if(err){
                 console.log(err);
@@ -242,11 +234,12 @@ app.post("/mainbox",function(req,res){
 
 app.get("/smallbox",function(req,res){
     res.render("smallbox",{smallBoxObjective:smallBox.objective});
-    
 })
 
 app.post("/smallbox",function(req,res){
     smallBox.plans = req.body.plans;
+    mainBox.plans.push(smallBox);
+    console.log(mainBox.plans);
     res.redirect("/mainbox");
 })
 
