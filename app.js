@@ -48,8 +48,6 @@ let smallBox={
     objective:"",
     plans:[]
 }
-exports.uppercase = str => str.toUpperCase()
-exports.a = 1
 //model 생성
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -216,14 +214,12 @@ app.post("/mainbox",function(req,res){
         TopLeft:req.body.TopLeft,
         Top:req.body.Top,
         TopRight:req.body.TopRight,
-        Left:req.body.Left,
+        mainObjective:req.body.mainObjective,
         Right:req.body.Right,
         BottomLeft:req.body.BottomLeft,
         Bottom:req.body.Bottom,
-        BottomRight:req.body.BottomRight
+        BottomRigth:req.body.BottomRigth
     }
-    mainBox.plans=Object.values(mainBox_values);
-    mainBox.objective=req.body.mainObjective;
 
     if (buttonName==="Save"){
         User.updateOne({id:userId},{
@@ -239,7 +235,6 @@ app.post("/mainbox",function(req,res){
         res.redirect("/main");
     }
     else{
-        console.log(req.body);
         smallBox.objective = mainBox_values[buttonName];
         res.redirect("/smallbox");
     }
