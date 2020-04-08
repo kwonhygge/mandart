@@ -233,13 +233,12 @@ app.post("/mainbox",function(req,res){
 })
 
 app.get("/smallbox",function(req,res){
-    res.render("smallbox",{smallBoxObjective:smallBox.objective});
+    res.render("smallbox",{smallBox:smallBox});
 })
 
 app.post("/smallbox",function(req,res){
     smallBox.plans = req.body.plans;
     mainBox.plans.push(smallBox);
-    console.log(mainBox.plans);
     res.redirect("/mainbox");
 })
 

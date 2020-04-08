@@ -1,6 +1,5 @@
-const inputArr = document.querySelectorAll(".input");
+const inputArr = document.querySelectorAll(".plan input");
 const textArr = document.querySelectorAll(".text");
-const arrowButtons = document.querySelectorAll(".arrow button");
 let clickedID = "";
 const SHOWING = "showing";
 
