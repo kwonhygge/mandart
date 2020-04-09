@@ -3,6 +3,7 @@ const textArr = document.querySelectorAll(".text");
 const arrowButtons = document.querySelectorAll(".arrow button");
 let clickedID = "";
 const SHOWING = "showing";
+const form = document.querySelector("form");
 
 function askForPlan(i){
     inputArr[i].classList.add(SHOWING);
@@ -23,7 +24,6 @@ function paintPlan(plan,i){
 function loadPlans(){
     for (let i=0; i<9;i++){
         let currentPlan = sessionStorage.getItem(`main_box${i}`);
-
         if(currentPlan === null){
             askForPlan(i);
             inputArr[i].addEventListener("click",clickBox);
@@ -36,14 +36,18 @@ function loadPlans(){
     
 }
 function convertToDiv(event){
-    if(event.target.id !== clickedID){
-        const value = document.getElementById(clickedID).value;
+    form.addEventListener("focusout",clickOutsideForm);
+    init();  
+}
+
+function clickOutsideForm(){
+    for(let i=0; i<9; i++){
+        const value = inputArr[i].value;
         if(value!==""){
-            savePlan(value);
+            sessionStorage.setItem(`main_box${i}`,inputArr[i].value);
         }
         
-    }  
-    init();  
+    }
 }
 
 function convertToInput(id){
@@ -52,19 +56,26 @@ function convertToInput(id){
 }
 
 function clickBox(event){
-    clickedID = event.target.id;
     if (event.target.tagName === `H5`){
+        clickedID = event.target.id;
         convertToInput(clickedID);
     }else{
         document.addEventListener("click",convertToDiv);
     }
 }
 
-function savePlan(plan){
-    sessionStorage.setItem(clickedID,plan);
+function handleKeyDown(){
+    form.addEventListener("keydown",function(event){
+        if(event.keyCode === 13){
+            event.preventDefault();
+        }
+    })
+    
 }
 
+
 function init(){
+    handleKeyDown();
     loadPlans();
 }
 

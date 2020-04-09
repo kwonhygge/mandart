@@ -1,6 +1,7 @@
 const inputArr = document.querySelectorAll(".plan input");
 const textArr = document.querySelectorAll(".text");
 const submitBtn=document.querySelector(".smallbox-submit-btn");
+const form = document.querySelector("form");
 let clickedID = "";
 const SHOWING = "showing";
 sessionStorage.setItem("isFirst",true);
@@ -80,7 +81,17 @@ function clickBox(event){
     }
 }
 
+function handleKeyDown(){
+    form.addEventListener("keydown",function(event){
+        if(event.keyCode === 13){
+            event.preventDefault();
+        }
+    })
+    
+}
+
 function init(){
+    handleKeyDown();
     savePrePlans();
     loadPlans();
 }
