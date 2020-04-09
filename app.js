@@ -233,20 +233,16 @@ app.post("/mainbox",function(req,res){
         smallBoxIndex=buttonName;
         smallBox.objective = mainBox_values[buttonName];
         mainBox.plans[smallBoxIndex].objective=smallBox.objective;
-        console.log(mainBox);
         res.redirect("/smallbox");
     }
 })
 
 app.get("/smallbox",function(req,res){
-    console.log(mainBox.plans);
     res.render("smallbox",{smallBoxes:mainBox.plans,index:smallBoxIndex});
 })
 
 app.post("/smallbox",function(req,res){
-    console.log(req.body);
     smallBox.plans = req.body.plans;
-    console.log(smallBoxIndex);
     mainBox.plans[smallBoxIndex]=smallBox;
     smallBox={objective:"",plans:[]};
     res.redirect("/mainbox");

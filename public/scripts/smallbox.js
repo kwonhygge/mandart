@@ -2,8 +2,6 @@ const inputArr = document.querySelectorAll(".plan input");
 const textArr = document.querySelectorAll(".text");
 const submitBtn=document.querySelector(".smallbox-submit-btn");
 let clickedID = "";
-let initStatuses=[true,true,true,true,true,true,true];
-let totInitStatus=true;
 const SHOWING = "showing";
 sessionStorage.setItem("isFirst",true);
 
@@ -16,15 +14,11 @@ function askForPlan(i){
 function paintPlan(i){
     inputArr[i].classList.remove(SHOWING);
     textArr[i].classList.add(SHOWING);
-    if(!initStatuses[i]){
-        textArr[i].innerHTML = inputArr[i].value;
-        console.log("Painted");
-    }
+    textArr[i].innerHTML = inputArr[i].value;
     
 }
 
 function resetPlans(){
-    console.log("reset?");
     for(let i=0;i<8;i++){
         sessionStorage.removeItem(`small_box${i}`)
     }
@@ -32,39 +26,24 @@ function resetPlans(){
 }
 
 function savePrePlans(){
-    if(!sessionStorage.getItem("isFirst")){
         for(let i=0; i<8 ; i++){
             const preText=inputArr[i].value;
             if(preText!==""){
                 sessionStorage.setItem(`small_box${i}`,preText);
             }
         }
-    }
     
     
 }
 
 function loadPlans(){
-    console.log("load");
     for (let i=0; i<8;i++){
         if(!sessionStorage.getItem(`small_box${i}`)){
-            console.log("ask");
             askForPlan(i);
-            initStatuses[i]=false;
             inputArr[i].addEventListener("click",clickBox);
         }else{
-            console.log("not ask");
-            if(!sessionStorage.getItem("isFirst")){
-                console.log("First");
-                paintPlan(i);
-                inputArr[i].value=textArr[i].innerHTML;
-                initStatuses[i]=false;
-            }else{
-                console.log("second");
-                inputArr[i].value=sessionStorage.getItem(`small_box${i}`);
-                console.log(inputArr[i].value);
-                paintPlan(i);
-            }
+            inputArr[i].value=sessionStorage.getItem(`small_box${i}`);
+            paintPlan(i);
             textArr[i].addEventListener("click",clickBox);
     }
     }
@@ -88,7 +67,7 @@ function savePlan(plan){
 
 function convertToInput(id){
     sessionStorage.removeItem(id);
-    init();
+    loadPlans();
 }
 
 function clickBox(event){
@@ -102,7 +81,6 @@ function clickBox(event){
 }
 
 function init(){
-    sessionStorage.setItem("isFirst",false);
     savePrePlans();
     loadPlans();
 }
