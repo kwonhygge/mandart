@@ -237,6 +237,7 @@ app.get("/smallbox",function(req,res){
 })
 
 app.post("/smallbox",function(req,res){
+    console.log(req.body);
     smallBox.plans = req.body.plans;
     mainBox.plans.push(smallBox);
     res.redirect("/mainbox");
