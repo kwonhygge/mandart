@@ -4,7 +4,6 @@ const submitBtn=document.querySelector(".smallbox-submit-btn");
 const form = document.querySelector("form");
 let clickedID = "";
 const SHOWING = "showing";
-sessionStorage.setItem("isFirst",true);
 
 function askForPlan(i){
     inputArr[i].classList.add(SHOWING);
