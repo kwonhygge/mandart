@@ -28,22 +28,20 @@ const userSchema = new mongoose.Schema({
 let themeColor = "white";
 let title="";
 let userId = "";
+let smallBoxIndex = 0;
 
 exports.isTyped = str => str.toUpperCase();
-
-let mainBox={
-    title:"",
-    objective:"",
-    plans:[{
-        objective:"hello",
-        plans:["3","2","3","4","5","6","6"]
-    }]
-}
-
 let smallBox={
     objective:"",
     plans:[]
 }
+let mainBox={
+    title:"",
+    objective:"",
+    plans:[{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},
+       {objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]}]
+    }
+
 //model 생성
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -206,15 +204,17 @@ app.get("/mainbox",function(req,res){
 
 app.post("/mainbox",function(req,res){
     const buttonName = req.body.buttonType;
+    console.log(req.body);
     const mainBox_values={
-        TopLeft:req.body.TopLeft,
-        Top:req.body.Top,
-        TopRight:req.body.TopRight,
+        0:req.body.TopLeft,
+        1:req.body.Top,
+        2:req.body.TopRight,
+        3:req.body.Left,
         mainObjective:req.body.mainObjective,
-        Right:req.body.Right,
-        BottomLeft:req.body.BottomLeft,
-        Bottom:req.body.Bottom,
-        BottomRigth:req.body.BottomRigth
+        4:req.body.Right,
+        5:req.body.BottomLeft,
+        6:req.body.Bottom,
+        7:req.body.BottomRight
     }
 
     if (buttonName==="Save"){
@@ -230,20 +230,25 @@ app.post("/mainbox",function(req,res){
         res.redirect("/main");
     }
     else{
+        smallBoxIndex=buttonName;
         smallBox.objective = mainBox_values[buttonName];
+        mainBox.plans[smallBoxIndex].objective=smallBox.objective;
+        console.log(mainBox);
         res.redirect("/smallbox");
     }
 })
 
 app.get("/smallbox",function(req,res){
-    console.log(mainBox.plans[0]);
-    res.render("smallbox",{smallBox:mainBox.plans[0]});
+    console.log(mainBox.plans);
+    res.render("smallbox",{smallBoxes:mainBox.plans,index:smallBoxIndex});
 })
 
 app.post("/smallbox",function(req,res){
     console.log(req.body);
     smallBox.plans = req.body.plans;
-    mainBox.plans.push(smallBox);
+    console.log(smallBoxIndex);
+    mainBox.plans[smallBoxIndex]=smallBox;
+    smallBox={objective:"",plans:[]};
     res.redirect("/mainbox");
 })
 

@@ -32,14 +32,10 @@ function resetPlans(){
 }
 
 function savePrePlans(){
-    console.log("pre")
     if(!sessionStorage.getItem("isFirst")){
-        console.log("savepre?");
         for(let i=0; i<8 ; i++){
-            const preText=textArr[i].innerHTML;
-            console.log(preText);
+            const preText=inputArr[i].value;
             if(preText!==""){
-                console.log("set??");
                 sessionStorage.setItem(`small_box${i}`,preText);
             }
         }
@@ -107,8 +103,6 @@ function clickBox(event){
 
 function init(){
     sessionStorage.setItem("isFirst",false);
-    console.log("init")
-    console.log(sessionStorage.getItem("isFirst"))
     savePrePlans();
     loadPlans();
 }
