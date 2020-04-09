@@ -50,15 +50,21 @@ function loadPlans(){
     }
     
 }
-function convertToDiv(event){
-    if(event.target.id !== clickedID){
-        const value = document.getElementById(clickedID).value;
-        if(value!==""){
-            savePlan(value);
-        }
-        loadPlans();
-    }    
+function convertToDiv(){
+    form.addEventListener("focusout",clickOutsideForm);
+    loadPlans();
 }
+
+function clickOutsideForm(){
+    for(let i=0; i<9; i++){
+        const value = inputArr[i].value;
+        if(value!==""){
+            sessionStorage.setItem(`small_box${i}`,inputArr[i].value);
+        }
+        
+    }
+}
+
 
 function savePlan(plan){
     

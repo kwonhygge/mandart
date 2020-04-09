@@ -35,7 +35,7 @@ function loadPlans(){
     }
     
 }
-function convertToDiv(event){
+function convertToDiv(){
     form.addEventListener("focusout",clickOutsideForm);
     init();  
 }
