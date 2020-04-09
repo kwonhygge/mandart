@@ -32,12 +32,14 @@ function resetPlans(){
 }
 
 function savePrePlans(){
-    
+    console.log("pre")
     if(!sessionStorage.getItem("isFirst")){
         console.log("savepre?");
         for(let i=0; i<8 ; i++){
             const preText=textArr[i].innerHTML;
+            console.log(preText);
             if(preText!==""){
+                console.log("set??");
                 sessionStorage.setItem(`small_box${i}`,preText);
             }
         }
@@ -74,7 +76,6 @@ function loadPlans(){
 }
 function convertToDiv(event){
     if(event.target.id !== clickedID){
-        event.preventDefault();
         const value = document.getElementById(clickedID).value;
         if(value!==""){
             savePlan(value);
@@ -104,18 +105,12 @@ function clickBox(event){
     }
 }
 
-function handleArrow(){
-    submitBtn.addEventListener("click",function(){
-        
-        loadPlans();
-    });
-}
-
 function init(){
     sessionStorage.setItem("isFirst",false);
+    console.log("init")
+    console.log(sessionStorage.getItem("isFirst"))
     savePrePlans();
     loadPlans();
-    handleArrow();
 }
 
 resetPlans();

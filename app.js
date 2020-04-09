@@ -34,7 +34,10 @@ exports.isTyped = str => str.toUpperCase();
 let mainBox={
     title:"",
     objective:"",
-    plans:[]
+    plans:[{
+        objective:"hello",
+        plans:["3","2","3","4","5","6","6"]
+    }]
 }
 
 let smallBox={
@@ -233,7 +236,8 @@ app.post("/mainbox",function(req,res){
 })
 
 app.get("/smallbox",function(req,res){
-    res.render("smallbox",{smallBox:smallBox});
+    console.log(mainBox.plans[0]);
+    res.render("smallbox",{smallBox:mainBox.plans[0]});
 })
 
 app.post("/smallbox",function(req,res){
