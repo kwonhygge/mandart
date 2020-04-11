@@ -17,14 +17,48 @@
 - 사용자가 테마를 선택하거나, 직접 커스터마이징 할 수 있어야 함
 
 4. 사용스택|
-- javascript
-- node, express
-- html, ejs
-- bootstrap, css
-- react
-- mongoDB
+
+- 프론트엔드
+  - html, ejs
+  - bootstrap, css
+  - javascript
+  
+- 백엔드
+  - node, express
+  
+- 데이터베이스
+  - mongoDB
+
+- 보안
+  -Google Oauth
+  -bcrypt
 
 5. 계획
 - adobe XD로 mockup design 구상
-- 개발환경 셋팅
-- 업데이트 예정
+- 개발환경과 데이터베이스 셋팅
+- 개발 진행
+
+6. 진행 상황
+- 프론트엔드
+  - css 
+    - 기본 마무리
+    - 반응형 지원
+      - 로그인 화면
+      - 로그인 후 홈 화면
+
+  - javascript 
+    - 메인 계획 박스 
+      - 글자 수 제한했음
+      - input에서 내용을 작성하다가 밖을 누르면 div로 바뀌도록 함
+
+- 백엔드
+  - app의 get과 post 셋팅
+
+- 데이터베이스
+  - mongoose에 유저 정보 저장
+  - 유저마다 계획표 저장
+  
+- 보안
+  - google oauth 연동
+  - 유저 이메일과 비밀번호 bcrypt로 
+
