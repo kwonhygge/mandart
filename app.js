@@ -17,6 +17,7 @@ const userSchema = new mongoose.Schema({
     secret:String,
     mainBox:{
         title:String,
+        themeColor:String,
         objective:String,
         plans: [{
             type:Object
@@ -26,7 +27,6 @@ const userSchema = new mongoose.Schema({
 
 //변수들
 let themeColor = "white";
-let title="";
 let userId = "";
 let smallBoxIndex = 0;
 
@@ -37,6 +37,7 @@ let smallBox={
 }
 let mainBox={
     title:"",
+    themeColor: "",
     objective:"",
     plans:[{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},
        {objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]},{objective:"",plans:[]}]
@@ -117,7 +118,6 @@ app.get("/auth/google",
 app.get('/auth/google/mandart', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
     res.redirect('/main');
   });
 
@@ -194,11 +194,13 @@ app.get("/create",function(req,res){
 
 app.post("/create",function(req,res){
     themeColor = req.body.theme;
+    mainBox.themeColor=themeColor;
     mainBox.title=req.body.titleText;
     res.redirect("/mainbox");
 })
 
 app.get("/mainbox",function(req,res){
+    console.log(mainBox);
     res.render("mainbox",{themeColor:themeColor});
 })
 
@@ -218,6 +220,7 @@ app.post("/mainbox",function(req,res){
     }
 
     if (buttonName==="Save"){
+        console.log(mainBox);
         User.updateOne({id:userId},{
             mainBox:mainBox
         },function(err){
@@ -248,6 +251,6 @@ app.post("/smallbox",function(req,res){
     res.redirect("/mainbox");
 })
 
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("listening on port 3000");
 })
