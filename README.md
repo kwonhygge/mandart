@@ -64,21 +64,32 @@
     <td valign="top"><img width="1200" alt="만다라트가입" src="https://user-images.githubusercontent.com/50289067/90373028-48e22b80-e0ac-11ea-8495-15b2edf621fc.png"> 
     </td>
   </tr>
+  <tr><td><h1>만다라트 생성 방법</h1></td></tr>
   <tr>
     <td valign="top"><img width="1200" alt="만다라트테마별" src="https://user-images.githubusercontent.com/50289067/90373021-467fd180-e0ac-11ea-96e3-b396abeba842.png"></td>
-    <td valign="top"><h2 style="font-size:18px;">새로운 만다라트 생성</h2>
+    <td valign="top"><h2 style="font-size:18px;">1. 주제와 테마 정하기</h2>
       <h4>원하는 주제 지정 ex)올해의 목표, 이번달 목표, 계정당 주제 여러개 가능</h4>
       <h4>원하는 테마를 골라서 생성 가능</h4>
       </td>
   </tr>
   <tr>
     <td valign="top"><img width="563" alt="만다라트리얼메인세로" src="https://user-images.githubusercontent.com/50289067/90377015-539fbf00-e0b2-11ea-9187-4bc55d3656b8.png"></td>
-    <td valign="top"><h2 style="font-size:18px;">가장 큰 목표 박스</h2>
-      <h4>가장 큰 목표를 가운데 적음 ex)공부, 건강, 부자되기 ... </h4>
-      <h4>가운데 적힌 목표를 이루기 위한 세부 목표를 나머지 칸에 적어주기 ex)인강듣기, 토이프로젝트 등등</h4>
-      <h4>세부목표(인강듣기)를 위한 세부 목표들을 적고 싶다면 화살표를 눌러 페이지 이동</h4>
-      <h4>input 칸에 내용을 적고 바깥을 누르면 value가 div로 고정됨 </h4>
-      <h4>div를 누르면 input으로 바뀌어 내용 수정 가능 </h4>
+    <td valign="top"><h2 style="font-size:18px;">2. 가장 큰 목표 정하기</h2>
+      <h3>목표 적는 방법</h3>
+      <h4>1. 가장 큰 목표를 가운데 적음 ex)공부, 건강, 부자되기 ... </h4>
+      <h4>2. 가운데 적힌 목표를 이루기 위한 세부 목표를 나머지 칸에 적어주기 ex)인강듣기, 토이프로젝트 등등</h4>
+      <h4>3. 세부목표(인강듣기)를 위한 세부 목표들을 적고 싶다면 화살표를 눌러 페이지 이동</h4>
+      <br></br>
+      <h3>내용 저장과 수정 방법</h3>
+      <h4>- input 칸에 내용을 적고 바깥을 누르면 value가 div로 고정됨 </h4>
+      <h4>- div를 누르면 input으로 바뀌어 내용 수정 가능 </h4>
+      </td>
+  </tr>
+  <tr>
+    <td valign="top"><img width="1200" alt="만다라트스몰박스" src="https://user-images.githubusercontent.com/50289067/90376283-2b639080-e0b1-11ea-88c9-faacd40a275e.png"></td>
+    <td valign="top"><h2 style="font-size:18px;">3. 세부 목표(인강듣기)를 위한 목표들</h2>
+      <h4>- 위에서 메인 목표(공부)를 위한 세부 목표(인강 듣기)를 정했다면 이 페이지에서 "인강듣기"를 위한 세부 목표를 정리할 수 있다</h4>
+      <h4>- 페이지를 이동하여도 적어놓은 목표들은 남아있음 Session storage로 저장</h4>
       </td>
   </tr>
 </table>
