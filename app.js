@@ -30,7 +30,6 @@ let themeColor = "white";
 let userId = "";
 let smallBoxIndex = 0;
 
-exports.isTyped = str => str.toUpperCase();
 let smallBox={
     objective:"",
     plans:[]
