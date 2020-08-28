@@ -1,0 +1,71 @@
+.box-container{
+    width: 540px;
+    margin: 0 auto;
+
+}
+
+.line, .boxes{
+    display:flex;
+}
+
+
+.box-el{
+    display: block;
+    width:60px;
+    height:60px;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 10px;
+
+}
+
+.colored{
+    background-color: green;
+    color: #fff;
+}
+
+
+/* #mainBox {
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+    height: 500px;
+  }
+  
+  .arrown-btn{
+    border:none;
+    background-color: transparent;
+  }
+
+  .arrow{
+    width:50px;
+    height: 50px;
+  }
+  
+  .arrow-img{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .mainbox-objectives{
+    width:100px;
+    height:100px;
+  }
+  
+  .mainbox-objectives input{
+    width:100%;
+    height:100%;
+    border:none;
+  }
+  
+  .box-middle{
+    display:flex;
+    align-items: center;
+  }
+  .box-contents{
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    background-color: green;
+  }
+   */

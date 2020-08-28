@@ -1,0 +1,46 @@
+/* margin */
+
+.marT_10 { margin-top: 10px;}
+.marT_20 { margin-top: 20px;}
+.marT_30 { margin-top: 30px;}
+.marT_40 { margin-top: 40px;}
+.marT_50 { margin-top: 50px;}
+
+.marB_10 { margin-bottom: 10px;}
+.marB_20 { margin-bottom: 20px;}
+.marB_30 { margin-bottom: 30px;}
+.marB_40 { margin-bottom: 40px;}
+.marB_45 { margin-bottom: 45px;}
+.marB_50 { margin-bottom: 50px;}
+.marB_60 { margin-bottom: 60px;}
+
+.marR_10 { margin-right: 10px;}
+.marR_20 { margin-right: 20px;}
+.marR_30 { margin-right: 30px;}
+.marR_40 { margin-right: 40px;}
+.marR_50 { margin-right: 50px;}
+
+.marL_10 { margin-left: 10px;}
+.marL_20 { margin-left: 20px;}
+.marL_30 { margin-left: 30px;}
+.marL_40 { margin-left: 40px;}
+.marL_50 { margin-left: 50px;}
+
+.mar0_auto { margin: 0 auto; }
+
+.txt-center {
+	text-align:center;
+}
+
+/* text */
+.main-text{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* position */
+.justify{
+    display: flex;
+    justify-content: space-between;
+}

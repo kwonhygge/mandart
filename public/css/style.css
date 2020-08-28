@@ -214,39 +214,6 @@ h1{
   display: block;
 }
 
-/* mainBox */
-#mainBox {
-  margin: 0 auto;
-  text-align: center;
-  width: 500px;
-  height: 500px;
-}
-
-.arrow button{
-  border:none;
-  background-color: transparent;
-}
-
-.arrow-img{
-  width: 30px;
-  height: 30px;
-}
-
-.mainbox-objectives{
-  width:100px;
-  height:100px;
-}
-
-.mainbox-objectives input{
-  width:100%;
-  height:100%;
-  border:none;
-}
-
-#mainBoxTable{
-  margin: 10% 10%;
-}
-
 
 /* smallbox */
 #smallbox{
