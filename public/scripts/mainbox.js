@@ -1,27 +1,32 @@
 const SHOWING = "showing";
-const toggleBtn=document.querySelector(".toggle-btn");
-const mainBox = document.querySelector(".main-box");
-const mainBoxEl = mainBox.querySelectorAll(".box-el");
 const totalBox = document.querySelector(".total-box");
+const middleBox = document.querySelector(".middle");
+const middleBoxesColored = middleBox.querySelectorAll(".colored");
+const sideBoxesColored = document.querySelectorAll(".side-objective");
 
 
-
-
-function editTotalBox(){
-
+function giveValue(target,other){
+    for(let i=0;i<8;i++){
+        if(target.name===other[i].name){
+            other[i].value=target.value;
+        }
+    }
 }
 
-function clickArrowButton(){
-    totalBox.classList.toggle(SHOWING);
-    mainBox.classList.toggle(SHOWING);
+function connectInput(){
+    for (let i=0; i<8; i++){
+        middleBoxesColored[i].addEventListener("change",function(event){
+            giveValue(event.target,sideBoxesColored);
+        });
+        sideBoxesColored[i].addEventListener("change",function(event){
+            giveValue(event.target,middleBoxesColored);
+        });
+    }
 }
-
 
 function init(){
-    // handleKeyDown();
-    // loadPlans();
-    console.log(mainBoxEl)
-    toggleBtn.addEventListener("click",clickArrowButton)
+    connectInput();
+    
 }
 
 init();

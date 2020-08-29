@@ -1,30 +1,8 @@
-/* Main Box */
-.main-box{
-
-  margin: 0 auto;
-  display: none;
-}
-
-.main-box .box-el{
-  width: 150px;
-  height: 150px;
-  border: 1px solid #fff;
-  font-size: 20px;
-}
-
-.main-box .boxes{
-  justify-content: center;
-}
-
-
-
-
 
 /* Total Box */
 .total-box{
   width: 540px;
   margin: 0 auto;
-  display:None;
 }
 
 .line,.boxes{
@@ -55,9 +33,8 @@
 
 /* mobile */
 @media ( max-width: 768px ) {
-  .main-box .box-el{
-    width: 130px;
-    height: 130px;
+  .total-box{
+    margin-top: 50px;
   }
   .box-el{
     width: 50px;
