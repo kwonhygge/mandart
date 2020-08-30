@@ -3,6 +3,15 @@ const totalBox = document.querySelector(".total-box");
 const middleBox = document.querySelector(".middle");
 const middleBoxesColored = middleBox.querySelectorAll(".colored");
 const sideBoxesColored = document.querySelectorAll(".side-objective");
+const coloredBoxes = document.querySelectorAll(".colored");
+
+
+function paintBoxes(){
+    for(let i=0;i<coloredBoxes.length;i++){
+
+        // coloredBoxes[i].style.backgroundColor="red";
+    }
+}
 
 
 function giveValue(target,other){
@@ -26,7 +35,7 @@ function connectInput(){
 
 function init(){
     connectInput();
-    
+    paintBoxes();
 }
 
 init();

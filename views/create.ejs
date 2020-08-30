@@ -1,35 +1,31 @@
 <%- include("partials/header") -%>
 
-<div class="back-btn">
-    <a href="/home"><img src="https://image.flaticon.com/icons/svg/271/271218.svg" alt="back-btn"></a>
+<div class="create-container">
+ 
+    <a href="/home"><svg xmlns="http://www.w3.org/2000/svg" class="back-btn" viewBox="0 0 447.243 383.558">
+            <path d="M420.361,192.229a31.967,31.967,0,0,0-5.535-.41H99.305l6.88-3.2a64,64,0,0,0,18.08-12.8l88.48-88.48a33.12,33.12,0,0,0,4.64-42.4,32,32,0,0,0-48-4.16l-160,160a32,32,0,0,0-.025,45.255l.025.025,160,160a32,32,0,0,0,48-3.2,33.12,33.12,0,0,0-4.64-42.4l-88.32-88.64a64,64,0,0,0-16-11.68l-9.6-4.32h314.24a33.12,33.12,0,0,0,33.76-26.88A32,32,0,0,0,420.361,192.229Z"/>
+      </svg></a>
+    <form action="/create" method=POST>
+        <div class="obj-create">
+            <h1>가장 메인이 되는 목표를 세워보세요</h1>
+            <h2>건강해지기, 부자되기, 공부 등 어떤 것도 좋습니다 </h2>
+            <input autocomplete="off" type="text" class="main-obj-input" name="mainObj">
+        </div>
+        <ul class="theme-colors">
+            <li class="thm-color green color-selected"></li>
+            <li class="thm-color pink"></li>
+            <li class="thm-color blue"></li>
+            <li class="thm-color olive"></li>
+            <li class="thm-color purple"></li>
+            <li class="thm-color dark"></li>
+        </ul>
+    </form>
 </div>
 
-<form action="/create" method=POST>
-    <div class="form-group setTitle">
-        <label for="titleText">Title</label>
-        <input autocomplete="off" type="text" class="form-control titleText" name="titleText">
-    </div>
+<a href="/home"><svg xmlns="http://www.w3.org/2000/svg" class="next-btn" viewBox="0 0 447.243 383.558">
+    <path d="M420.361,192.229a31.967,31.967,0,0,0-5.535-.41H99.305l6.88-3.2a64,64,0,0,0,18.08-12.8l88.48-88.48a33.12,33.12,0,0,0,4.64-42.4,32,32,0,0,0-48-4.16l-160,160a32,32,0,0,0-.025,45.255l.025.025,160,160a32,32,0,0,0,48-3.2,33.12,33.12,0,0,0-4.64-42.4l-88.32-88.64a64,64,0,0,0-16-11.68l-9.6-4.32h314.24a33.12,33.12,0,0,0,33.76-26.88A32,32,0,0,0,420.361,192.229Z"/>
+</svg></a>
 
-    <div class="themes">
-        <div class="form-check form-check-inline theme1">
-            <input class="form-check-input" type="checkbox" name="theme" id="inlineCheckbox1" value="green">
-            <img class="theme-img" src="/imgs/theme1.png">
-        </div>
-
-        <div class="form-check form-check-inline theme2">
-            <input class="form-check-input" type="checkbox" name="theme" id="inlineCheckbox2" value="purple">
-            <img class="theme-img" src="/imgs/theme2.png">
-        </div>
-
-        <div class="form-check form-check-inline theme3">
-            <input class="form-check-input" type="checkbox" name="theme" id="inlineCheckbox3" value="gray">
-            <img class="theme-img" src="/imgs/theme3.png">
-        </div>
-
-        <button class="submit-btn" id="btn" type="submit"><img class="btn-img" src="https://image.flaticon.com/icons/svg/483/483327.svg"></button>
-    </div>
-    
-</form>
-
+<script src="/scripts/create.js"></script>
 
 <%- include('partials/footer') %>

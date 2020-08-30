@@ -1,3 +1,13 @@
+:root{
+    --color-green: #3A674A;
+    --color-pink: #BF6071;
+    --color-purple: #5B609B;
+    --color-olive: #81B214;
+    --color-dark:#404040;
+    --color-blue: #4E89AE;
+}
+
+
 /* margin */
 
 .marT_10 { margin-top: 10px;}
