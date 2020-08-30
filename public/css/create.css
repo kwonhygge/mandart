@@ -78,7 +78,6 @@
     width:4rem;
     height: 4rem;
     border-radius: 50%;
-    background-color:var(--color-green);
   }
 
   .thm-color:hover{
@@ -87,14 +86,11 @@
   }
 
   .next-btn{
-    display: none;
-    width: 5%;
-    height: 20%;
+    width: 5rem;
     position: absolute;
     right: 10%;
-    bottom: 50%;
+    top: 50%;
     transform: translateY(-50%);
-    transform: rotate(180deg);
   }
   
 
