@@ -42,7 +42,7 @@
   fill: #fff;
 }
 .back-btn:hover {
-  fill: #c3bfbf;
+  fill: #000000;
 }
 
 form {
@@ -50,18 +50,21 @@ form {
   text-align: center;
 }
 .obj-create h1 {
-  font-size: 1.8rem;
+  font-family: var(--font-gamja);
+  font-size: 2rem;
   font-weight: bold;
   padding: 2.5rem 0.5rem;
 }
 .obj-create h2 {
-  font-size: 1.2rem;
+  font-family: var(--font-gamja);
+  font-size: 1.5rem;
   font-weight: normal;
   margin-top: 2rem;
   padding: 0 1rem;
 }
 
 .main-obj-input {
+  font-family: var(--font-gamja);
   width: 20rem;
   line-height: 4rem;
   margin-top: 2.5rem;
@@ -98,6 +101,10 @@ form {
   margin-top: 2.5rem;
   transform: rotate(45deg);
   box-sizing: border-box;
+}
+.arrow-down:hover {
+  border-color: #000;
+  cursor: pointer;
 }
 
 /* mobile */
