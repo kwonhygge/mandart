@@ -15,21 +15,22 @@
 .dark {
   background-color: var(--color-dark);
 }
+
 .color-selected {
-  border: 1px dashed white;
+  border: 1.5px solid #fff;
+  transform: scale(1.2, 1.2);
 }
 
 .showing {
   display: block;
 }
 
-.create-container {
-  position: relative;
+.create-box {
   width: 100%;
   max-width: 560px;
-  padding: 3.5rem 2.5rem 2.5rem;
+  padding: 2.5rem;
   margin: 0 auto;
-  border: 2px solid #c3bfbf;
+  border: 2px solid #fff;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: var(--color-green);
@@ -85,6 +86,18 @@ form {
 .thm-color:hover {
   cursor: pointer;
   border: 1px solid white;
+}
+
+.arrow-down {
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0px 1px 1px 0px;
+  margin-top: 2.5rem;
+  transform: rotate(45deg);
+  box-sizing: border-box;
 }
 
 /* mobile */
