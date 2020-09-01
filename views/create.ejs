@@ -1,6 +1,6 @@
 <%- include("partials/header") -%>
 <div class="create-container">
-  <div class="create-box">
+  <div class="create-box green">
     <a href="/home"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -23,12 +23,37 @@
         />
       </div>
       <ul class="theme-colors">
-        <li class="thm-color green color-selected"></li>
-        <li class="thm-color pink"></li>
-        <li class="thm-color blue"></li>
-        <li class="thm-color olive"></li>
-        <li class="thm-color purple"></li>
-        <li class="thm-color dark"></li>
+        <li class="thm-color">
+          <input id="green" type="radio" name="choice" checked /><label
+            for="green"
+            ><span class="green"></span
+          ></label>
+        </li>
+        <li class="thm-color">
+          <input id="pink" type="radio" name="choice" /><label for="pink"
+            ><span class="pink"></span
+          ></label>
+        </li>
+        <li class="thm-color">
+          <input id="blue" type="radio" name="choice" /><label for="blue"
+            ><span class="blue"></span
+          ></label>
+        </li>
+        <li class="thm-color">
+          <input id="olive" type="radio" name="choice" /><label for="olive"
+            ><span class="olive"></span
+          ></label>
+        </li>
+        <li class="thm-color">
+          <input id="purple" type="radio" name="choice" /><label for="purple"
+            ><span class="purple"></span
+          ></label>
+        </li>
+        <li class="thm-color">
+          <input id="dark" type="radio" name="choice" /><label for="dark"
+            ><span class="dark"></span
+          ></label>
+        </li>
       </ul>
       <div class="arrow-down"></div>
     </form>

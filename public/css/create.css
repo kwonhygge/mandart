@@ -1,5 +1,7 @@
 /* property */
-
+.green {
+  background-color: var(--color-green);
+}
 .pink {
   background-color: var(--color-pink);
 }
@@ -33,7 +35,6 @@
   border: 2px solid #fff;
   box-sizing: border-box;
   border-radius: 10px;
-  background-color: var(--color-green);
 }
 
 .back-btn {
@@ -50,13 +51,11 @@ form {
   text-align: center;
 }
 .obj-create h1 {
-  font-family: var(--font-gamja);
   font-size: 2rem;
   font-weight: bold;
   padding: 2.5rem 0.5rem;
 }
 .obj-create h2 {
-  font-family: var(--font-gamja);
   font-size: 1.5rem;
   font-weight: normal;
   margin-top: 2rem;
@@ -64,7 +63,6 @@ form {
 }
 
 .main-obj-input {
-  font-family: var(--font-gamja);
   width: 20rem;
   line-height: 4rem;
   margin-top: 2.5rem;
@@ -80,15 +78,23 @@ form {
   margin: 2rem auto;
 }
 
-.thm-color {
-  width: 2rem;
-  height: 2rem;
+input[type='radio'] {
+  display: none;
+}
+input[type='radio'] + label span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
   border-radius: 50%;
 }
 
-.thm-color:hover {
+input[type='radio'] + label:hover span {
   cursor: pointer;
-  border: 1px solid white;
+}
+
+input[type='radio']:checked + label span {
+  transform: scale(1.5);
+  border: 2px solid #fff;
 }
 
 .arrow-down {
