@@ -207,7 +207,9 @@ app.get('/create', function (req, res) {
 
 app.post('/create', function (req, res) {
   console.log(req.body);
-  themeColor = req.body.choice;
+  // themeColor = req.body.chice;
+  // mainBox.themeColor=themeColor;
+  // mainBox.title=req.body.titleText;
   res.redirect('/mainbox');
 });
 
