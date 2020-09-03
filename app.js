@@ -5,12 +5,15 @@ require('dotenv').config();
 //mongoose
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/objectiveDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose.connect(
+  `mongodb+srv://admin-dory:${process.env.MONGO_PASSWORD}@cluster0.b1gte.mongodb.net/objectiveDB`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 const userSchema = new mongoose.Schema({
   email: String,
@@ -193,6 +196,7 @@ app.get('/mainbox', function (req, res) {
 });
 
 app.post('/mainbox', function (req, res) {
+  console.log(req.body);
   // const mainBox_values = {
   //   0: req.body.TopLeft,
   //   1: req.body.Top,
