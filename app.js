@@ -1,39 +1,40 @@
+'use strict';
 //jshint esversion:6
 
 //dotenv
 require('dotenv').config();
-//mongoose
-const mongoose = require('mongoose');
+// //mongoose
+// const mongoose = require('mongoose');
 
-mongoose.connect(
-  `mongodb+srv://admin-dory:${process.env.MONGO_PASSWORD}@cluster0.b1gte.mongodb.net/objectiveDB`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-);
+// mongoose.connect(
+//   `mongodb+srv://admin-dory:${process.env.MONGO_PASSWORD}@cluster0.b1gte.mongodb.net/objectiveDB`,
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//     useFindAndModify: false,
+//   }
+// );
 
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  googleId: String,
-  secret: String,
-  mainBox: {
-    objective: String,
-    themeColor: String,
-    plans: [
-      {
-        type: Object,
-      },
-    ],
-  },
-});
+// const userSchema = new mongoose.Schema({
+//   email: String,
+//   password: String,
+//   googleId: String,
+//   secret: String,
+//   mainBox: {
+//     objective: String,
+//     themeColor: String,
+//     plans: [
+//       {
+//         type: Object,
+//       },
+//     ],
+//   },
+// });
 
 //변수들
-let themeColor = 'white';
-let userId = '';
+// let themeColor = 'white';
+// let userId = '';
 
 //model 생성
 const express = require('express');
@@ -41,10 +42,10 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 //passport
 const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose');
+// const passportLocalMongoose = require('passport-local-mongoose');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const session = require('express-session');
-const findOrCreate = require('mongoose-findorcreate');
+// const findOrCreate = require('mongoose-findorcreate');
 //bcrypt
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -68,11 +69,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-userSchema.plugin(passportLocalMongoose, { usernameField: 'username' });
-userSchema.plugin(findOrCreate);
+// userSchema.plugin(passportLocalMongoose, { usernameField: 'username' });
+// userSchema.plugin(findOrCreate);
 
-const User = new mongoose.model('User', userSchema);
-passport.use(User.createStrategy());
+// const User = new mongoose.model('User', userSchema);
+// passport.use(User.createStrategy());
 
 passport.serializeUser(function (user, done) {
   userId = user.id;
@@ -122,60 +123,59 @@ app.get('/login', function (req, res) {
   res.render('login');
 });
 
-app.post('/login', function (req, res) {
-  const user = new User({
-    username: req.body.username,
-    password: req.body.password,
-  });
+// app.post('/login', function (req, res) {
+// const user = new User({
+//   username: req.body.username,
+//   password: req.body.password,
+// });
 
-  User.findOne({ email: user.username }, function (err, foundUser) {
-    if (err) {
-      console.log(err);
-    } else {
-      if (foundUser) {
-        bcrypt.compare(user.password, foundUser.password, function (
-          err,
-          result
-        ) {
-          if (result === true) {
-            res.redirect('/main');
-          }
-        });
-      } else {
-        req.login(user, function (err) {
-          if (err) {
-            console.log(err);
-          } else {
-            passport.authenticate('local')(req, res, function () {
-              res.redirect('/main');
-            });
-          }
-        });
-      }
-    }
-  });
-});
+//   User.findOne({ email: user.username }, function (err, foundUser) {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       if (foundUser) {
+//         bcrypt.compare(user.password, foundUser.password, function (
+//           err,
+//           result
+//         ) {
+//           if (result === true) {
+//             res.redirect('/main');
+//           }
+//         });
+//       } else {
+//         req.login(user, function (err) {
+//           if (err) {
+//             console.log(err);
+//           } else {
+//             passport.authenticate('local')(req, res, function () {
+//               res.redirect('/main');
+//             });
+//           }
+//         });
+//       }
+//     }
+//   });
+// });
 
 app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
 app.post('/signup', function (req, res) {
-  bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-    const newUser = new User({
-      email: req.body.username,
-      password: hash,
-    });
-    console.log(newUser);
-
-    newUser.save(function (err) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.redirect('/login');
-      }
-    });
-  });
+  // bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+  //   const newUser = new User({
+  //     email: req.body.username,
+  //     password: hash,
+  //   });
+  //   console.log(newUser);
+  // newUser.save(function (err) {
+  //   if (err) {
+  //     console.log(err);
+  //   } else {
+  //     res.redirect('/login');
+  //   }
+  // });
+  // });
 });
 
 app.get('/main', function (req, res) {
