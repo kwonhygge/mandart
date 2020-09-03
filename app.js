@@ -18,9 +18,8 @@ const userSchema = new mongoose.Schema({
   googleId: String,
   secret: String,
   mainBox: {
-    title: String,
-    themeColor: String,
     objective: String,
+    themeColor: String,
     plans: [
       {
         type: Object,
@@ -32,27 +31,6 @@ const userSchema = new mongoose.Schema({
 //변수들
 let themeColor = 'white';
 let userId = '';
-let smallBoxIndex = 0;
-
-let smallBox = {
-  objective: '',
-  plans: [],
-};
-let mainBox = {
-  title: '',
-  themeColor: '',
-  objective: '',
-  plans: [
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-    { objective: '', plans: [] },
-  ],
-};
 
 //model 생성
 const express = require('express');
@@ -212,58 +190,43 @@ app.post('/create', function (req, res) {
 });
 
 app.get('/mainbox', function (req, res) {
-  console.log(mainBox);
-  res.render('mainbox', { themeColor: themeColor });
+  res.render('mainbox');
 });
 
 app.post('/mainbox', function (req, res) {
-  const buttonName = req.body.buttonType;
-  console.log(req.body);
-  const mainBox_values = {
-    0: req.body.TopLeft,
-    1: req.body.Top,
-    2: req.body.TopRight,
-    3: req.body.Left,
-    mainObjective: req.body.mainObjective,
-    4: req.body.Right,
-    5: req.body.BottomLeft,
-    6: req.body.Bottom,
-    7: req.body.BottomRight,
-  };
-
-  if (buttonName === 'Save') {
-    console.log(mainBox);
-    User.updateOne(
-      { id: userId },
-      {
-        mainBox: mainBox,
-      },
-      function (err) {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log('Successfully updated All');
-        }
-      }
-    );
-    res.redirect('/main');
-  } else {
-    smallBoxIndex = buttonName;
-    smallBox.objective = mainBox_values[buttonName];
-    mainBox.plans[smallBoxIndex].objective = smallBox.objective;
-    res.redirect('/smallbox');
-  }
-});
-
-app.get('/smallbox', function (req, res) {
-  res.render('smallbox', { smallBoxes: mainBox.plans, index: smallBoxIndex });
-});
-
-app.post('/smallbox', function (req, res) {
-  smallBox.plans = req.body.plans;
-  mainBox.plans[smallBoxIndex] = smallBox;
-  smallBox = { objective: '', plans: [] };
-  res.redirect('/mainbox');
+  // const mainBox_values = {
+  //   0: req.body.TopLeft,
+  //   1: req.body.Top,
+  //   2: req.body.TopRight,
+  //   3: req.body.Left,
+  //   mainObjective: req.body.mainObjective,
+  //   4: req.body.Right,
+  //   5: req.body.BottomLeft,
+  //   6: req.body.Bottom,
+  //   7: req.body.BottomRight,
+  // };
+  // if (buttonName === 'Save') {
+  //   console.log(mainBox);
+  //   User.updateOne(
+  //     { id: userId },
+  //     {
+  //       mainBox: mainBox,
+  //     },
+  //     function (err) {
+  //       if (err) {
+  //         console.log(err);
+  //       } else {
+  //         console.log('Successfully updated All');
+  //       }
+  //     }
+  //   );
+  //   res.redirect('/main');
+  // } else {
+  //   smallBoxIndex = buttonName;
+  //   smallBox.objective = mainBox_values[buttonName];
+  //   mainBox.plans[smallBoxIndex].objective = smallBox.objective;
+  //   res.redirect('/smallbox');
+  // }
 });
 
 app.listen(process.env.PORT || 3000, function () {
