@@ -4,121 +4,112 @@ body {
 }
 
 body {
-  background-color:#ebebeb;
+  background-color: #c2d9df;
 }
-
 
 /* navbar */
-.navbar-brand{
-    font-family: "Roboto";
+.navbar-brand {
+  font-family: 'Roboto';
 }
 
-.profile-container{
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    overflow: hidden;
+.profile-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.profile-container img{
-    width: 100%;
-    height: 100%;
+.profile-container img {
+  width: 100%;
+  height: 100%;
 }
 
-h1{
-    font-family: 'Nanum Gothic';
-    font-weight: bold;
-    font-size: 2.5rem;
+h1 {
+  font-family: 'Nanum Gothic';
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 
 /* main */
 
-.small-piece{
-  width:30px;
-  height:30px;
+.small-piece {
+  width: 30px;
+  height: 30px;
 }
 
-.small-piece div{
-  width:100%;
-  height:100%;
+.small-piece div {
+  width: 100%;
+  height: 100%;
   background-color: white;
 }
 
-
-
 /* signup */
-.signup-con{
-    padding: 100px 500px 0;
-    text-align: center;
+.signup-con {
+  padding: 100px 500px 0;
+  text-align: center;
 }
 
-.signup-con h1{
-    margin-bottom: 20px;
+.signup-con h1 {
+  margin-bottom: 20px;
 }
 
 .form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-  }
-  .form-signin .checkbox {
-    font-weight: 400;
-  }
-  .form-signin .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
-  }
-  .form-signin .form-control:focus {
-    z-index: 2;
-  }
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  .form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-  }
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type='email'] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type='password'] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
 /* signin */
-.buttons{
-    display: flex;
-    justify-content: space-between;
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
-
-.To-text{
-    font-family: "Roboto";
-    margin: 10px 0;
-    font-size: 1rem;
+.To-text {
+  font-family: 'Roboto';
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
-.To-text a{
-    font-weight: bold; 
-    color:black; 
-    text-decoration: underline;
+.To-text a {
+  font-weight: bold;
+  color: black;
+  text-decoration: underline;
 }
-
 
 /* mid-container */
 
-.home-content{
-    font-family: 'Nanum Myeongjo';
-    margin: 5% 0;
+.home-content {
+  font-family: 'Nanum Myeongjo';
+  margin: 5% 0;
 }
 
-.mid-container{
-    padding: 100px 30%;
-    text-align: center;
-}
-
-.start-btn{
-    margin: 5% 0;
+.mid-container {
+  padding: 100px 30%;
+  text-align: center;
 }
 
 /* press container
@@ -128,80 +119,75 @@ h1{
 } */
 
 /* main */
-#elementContainer button{
-  border:none;
+#elementContainer button {
+  border: none;
   background-color: transparent;
 }
 
-.element{
+.element {
   margin: 10%;
 }
 
-.title-text{
+.title-text {
   text-align: center;
   font-size: 1.5rem;
 }
-.theme-button{
+.theme-button {
   margin: 0 auto;
-  display:block;
+  display: block;
 }
-.theme-button img{
-  width:300px;
-  height:300px;
+.theme-button img {
+  width: 300px;
+  height: 300px;
 }
 
-
-.plusBtnContainer{
+.plusBtnContainer {
   float: right;
-  margin-right:5%;
+  margin-right: 5%;
   margin-top: 5%;
 }
-.plusBtnContainer img{
-  width:70px;
-  height:70px;
+.plusBtnContainer img {
+  width: 70px;
+  height: 70px;
 }
 
-
-
-
 /* smallbox */
-#smallbox{
+#smallbox {
   margin: 7% 33%;
   text-align: center;
 }
 
-.plan{
-  width:150px;
-  height:150px;
+.plan {
+  width: 150px;
+  height: 150px;
 }
 
-.plan input{
-  width:100%;
-  height:100%;
+.plan input {
+  width: 100%;
+  height: 100%;
 }
 
-.colored-objective{
-  width:100%;
-  height:95%;
+.colored-objective {
+  width: 100%;
+  height: 95%;
   background-color: green;
-
 }
-.colored-objective h4{
+.colored-objective h4 {
   padding: 40% 0;
   text-align: center;
   color: white;
   font-size: 1.5rem;
 }
 
-.smallbox-submit-btn{
-  border:none;
+.smallbox-submit-btn {
+  border: none;
   background-color: transparent;
   display: block;
   float: right;
   margin-right: 20%;
 }
 
-.smallbox-submit-btn img{
-  width:50px;
-  height:50px;
+.smallbox-submit-btn img {
+  width: 50px;
+  height: 50px;
 }

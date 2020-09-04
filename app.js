@@ -21,16 +21,15 @@ mongoose.set('useCreateIndex', true);
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
-  googleId: String,
   secret: String,
   mainBox: {
     objective: String,
     themeColor: String,
-    plans: [
-      {
-        type: Object,
+    plans: {
+      smallBox: {
+        type: Array,
       },
-    ],
+    },
   },
 });
 
@@ -122,18 +121,6 @@ app.post('/signup', function (req, res) {
       if (foundUser) {
         res.redirect('/signup');
       } else {
-        //비밀번호 hash하여 저장
-        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-          const newUser = new User({
-            email: req.body.username,
-            password: hash,
-          });
-          newUser.save(function (err) {
-            if (err) {
-              console.log(err);
-            }
-          });
-        });
         //세션에 저장
         User.register(
           { username: req.body.username },
@@ -155,6 +142,7 @@ app.post('/signup', function (req, res) {
 
 app.get('/main', function (req, res) {
   if (req.isAuthenticated()) {
+    const loginUserName = req.user.username;
     res.render('main');
   } else {
     res.redirect('/login');
