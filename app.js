@@ -1,3 +1,4 @@
+'use strict';
 //jshint esversion:6
 
 //dotenv
@@ -33,20 +34,22 @@ const userSchema = new mongoose.Schema({
 
 //model 생성
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const session = require('express-session');
-const findOrCreate = require('mongoose-findorcreate');
-//bcrypt
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-
-const app = express();
 
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+
+//dotenv
+require('dotenv').config();
+
+//bcrypt
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 //session
 app.use(
