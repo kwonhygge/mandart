@@ -1,3 +1,4 @@
+'use strict';
 //jshint esversion:6
 
 const express = require('express');
@@ -13,38 +14,6 @@ app.use(express.static('public'));
 
 //dotenv
 require('dotenv').config();
-
-//mongoose
-const mongoose = require('mongoose');
-
-mongoose.connect(
-  `mongodb+srv://admin-dory:${process.env.MONGO_PASS}@cluster0.b1gte.mongodb.net/objectiveDB`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  }
-);
-const findOrCreate = require('mongoose-findorcreate');
-
-//model 생성
-const userSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  googleId: String,
-  secret: String,
-  mainBox: {
-    objective: String,
-    themeColor: String,
-    plans: [
-      {
-        type: Object,
-      },
-    ],
-  },
-});
-const User = new mongoose.model('User', userSchema);
 
 //bcrypt
 const bcrypt = require('bcrypt');
@@ -96,6 +65,7 @@ app.get('/signup', function (req, res) {
 });
 
 app.post('/signup', function (req, res) {
+
   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
     const newUser = new User({
       email: req.body.username,
@@ -110,6 +80,7 @@ app.post('/signup', function (req, res) {
       }
     });
   });
+
 });
 
 app.get('/main', function (req, res) {
