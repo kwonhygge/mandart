@@ -16,6 +16,8 @@ mongoose.connect(
   }
 );
 
+mongoose.set('useCreateIndex', true);
+
 const userSchema = new mongoose.Schema({
   email: String,
   password: String,
@@ -38,6 +40,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const session = require('express-session');
+const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 app.set('view engine', 'ejs');
 
@@ -59,40 +63,47 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+userSchema.plugin(passportLocalMongoose);
 const User = new mongoose.model('User', userSchema);
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get('/', function (req, res) {
   res.render('home');
 });
 
 app.get('/login', function (req, res) {
-  res.render('login');
+  if (req.isAuthenticated()) {
+    res.render('main');
+  } else {
+    res.render('login');
+  }
 });
 
 app.post('/login', function (req, res) {
-  const username = req.body.username;
-  const password = req.body.password;
+  const user = new User({
+    username: req.body.username,
+    password: req.body.password,
+  });
 
-  User.findOne({ email: username }, function (err, foundUser) {
+  req.login(user, function (err) {
     if (err) {
-      console.log('err');
       console.log(err);
     } else {
-      console.log('not err');
-      if (foundUser) {
-        console.log('found');
-        bcrypt.compare(password, foundUser.password, function (err, result) {
-          if (err) {
-            console.log(err);
-          } else if (result === true) {
-            res.redirect('/main');
-          }
-        });
-      } else {
-        res.redirect('/signup');
-      }
+      passport.authenticate('local')(req, res, function () {
+        res.redirect('/main');
+      });
     }
   });
+});
+
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 app.get('/signup', function (req, res) {
@@ -100,24 +111,54 @@ app.get('/signup', function (req, res) {
 });
 
 app.post('/signup', function (req, res) {
-  bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
-    const newUser = new User({
-      email: req.body.username,
-      password: hash,
-    });
+  const username = req.body.username;
+  const password = req.body.password;
 
-    newUser.save(function (err) {
-      if (err) {
-        console.log(err);
+  User.findOne({ email: username }, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      //이미 이 아이디가 있는 경우
+      if (foundUser) {
+        res.redirect('/signup');
       } else {
-        res.redirect('/login');
+        //비밀번호 hash하여 저장
+        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+          const newUser = new User({
+            email: req.body.username,
+            password: hash,
+          });
+          newUser.save(function (err) {
+            if (err) {
+              console.log(err);
+            }
+          });
+        });
+        //세션에 저장
+        User.register(
+          { username: req.body.username },
+          req.body.password,
+          function (err, user) {
+            if (err) {
+              res.redirect('/signup');
+            } else {
+              passport.authenticate('local')(req, res, function () {
+                res.redirect('/main');
+              });
+            }
+          }
+        );
       }
-    });
+    }
   });
 });
 
 app.get('/main', function (req, res) {
-  res.render('main');
+  if (req.isAuthenticated()) {
+    res.render('main');
+  } else {
+    res.redirect('/login');
+  }
 });
 
 app.get('/create', function (req, res) {
@@ -138,6 +179,5 @@ app.post('/mainbox', function (req, res) {
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log(process.env.TEST);
   console.log('listening on port 3000');
 });
