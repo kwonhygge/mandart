@@ -75,7 +75,7 @@ app.get('/', function (req, res) {
   res.render('home');
 });
 
-app.get('/login', function (req, res) {
+app.get('/users/login', function (req, res) {
   if (req.isAuthenticated()) {
     res.render('main');
   } else {
@@ -83,7 +83,7 @@ app.get('/login', function (req, res) {
   }
 });
 
-app.post('/login', function (req, res) {
+app.post('/users/login', function (req, res) {
   const user = new User({
     username: req.body.username,
     password: req.body.password,
@@ -100,16 +100,16 @@ app.post('/login', function (req, res) {
   });
 });
 
-app.get('/logout', function (req, res) {
+app.get('/users/logout', function (req, res) {
   req.logout();
   res.redirect('/');
 });
 
-app.get('/signup', function (req, res) {
+app.get('/users/signup', function (req, res) {
   res.render('signup');
 });
 
-app.post('/signup', function (req, res) {
+app.post('/users/signup', function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
@@ -119,7 +119,7 @@ app.post('/signup', function (req, res) {
     } else {
       //이미 이 아이디가 있는 경우
       if (foundUser) {
-        res.redirect('/signup');
+        res.redirect('/users/signup');
       } else {
         //세션에 저장
         User.register(
@@ -127,7 +127,7 @@ app.post('/signup', function (req, res) {
           req.body.password,
           function (err, user) {
             if (err) {
-              res.redirect('/signup');
+              res.redirect('/users/signup');
             } else {
               passport.authenticate('local')(req, res, function () {
                 res.redirect('/main');
@@ -145,24 +145,24 @@ app.get('/main', function (req, res) {
     const loginUserName = req.user.username;
     res.render('main');
   } else {
-    res.redirect('/login');
+    res.redirect('/users/login');
   }
 });
 
-app.get('/create', function (req, res) {
+app.get('/main/create', function (req, res) {
   res.render('create');
 });
 
-app.post('/create', function (req, res) {
+app.post('/main/create', function (req, res) {
   console.log(req.body);
-  res.redirect('/mainbox');
+  res.redirect('/main/create/mainbox');
 });
 
-app.get('/mainbox', function (req, res) {
+app.get('/main/create/mainbox', function (req, res) {
   res.render('mainbox');
 });
 
-app.post('/mainbox', function (req, res) {
+app.post('/main/create/mainbox', function (req, res) {
   console.log(req.body);
 });
 

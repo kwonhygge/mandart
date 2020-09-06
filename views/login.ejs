@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-body">
           <!-- Makes POST request to /login route -->
-          <form action="/login" method="POST">
+          <form action="/users/login" method="POST">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" class="form-control" name="username" />
@@ -20,7 +20,9 @@
             <div class="buttons">
               <button type="submit" class="btn btn-dark">Login</button>
               <div>
-                <p class="To-text">You can sign up <a href="signup">here</a></p>
+                <p class="To-text">
+                  You can sign up <a href="/users/signup">here</a>
+                </p>
               </div>
             </div>
           </form>
