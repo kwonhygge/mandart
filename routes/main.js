@@ -3,16 +3,20 @@ module.exports = function (ps) {
   const router = express.Router();
   const passport = ps;
 
-  router.get('/', function (req, res) {
+  function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-      const loginUserName = req.user.username;
-      res.render('main');
+      next();
     } else {
       res.redirect('/auth/login');
     }
+  }
+
+  router.get('/', ensureAuthenticated, function (req, res) {
+    const loginUserName = req.user.username;
+    res.render('main');
   });
 
-  router.get('/create', function (req, res) {
+  router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create');
   });
 
@@ -21,7 +25,7 @@ module.exports = function (ps) {
     res.redirect('/main/create/mainbox');
   });
 
-  router.get('/create/mainbox', function (req, res) {
+  router.get('/create/mainbox', ensureAuthenticated, function (req, res) {
     res.render('mainbox');
   });
 

@@ -11,7 +11,6 @@ module.exports = function (passport, User) {
       if (fmsg.error) {
         feedback = fmsg.error[0];
       }
-      console.log(feedback);
       res.render('login', { feedback: feedback });
     }
   });
@@ -36,35 +35,17 @@ module.exports = function (passport, User) {
     res.render('signup');
   });
 
-  router.post('/signup', function (req, res) {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    User.findOne({ email: username }, function (err, foundUser) {
-      if (err) {
-        console.log(err);
-      } else {
-        //이미 이 아이디가 있는 경우
-        if (foundUser) {
-          res.redirect('/auth/signup');
-        } else {
-          //세션에 저장
-          User.register(
-            { username: req.body.username },
-            req.body.password,
-            function (err, user) {
-              if (err) {
-                res.redirect('/auth/signup');
-              } else {
-                passport.authenticate('local')(req, res, function () {
-                  res.redirect('/main');
-                });
-              }
-            }
-          );
+  router.post('/signup', function (req, res, next) {
+    User.register(
+      new User({ username: req.body.username }),
+      req.body.password,
+      function (err) {
+        if (err) {
+          return next(err);
         }
+        res.redirect('/main');
       }
-    });
+    );
   });
 
   return router;
