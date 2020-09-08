@@ -1,0 +1,47 @@
+.login-box h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.login-box h2 {
+  color: #c63200;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+.login-box h3 {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+.login-box a {
+  color: #f0f0f0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.login-box input[type='submit'],
+.login-box input[type='email'],
+.login-box input[type='password'] {
+  margin-top: 1.5rem;
+  background: none;
+  border: 2px solid #c2d9df;
+  width: 70%;
+  color: #c2d9df;
+  height: 3rem;
+  border-radius: 26px;
+  text-align: center;
+  transition: 0.25s;
+}
+.login-box input[type='submit'] {
+  background: #c2d9df;
+  width: 50%;
+  font-weight: 500;
+  color: #152232;
+}
+.login-box input[type='submit']:hover {
+  background: #152232;
+  color: #c2d9df;
+}
+
+.login-box input[type='email']:focus,
+.login-box input[type='password']:focus {
+  width: 80%;
+  border-color: #ebf6a7;
+}

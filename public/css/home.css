@@ -1,25 +1,27 @@
-.main-container {
-  width: 100%;
-  height: 80%;
+.cubes-container.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+}
+
+.cubes {
+  width: 40rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-.main-box {
-  position: relative;
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
-  padding: 5rem;
-  margin: 0 auto;
-  box-sizing: border-box;
-  background: #152232;
-  box-shadow: -10px -10px 30px #ffffff, 10px 10px 30px rgba(0, 0, 0, 0.4);
-  border-radius: 19px;
+.empty-cube {
+  width: 4rem;
+  height: 4rem;
 }
+
 .cube {
-  width: 4.3rem;
-  height: 4.3rem;
+  width: 4rem;
+  height: 4rem;
+  background: #e8e1e1;
+}
+
+.cube.attached {
+  width: 4rem;
+  height: 4rem;
   background: #e8e1e1;
   position: absolute;
   right: 5rem;
@@ -45,7 +47,7 @@
 
 .main-title-kr {
   margin-top: 1.3rem;
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-style: normal;
   font-weight: bold;
   line-height: 5.1rem;
@@ -59,16 +61,30 @@
 }
 
 .start-btn {
-  margin-top: 2.3rem;
+  margin-top: 2rem;
   background: #ffffff;
   box-shadow: -5px -5px 20px rgba(255, 255, 255, 0.3),
     5px 5px 20px rgba(0, 0, 0, 0.4);
   border-radius: 100px;
   width: 15.5rem;
-  height: 5.8rem;
+  height: 4rem;
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 2rem;
-  line-height: 2.4rem;
+  font-size: 1.5rem;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .cubes-container.bottom {
+    display: none;
+  }
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cubes-container.bottom {
+    display: none;
+  }
 }

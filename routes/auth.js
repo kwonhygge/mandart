@@ -7,7 +7,7 @@ module.exports = function (passport, User) {
       res.render('main');
     } else {
       const fmsg = req.flash();
-      let feedback = 'Hello';
+      let feedback = '';
       if (fmsg.error) {
         feedback = fmsg.error[0];
       }
