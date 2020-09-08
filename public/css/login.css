@@ -33,10 +33,10 @@
   background: #c2d9df;
   width: 50%;
   font-weight: 500;
-  color: #152232;
+  color: var(--color-background-dark);
 }
 .login-box input[type='submit']:hover {
-  background: #152232;
+  background: var(--color-background-dark);
   color: #c2d9df;
 }
 

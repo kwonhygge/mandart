@@ -7,7 +7,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   /* margin: 0 auto; */
-  color: #f0f0f0;
+  color: var(--color-comfortable-white);
   min-height: 30rem;
   box-sizing: border-box;
   background: #152232;
