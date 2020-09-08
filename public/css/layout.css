@@ -1,6 +1,7 @@
 .box {
   position: absolute;
-  width: 90vh;
+  width: 80vh;
+  height: 70vh;
   text-align: center;
   padding: 4rem;
   top: 50%;
@@ -19,6 +20,7 @@
 @media (max-width: 768px) {
   .box {
     width: 40vh;
+    height: 30vh;
   }
 }
 
@@ -26,6 +28,7 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .box {
-    width: 70vh;
+    width: 50vh;
+    height: 30vh;
   }
 }
