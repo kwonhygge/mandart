@@ -1,53 +1,47 @@
-const SHOWING = "showing";
-const totalBox = document.querySelector(".total-box");
-const middleBox = document.querySelector(".middle");
-const middleBoxesColored = middleBox.querySelectorAll(".colored");
-const sideBoxesColored = document.querySelectorAll(".side-objective");
-const coloredBoxes = document.querySelectorAll(".colored");
+const SHOWING = 'showing';
+const totalBox = document.querySelector('.total-box');
+const middleBox = document.querySelector('.middle');
+const middleBoxesColored = middleBox.querySelectorAll('.middleObj');
+const sideBoxesColored = document.querySelectorAll('.side-objective');
+const coloredBoxes = document.querySelectorAll('.colored');
 
-
-function paintBoxes(){
-    for(let i=0;i<coloredBoxes.length;i++){
-
-        // coloredBoxes[i].style.backgroundColor="red";
-    }
+function paintBoxes() {
+  for (let i = 0; i < coloredBoxes.length; i++) {
+    // coloredBoxes[i].style.backgroundColor="red";
+  }
 }
 
-
-function giveValue(target,other){
-    for(let i=0;i<8;i++){
-        if(target.name===other[i].name){
-            other[i].value=target.value;
-        }
+function giveValue(target, other) {
+  for (let i = 0; i < 8; i++) {
+    if (target.name === other[i].name) {
+      other[i].value = target.value;
     }
+  }
 }
 
-function connectInput(){
-    for (let i=0; i<8; i++){
-        middleBoxesColored[i].addEventListener("change",function(event){
-            giveValue(event.target,sideBoxesColored);
-        });
-        sideBoxesColored[i].addEventListener("change",function(event){
-            giveValue(event.target,middleBoxesColored);
-        });
-    }
+function connectInput() {
+  for (let i = 0; i < 8; i++) {
+    middleBoxesColored[i].addEventListener('change', function (event) {
+      giveValue(event.target, sideBoxesColored);
+    });
+    sideBoxesColored[i].addEventListener('change', function (event) {
+      giveValue(event.target, middleBoxesColored);
+    });
+  }
 }
 
-function init(){
-    connectInput();
-    paintBoxes();
+function init() {
+  connectInput();
+  paintBoxes();
 }
 
 init();
-
 
 // const inputArr = document.querySelectorAll(".input");
 // const textArr = document.querySelectorAll(".text");
 // const arrowButtons = document.querySelectorAll(".arrow button");
 // let clickedID = "";
 // const form = document.querySelector("form");
-
-
 
 // function askForPlan(i){
 //     inputArr[i].classList.add(SHOWING);
@@ -61,8 +55,8 @@ init();
 //         textArr[i].innerHTML = `${plan}`;
 //         if(i === 4){
 //             textArr[i].style.color = "green";
-//         }    
-    
+//         }
+
 // }
 
 // function loadPlans(){
@@ -77,11 +71,11 @@ init();
 //             inputArr[i].value=currentPlan;
 //     }
 //     }
-    
+
 // }
 // function convertToDiv(){
 //     form.addEventListener("focusout",clickOutsideForm);
-//     init();  
+//     init();
 // }
 
 // function clickOutsideForm(){
@@ -90,7 +84,7 @@ init();
 //         if(value!==""){
 //             sessionStorage.setItem(`main_box${i}`,inputArr[i].value);
 //         }
-        
+
 //     }
 // }
 
@@ -114,5 +108,5 @@ init();
 //             event.preventDefault();
 //         }
 //     })
-    
+
 // }

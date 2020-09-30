@@ -1,49 +1,29 @@
 <%- include('partials/header') %>
 
-<div class="signup-con">
-  <h1>Sign Up</h1>
+<div class="box login-box">
+  <h1>Sign up</h1>
+  <form action="/auth/signup" method="POST">
+    <input
+      type="email"
+      name="username"
+      placeholder="email address"
+      autocomplete="none"
+      required
+    />
+    <input type="password" name="password" placeholder="password" />
+    <input
+      type="password"
+      name="password-confirm"
+      placeholder="confirm password"
+    />
+    <h1></h1>
+    <input type="submit" value="signup" />
+  </form>
+  <h3 class="To-text">
+    Already have an account? <a href="/auth/login">Login</a>
+  </h3>
+</div>
 
-  <div class="card">
-    <form class="sign-up-form" action="/auth/signup" method="POST">
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input
-        type="email"
-        name="username"
-        class="form-control"
-        placeholder="Email address"
-        required
-        autofocus
-      />
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input
-        type="password"
-        name="password"
-        class="form-control"
-        placeholder="Password"
-        required
-      />
-      <button class="btn btn-lg btn-dark btn-block" type="submit">
-        Sign Up
-      </button>
-    </form>
-
-    <div class="card-body">
-      <a
-        class="btn btn-block btn-social btn-google"
-        href="/auth/google"
-        role="button"
-      >
-        <i class="fab fa-google"></i>
-        Sign Up with Google
-      </a>
-    </div>
-
-    <div class="card-body">
-      <p class="To-text">
-        Already have an account? <a href="/auth/login">Login</a>
-      </p>
-    </div>
-  </div>
 
   <%- include('partials/footer') %>
 </div>

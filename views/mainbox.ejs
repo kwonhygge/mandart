@@ -5,47 +5,29 @@
   <div class="total-box marT_60">
     <!-- Top Line -->
     <div class="line">
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
-          <input type="text" class="box-el" name="Top" />
-          <input type="text" class="box-el" name="Top" />
-          <input type="text" class="box-el" name="Top" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
         </div>
         <div class="boxes">
-          <input type="text" class="box-el" name="Top" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
           <input
             type="text"
-            class="box-el colored side-objective"
-            name="TopLeft"
+            class="box-el <%=themeColor%> side-objective"
+            name="TopLeftObj"
           />
-          <input type="text" class="box-el" name="Top" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
         </div>
         <div class="boxes">
-          <input type="text" class="box-el" name="Top" />
-          <input type="text" class="box-el" name="Top" />
-          <input type="text" class="box-el" name="Top" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
+          <input type="text" class="box-el" name="TopLeftPlan" />
         </div>
       </div>
 
-      <div class="box">
-        <div class="boxes">
-          <input type="text" class="box-el" />
-          <input type="text" class="box-el" />
-          <input type="text" class="box-el" />
-        </div>
-        <div class="boxes">
-          <input type="text" class="box-el" />
-          <input type="text" class="box-el colored side-objective" name="Top" />
-          <input type="text" class="box-el" />
-        </div>
-        <div class="boxes">
-          <input type="text" class="box-el" />
-          <input type="text" class="box-el" />
-          <input type="text" class="box-el" />
-        </div>
-      </div>
-
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -55,7 +37,29 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el side-objective <%=themeColor%>"
+            name="Top"
+          />
+          <input type="text" class="box-el" />
+        </div>
+        <div class="boxes">
+          <input type="text" class="box-el" />
+          <input type="text" class="box-el" />
+          <input type="text" class="box-el" />
+        </div>
+      </div>
+
+      <div class="plan-box">
+        <div class="boxes">
+          <input type="text" class="box-el" />
+          <input type="text" class="box-el" />
+          <input type="text" class="box-el" />
+        </div>
+        <div class="boxes">
+          <input type="text" class="box-el" />
+          <input
+            type="text"
+            class="box-el <%=themeColor%> side-objective"
             name="TopRight"
           />
           <input type="text" class="box-el" />
@@ -71,7 +75,7 @@
     <!-- Middle Line -->
 
     <div class="line">
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -81,7 +85,7 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el <%=themeColor%> side-objective"
             name="Left"
           />
           <input type="text" class="box-el" />
@@ -93,25 +97,57 @@
         </div>
       </div>
 
-      <div class="box middle">
+      <div class="plan-box middle">
         <div class="boxes">
-          <input type="text" class="box-el colored" name="TopLeft" />
-          <input type="text" class="box-el colored" name="Top" />
-          <input type="text" class="box-el colored" name="TopRight" />
+          <input
+            type="text"
+            class="box-el <%=themeColor%> middleObj"
+            name="TopLeftObj"
+          />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="Top"
+          />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="TopRight"
+          />
         </div>
         <div class="boxes">
-          <input type="text" class="box-el colored" name="Left" />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="Left"
+          />
           <input type="text" class="box-el main-text" />
-          <input type="text" class="box-el colored" name="Right" />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="Right"
+          />
         </div>
         <div class="boxes">
-          <input type="text" class="box-el colored" name="BottomLeft" />
-          <input type="text" class="box-el colored" name="Bottom" />
-          <input type="text" class="box-el colored" name="BottomRight" />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="BottomLeft"
+          />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="Bottom"
+          />
+          <input
+            type="text"
+            class="box-el <%=themeColor% middleObj>"
+            name="BottomRight"
+          />
         </div>
       </div>
 
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -121,7 +157,7 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el <%=themeColor%> side-objective"
             name="Right"
           />
           <input type="text" class="box-el" />
@@ -136,7 +172,7 @@
 
     <!-- Bottom Line -->
     <div class="line">
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -146,7 +182,7 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el <%=themeColor%> side-objective"
             name="BottomLeft"
           />
           <input type="text" class="box-el" />
@@ -158,7 +194,7 @@
         </div>
       </div>
 
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -168,7 +204,7 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el <%=themeColor%> side-objective"
             name="Bottom"
           />
           <input type="text" class="box-el" />
@@ -180,7 +216,7 @@
         </div>
       </div>
 
-      <div class="box">
+      <div class="plan-box">
         <div class="boxes">
           <input type="text" class="box-el" />
           <input type="text" class="box-el" />
@@ -190,7 +226,7 @@
           <input type="text" class="box-el" />
           <input
             type="text"
-            class="box-el colored side-objective"
+            class="box-el <%=themeColor%> side-objective"
             name="BottomRight"
           />
           <input type="text" class="box-el" />

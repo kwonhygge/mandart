@@ -1,21 +1,27 @@
 /* property */
 .green {
   background-color: var(--color-green);
+  color: #fff;
 }
 .pink {
   background-color: var(--color-pink);
+  color: #fff;
 }
 .blue {
   background-color: var(--color-blue);
+  color: #fff;
 }
 .olive {
   background-color: var(--color-olive);
+  color: #fff;
 }
 .purple {
   background-color: var(--color-purple);
+  color: #fff;
 }
 .dark {
   background-color: var(--color-dark);
+  color: #fff;
 }
 
 .color-selected {
