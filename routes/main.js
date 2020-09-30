@@ -4,6 +4,9 @@ module.exports = function (ps) {
   const passport = ps;
   const User = require('../lib/db.js');
 
+  let themeColor = '';
+  let mainObj = '';
+
   function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
       next();
@@ -22,28 +25,62 @@ module.exports = function (ps) {
   });
 
   router.post('/create', function (req, res) {
+    mainObj = req.body.mainobj;
+    themeColor = req.body.choice;
+    res.redirect('/main/create/mainbox');
+  });
+
+  router.get('/create/mainbox', ensureAuthenticated, function (req, res) {
+    res.render('mainbox', { themeColor: themeColor });
+  });
+
+  router.post('/create/mainbox', function (req, res) {
     User.updateOne(
       { _id: req.user._id },
-      { mainBox: { objective: req.body.mainObj, themeColor: req.body.choice } },
+      {
+        $push: {
+          mainBox: {
+            objective: mainObj,
+            themeColor: themeColor,
+            smallPlans: [
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+              {
+                objective: req.body.TopLeftObj[0],
+                plans: req.body.TopLeftPlan,
+              },
+            ],
+          },
+        },
+      },
       function (err) {
         if (err) {
-          console.log('error');
+          console.log(err);
         } else {
           console.log('Succesfully updated');
         }
       }
     );
-    res.redirect('/main/create/mainbox');
-  });
-
-  router.get('/create/mainbox', ensureAuthenticated, function (req, res) {
-    console.log(req.user.mainBox.themeColor);
-    res.render('mainbox', { themeColor: req.user.mainBox.themeColor });
-  });
-
-  router.post('/create/mainbox', function (req, res) {
-    console.log(req.body);
     res.redirect('/main');
   });
+
   return router;
 };
