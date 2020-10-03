@@ -27,7 +27,7 @@ app.use('/auth', authRouter);
 require('dotenv').config();
 
 app.get('/', function (req, res) {
-  res.render('home');
+  res.render('home', { login: false, type: 'main' });
 });
 
 app.listen(process.env.PORT || 3000, function () {

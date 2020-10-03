@@ -1,10 +1,20 @@
-.cubes-container.top {
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.cubes-container {
   position: fixed;
-  top: -10%;
-  right: -80%;
+  top: 0;
+  right: 0;
   z-index: -1;
 }
-.cubes-container.top .cube {
+.cubes-container .cube {
   background: var(--color-background-dark);
 }
 

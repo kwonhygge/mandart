@@ -4,14 +4,14 @@ module.exports = function (passport, User) {
 
   router.get('/login', function (req, res) {
     if (req.isAuthenticated()) {
-      res.render('list');
+      res.render('list', { type: 'login' });
     } else {
       const fmsg = req.flash();
       let feedback = '';
       if (fmsg.error) {
         feedback = fmsg.error[0];
       }
-      res.render('login', { feedback: feedback });
+      res.render('login', { feedback: feedback, type: 'login' });
     }
   });
 
