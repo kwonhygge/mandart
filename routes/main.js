@@ -17,7 +17,7 @@ module.exports = function (ps) {
 
   router.get('/', ensureAuthenticated, function (req, res) {
     const loginUserName = req.user.username;
-    res.render('main');
+    res.render('list');
   });
 
   router.get('/create', ensureAuthenticated, function (req, res) {

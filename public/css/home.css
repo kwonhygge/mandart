@@ -1,118 +1,35 @@
-.cubes-container.bottom {
-  position: absolute;
-  bottom: 0;
-  left: 3%;
-}
-.cubes-container.top {
-  position: absolute;
-  top: -10%;
-  right: -80%;
-  z-index: -1;
-}
-.cubes-container.top .cube {
-  background: var(--color-background-dark);
+body {
+  background: #d7cbb5;
 }
 
-.cubes {
-  display: flex;
-}
-.empty-cube {
-  width: 60px;
-  height: 60px;
-}
-
-.cube {
-  width: 60px;
-  height: 60px;
-  border-radius: 5px;
-  background: #e8e1e1;
-}
-
-.cube.fall {
-  transform: rotate(-142.93deg);
-}
-
-.cube.attached {
-  width: 4rem;
-  height: 4rem;
-  background: #e8e1e1;
-  position: absolute;
-  right: 5rem;
-  top: -3rem;
-  z-index: 1;
-  box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.8),
-    -10px -10px 10px rgba(27, 27, 27, 0.4);
-  border-radius: 5px;
-  transform: rotate(153.49deg);
-}
-
-.main-title-en {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.3rem;
-  line-height: 1.6rem;
-  letter-spacing: 0.05em;
-  color: #ebf6a7;
-}
-.main-title-en span {
-  color: var(--color-comfortable-white);
-}
-
-.main-title-kr {
-  margin-top: 1.3rem;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 5.1rem;
+.main-container {
   text-align: center;
-  letter-spacing: 0.03em;
-  color: var(--color-comfortable-white);
-  text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.main-title-kr span {
-  color: #ebf7a7;
+.main-title > * {
+  font-family: 'Roboto', sans-serif;
 }
-
-.start-btn {
-  margin-top: 2rem;
-
-  box-shadow: -5px -5px 20px rgba(218, 218, 218, 0.3),
-    5px 5px 20px rgba(0, 0, 0, 0.4);
-  border-radius: 100px;
-
-  width: 15.5rem;
-  height: 4rem;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.5rem;
-  transition: 0.25s;
-  background: var(--color-comfortable-white);
-  color: var(--color-background-dark);
+.main-title > h1 {
+  font-size: 10rem;
+  line-height: 7rem;
+  font-weight: 300;
 }
-.start-btn:hover {
-  background: var(--color-background-dark);
-  color: var(--color-comfortable-white);
-  border: 1px solid var(--color-comfortable-white);
+.main-title > span {
+  font-weight: bolder;
+}
+.main-title > h2 {
+  font-size: 3.8rem;
+  line-height: 4rem;
 }
 
 /* mobile */
 @media (max-width: 768px) {
-  .cubes-container.bottom {
-    display: none;
-  }
-  .cubes-container.top {
-    display: none;
-  }
 }
 
 /* tablet */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .cubes-container.bottom {
-    display: none;
-  }
-  .cubes-container.top {
-    display: none;
-  }
 }

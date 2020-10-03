@@ -98,16 +98,6 @@
   margin: 0 auto;
 }
 
-.txt-center {
-  text-align: center;
-}
-
-/* text */
-.main-text {
-  font-weight: bold;
-  font-size: 200%;
-}
-
 /* position */
 .justify {
   display: flex;

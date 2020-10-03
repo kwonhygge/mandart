@@ -4,7 +4,7 @@ module.exports = function (passport, User) {
 
   router.get('/login', function (req, res) {
     if (req.isAuthenticated()) {
-      res.render('main');
+      res.render('list');
     } else {
       const fmsg = req.flash();
       let feedback = '';

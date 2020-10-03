@@ -1,75 +1,12 @@
-<%- include("partials/header") -%>
+<%- include("partials/header") -%> <%- include("navs/mainNav") -%>
 
-<div class="cubes-container bottom">
-  <div class="cubes">
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
+<div class="main-container">
+  <div class="main-title">
+    <h1><span>Manda La</span> Art</h1>
+    <h2><span>Plan</span> your new dream and <strong>realize</strong> it</h2>
   </div>
-  <div class="cubes">
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-  </div>
-  <div class="cubes">
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-  </div>
-  <div class="cubes">
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-    <div class="empty-cube"></div>
-    <div class="cube"></div>
-  </div>
-</div>
-
-<div class="box main-box">
-  <div class="cube attached"></div>
-  <h1 class="main-title-en">Manda La Art <span>Planner</span></h1>
-  <h1 class="main-title-kr">만다라트<br /><span>플래너</span></h1>
-  <button class="start-btn" type="button" onClick="location.href='/auth/login'">
-    시작하기
-  </button>
-  <button>Sign in</button>
-  <button>Sign up</button>
-  <div class="cubes-container top">
-    <div class="cubes">
-      <div class="empty-cube"></div>
-      <div class="cube"></div>
-      <div class="empty-cube"></div>
-      <div class="cube"></div>
-      <div class="empty-cube"></div>
-    </div>
-    <div class="cubes">
-      <div class="cube"></div>
-      <div class="empty-cube"></div>
-      <div class="cube"></div>
-      <div class="empty-cube"></div>
-      <div class="cube"></div>
-    </div>
-    <div class="cubes">
-      <div class="empty-cube"></div>
-      <div class="cube" style="background: rgba(21, 34, 50, 0.2)"></div>
-      <div class="empty-cube"></div>
-      <div class="cube" style="background: rgba(21, 34, 50, 0.2)"></div>
-      <div class="empty-cube"></div>
-    </div>
-    <div class="cubes">
-      <div class="cube fall"></div>
-      <div class="empty-cube"></div>
-      <div class="cube"></div>
-      <div class="empty-cube"></div>
-      <div class="cube" style="background: rgba(21, 34, 50, 0.2)"></div>
-    </div>
-  </div>
+  <button onClick="location.href='/auth/login'">Sign in</button>
+  <button onClick="location.href='/auth/signup'">Sign up</button>
 </div>
 
 <%- include("partials/footer") -%>
