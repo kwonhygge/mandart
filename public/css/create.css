@@ -23,6 +23,9 @@
   background-color: var(--color-dark);
   color: #fff;
 }
+.white {
+  background-color: var(--color-comfortable-white);
+}
 
 .color-selected {
   border: 1.5px solid #fff;

@@ -14,39 +14,13 @@ nav {
   right: 0;
   z-index: -1;
 }
-.cubes-container .cube {
-  background: var(--color-background-dark);
-}
 
 .cubes {
   display: flex;
 }
-.empty-cube {
-  width: 60px;
-  height: 60px;
-}
 
 .cube {
-  width: 60px;
-  height: 60px;
+  width: 3.12vw;
+  height: 3.12vw;
   border-radius: 5px;
-  background: #e8e1e1;
-}
-
-.cube.fall {
-  transform: rotate(-142.93deg);
-}
-
-.cube.attached {
-  width: 4rem;
-  height: 4rem;
-  background: #e8e1e1;
-  position: absolute;
-  right: 5rem;
-  top: -3rem;
-  z-index: 1;
-  box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.8),
-    -10px -10px 10px rgba(27, 27, 27, 0.4);
-  border-radius: 5px;
-  transform: rotate(153.49deg);
 }
