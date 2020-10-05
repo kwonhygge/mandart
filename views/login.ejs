@@ -1,19 +1,20 @@
-<%- include('partials/header') %><%- include("navs/mainNav") -%>
-
-<div class="box login-box">
-  <h1>Login</h1>
-  <form action="/auth/login" method="POST">
-    <input
-      type="email"
-      name="username"
-      placeholder="email"
-      autocomplete="none"
-    />
-    <input type="password" name="password" placeholder="password" />
-    <h2><%=feedback%></h2>
-    <input type="submit" value="Login" />
-  </form>
-  <h3>If you don't have an accout, click <a href="/auth/signup">here</a></h3>
-</div>
+<%- include('partials/header') %>
+<body class="auth-body">
+  <div class="box login-box">
+    <h1>Login</h1>
+    <form action="/auth/login" method="POST">
+      <input
+        type="email"
+        name="username"
+        placeholder="email"
+        autocomplete="none"
+      />
+      <input type="password" name="password" placeholder="password" />
+      <h2><%=feedback%></h2>
+      <input type="submit" value="Login" />
+    </form>
+    <h3>If you don't have an accout, click <a href="/auth/signup">here</a></h3>
+  </div>
+</body>
 
 <%- include('partials/footer') %>

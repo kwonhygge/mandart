@@ -4,14 +4,14 @@ module.exports = function (passport, User) {
 
   router.get('/login', function (req, res) {
     if (req.isAuthenticated()) {
-      res.render('list', { type: 'login' });
+      res.render('list', { login: true, type: 'login' });
     } else {
       const fmsg = req.flash();
       let feedback = '';
       if (fmsg.error) {
         feedback = fmsg.error[0];
       }
-      res.render('login', { feedback: feedback, type: 'login' });
+      res.render('login', { feedback: feedback, type: 'auth', login: false });
     }
   });
 
@@ -32,7 +32,7 @@ module.exports = function (passport, User) {
   });
 
   router.get('/signup', function (req, res) {
-    res.render('signup');
+    res.render('signup', { login: false, type: 'auth' });
   });
 
   router.post('/signup', function (req, res, next) {

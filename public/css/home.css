@@ -1,7 +1,3 @@
-body {
-  background: #d7cbb5;
-}
-
 .home-container {
   text-align: center;
   position: absolute;
@@ -14,8 +10,8 @@ body {
 }
 
 .home-title h1 {
-  font-size: 5.2vw;
-  line-height: 3.64vw;
+  font-size: 10rem;
+  line-height: 7rem;
   font-weight: 300;
 }
 .home-title span {

@@ -1,32 +1,3 @@
-/* property */
-.green {
-  background-color: var(--color-green);
-  color: #fff;
-}
-.pink {
-  background-color: var(--color-pink);
-  color: #fff;
-}
-.blue {
-  background-color: var(--color-blue);
-  color: #fff;
-}
-.olive {
-  background-color: var(--color-olive);
-  color: #fff;
-}
-.purple {
-  background-color: var(--color-purple);
-  color: #fff;
-}
-.dark {
-  background-color: var(--color-dark);
-  color: #fff;
-}
-.white {
-  background-color: var(--color-comfortable-white);
-}
-
 .color-selected {
   border: 1.5px solid #fff;
   transform: scale(1.2, 1.2);

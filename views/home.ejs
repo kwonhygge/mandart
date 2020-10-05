@@ -1,14 +1,15 @@
 <%- include("partials/header") -%>
-
-<div class="home-container">
-  <div class="home-title">
-    <h1><span>Manda La</span> Art</h1>
-    <h2><span>Plan</span> your new dream and <span>realize</span> it</h2>
+<body class="home-body">
+  <div class="home-container">
+    <div class="home-title">
+      <h1><span>Manda La</span> Art</h1>
+      <h2><span>Plan</span> your new dream and <span>realize</span> it</h2>
+    </div>
+    <div class="home-btns">
+      <button onClick="location.href='/auth/login'">Sign in</button>
+      <button onClick="location.href='/auth/signup'">Sign up</button>
+    </div>
   </div>
-  <div class="home-btns">
-    <button onClick="location.href='/auth/login'">Sign in</button>
-    <button onClick="location.href='/auth/signup'">Sign up</button>
-  </div>
-</div>
+</body>
 
 <%- include("partials/footer") -%>
