@@ -1,31 +1,40 @@
 <%- include('partials/header') %>
 <body class="auth-body">
-  <div class="box login-box">
+  <div class="auth-container">
     <h1>Sign up</h1>
-    <form action="/auth/signup" method="POST">
+    <h2>Welcome to Manda La Art!</h2>
+    <form class="auth-form" action="/auth/signup" method="POST">
       <input
         type="email"
         name="username"
-        placeholder="email address"
+        placeholder="Email"
         autocomplete="none"
-        required
       />
-      <input type="password" name="password" placeholder="password" />
-      <input
-        type="password"
-        name="password-confirm"
-        placeholder="confirm password"
-      />
-      <h1></h1>
-      <input type="submit" value="signup" />
+      <div class="password-container">
+        <input
+          id="password1"
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <span class="confirm-circle"></span>
+      </div>
+
+      <div class="password-container">
+        <input
+          id="password2"
+          type="password"
+          name="password"
+          placeholder="Confirm Password"
+          required
+        />
+        <span class="confirm-circle"></span>
+      </div>
+
+      <input type="submit" class="signup-btn" value="Sign in" />
     </form>
-    <h3 class="To-text">
-      Already have an account? <a href="/auth/login">Login</a>
-    </h3>
   </div>
 </body>
-
-
-
-  <%- include('partials/footer') %>
-</div>
+<script src="/scripts/auth.js"></script>
+<%- include('partials/footer') %>

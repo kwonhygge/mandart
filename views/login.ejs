@@ -1,9 +1,9 @@
 <%- include('partials/header') %>
 <body class="auth-body">
-  <div class="login-container">
+  <div class="auth-container">
     <h1>Sign in</h1>
     <h2>Hello, Make your new plan</h2>
-    <form class="login-form" action="/auth/login" method="POST">
+    <form class="auth-form" action="/auth/login" method="POST">
       <input
         type="email"
         name="username"
@@ -12,9 +12,8 @@
       />
       <input type="password" name="password" placeholder="Password" />
       <h3><%=feedback%></h3>
-      <input type="submit" value="Sign in" />
+      <input type="submit" class="login-btn" value="Sign in" />
     </form>
   </div>
 </body>
-
 <%- include('partials/footer') %>

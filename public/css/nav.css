@@ -1,4 +1,5 @@
 nav {
+  top: 2rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -6,6 +7,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 80%;
+}
+.home-logo {
+  width: 5rem;
+}
+.home-logo img {
+  width: 100%;
 }
 
 .cubes-container {

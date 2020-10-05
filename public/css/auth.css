@@ -1,69 +1,90 @@
-.login-container {
+.auth-container {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.login-container * {
+.auth-container * {
   font-family: 'Roboto', sans-serif;
 }
-.login-container h1 {
+.auth-container h1 {
   font-style: normal;
   font-weight: 500;
   font-size: 8rem;
   line-height: 7rem;
   margin-bottom: 2rem;
 }
-.login-container h2 {
+.auth-container h2 {
   font-style: normal;
   font-weight: normal;
   font-size: 3.5rem;
   line-height: 7rem;
   margin-bottom: 3rem;
 }
-.login-container h3 {
+.auth-container h3 {
   color: #ff911f;
   font-size: 2rem;
   line-height: 3rem;
 }
-.login-form {
+.auth-form {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.login-form input[type='submit'],
-.login-form input[type='email'],
-.login-form input[type='password'] {
+.auth-form input[type='submit'],
+.auth-form input[type='email'],
+.auth-form input[type='password'] {
   -webkit-box-sizing: border-box; /*Safari/Chrome*/
   -moz-box-sizing: border-box; /*Firefox*/
   box-sizing: border-box;
   margin-top: 1.5rem;
-  background: none;
-  width: 90%;
-  background: #e0e0e0;
+  width: 50rem;
+
   border-radius: 3rem;
   font-size: 2rem;
   line-height: 3rem;
   transition: 0.25s;
 }
-.login-form input[type='password'],
-.login-form input[type='email'] {
+.auth-form input[type='password'],
+.auth-form input[type='email'] {
+  background: #e0e0e0;
   color: #828282;
-  padding: 2rem 0 2rem 4rem;
+  padding: 2rem 2rem 2rem 4rem;
 }
-.login-form input[type='submit'] {
+.auth-form input[type='submit'] {
   padding: 2rem 0;
-  background: #323232;
+}
+.login-btn {
+  background: none;
+  background-color: #323232;
   color: #ff911f;
 }
-.login-form input[type='submit']:hover {
+
+.signup-btn {
+  background: none;
+  background-color: #ff911f;
+  color: #323232;
+}
+
+.auth-form input[type='submit']:hover {
   opacity: 0.9;
 }
 
-.login-form input[type='email']:focus,
-.login-form input[type='password']:focus {
-  width: 95%;
+.auth-form input[type='email']:focus,
+.auth-form input[type='password']:focus {
+  width: 53rem;
   border-color: #ebf6a7;
+}
+.password-container {
+  position: relative;
+}
+.confirm-circle {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
