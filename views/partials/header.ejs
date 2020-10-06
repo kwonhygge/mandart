@@ -36,9 +36,9 @@
       <a class="home-logo" href="/"><img src="/imgs/logo.png" /></a>
       <% if(login){%>
       <a>profile</a>
-      <%}%>
     </nav>
-    <% if(type==="main"){%>
+      <%} else{ if(type==="home"){%>
+    </nav>
     <div class="cubes-container">
       <div class="cubes">
         <div class="cube white"></div>
@@ -72,6 +72,7 @@
       <div class="cube white falling2"></div>
     </div>
     <%}else if(type==="auth"){%>
+    </nav>
     <div class="cubes-container">
       <div class="cubes">
         <div class="cube beige"></div>
@@ -104,6 +105,6 @@
       <div class="cube beige falling1"></div>
       <div class="cube beige falling2"></div>
     </div>
-    <%}%>
+    <%}%> <%}%>
   </body>
 </html>

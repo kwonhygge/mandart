@@ -17,11 +17,11 @@ module.exports = function (ps) {
 
   router.get('/', ensureAuthenticated, function (req, res) {
     const loginUserName = req.user.username;
-    res.render('list');
+    res.render('list', { login: true });
   });
 
   router.get('/create', ensureAuthenticated, function (req, res) {
-    res.render('create');
+    res.render('create', { login: true });
   });
 
   router.post('/create', function (req, res) {
