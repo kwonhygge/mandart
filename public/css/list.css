@@ -1,0 +1,25 @@
+.big-boxes {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.big-line {
+  display: flex;
+}
+.small-boxes {
+  width: 90px;
+}
+.small-line {
+  border-top: 1px solid black;
+  display: flex;
+}
+.small-box {
+  width: 30px;
+  height: 30px;
+  border-right: 1px solid black;
+}
