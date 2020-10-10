@@ -1,8 +1,10 @@
-.big-boxes {
-  position: relative;
+.list-container {
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.big-boxes {
   width: 270px;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
