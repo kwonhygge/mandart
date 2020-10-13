@@ -43,6 +43,12 @@ const themes = [
   },
 ];
 
+const mainTitleInput = document.querySelector('.mainTitle');
+const chosenThemeImg = document.querySelector('#box-modal5 .footer img');
+const mainTitle = document.querySelector('#box-modal5 .footer .body2');
+// handle choice
+const options = document.querySelectorAll('.option input');
+
 // modal
 
 const plusBtn = document.getElementById('plusBtn');
@@ -60,6 +66,10 @@ const nextBtn2 = document.getElementById('nextBtn2');
 const nextBtn3 = document.getElementById('nextBtn3');
 const nextBtn4 = document.getElementById('nextBtn4');
 const nextBtn5 = document.getElementById('nextBtn5');
+const prevBtn2 = document.getElementById('prevBtn2');
+const prevBtn3 = document.getElementById('prevBtn3');
+const prevBtn4 = document.getElementById('prevBtn4');
+const prevBtn5 = document.getElementById('prevBtn5');
 
 const modalClose = () => {
   modals.forEach((modal) => {
@@ -68,15 +78,26 @@ const modalClose = () => {
 };
 const goModalFive = () => {
   modalClose();
-  modal4.classList.add(SHOWING);
+  modal5.classList.add(SHOWING);
+  options.forEach((option) => {
+    option.checked ? (chosenThemeImg.src = `/imgs/${option.id}.png`) : null;
+  });
+  mainTitle.innerHTML = mainTitleInput.value;
   nextBtn5.addEventListener('click', function () {});
+  prevBtn5.addEventListener('click', function () {
+    goModalFour();
+  });
 };
 
 const goModalFour = () => {
   modalClose();
   modal4.classList.add(SHOWING);
+
   nextBtn4.addEventListener('click', function () {
     goModalFive();
+  });
+  prevBtn4.addEventListener('click', function () {
+    goModalThree();
   });
 };
 
@@ -86,6 +107,9 @@ const goModalThree = () => {
   nextBtn3.addEventListener('click', function () {
     goModalFour();
   });
+  prevBtn3.addEventListener('click', function () {
+    goModalTwo();
+  });
 };
 
 const goModalTwo = () => {
@@ -93,6 +117,9 @@ const goModalTwo = () => {
   modal2.classList.add(SHOWING);
   nextBtn2.addEventListener('click', function () {
     goModalThree();
+  });
+  prevBtn2.addEventListener('click', function () {
+    goModalOne();
   });
 };
 
@@ -144,9 +171,8 @@ const loadBoxes = () => {
 
 const init = () => {
   plusBtn.addEventListener('click', function () {
-    goModalOne();
+    clickPlusBtn();
   });
-  clickPlusBtn();
 };
 
 init();

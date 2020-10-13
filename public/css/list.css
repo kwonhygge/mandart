@@ -65,6 +65,8 @@
 .modal-content .order {
   display: inline;
 }
+
+/* modal1 */
 .option-container {
   margin: 6rem auto;
   width: 45%;
@@ -99,4 +101,18 @@
 }
 .option-container .name {
   font-size: 1.5rem;
+}
+
+/* modal2 */
+#box-modal2 .footer {
+  margin-top: 18rem;
+}
+#box-modal2 .footer input {
+  width: 70rem;
+  height: 10rem;
+  border: 3px solid #ff0000;
+  border-radius: 30px;
+  font-size: 4rem;
+  line-height: 7rem;
+  padding: 1rem 3rem;
 }
