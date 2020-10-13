@@ -5,3 +5,69 @@
 .home-body {
   background-color: var(--color-beige);
 }
+
+/* BOXES */
+
+.box-container .name {
+  text-align: center;
+}
+.box-background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-backdrop {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.big-boxes {
+  border-left: 1px solid #c7d2ce;
+  border-bottom: 1px solid #c7d2ce;
+}
+.big-line {
+  display: flex;
+}
+.small-line {
+  border-top: 1px solid #c7d2ce;
+  display: flex;
+}
+.small-box {
+  border-right: 1px solid #c7d2ce;
+}
+
+/* modal */
+.modal {
+  display: none;
+}
+.modal .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+}
+.modal .modal-content {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+}
+.modal .closeBtn {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  z-index: 4;
+  cursor: pointer;
+}
+.modal .nextBtn {
+  position: fixed;
+  bottom: 9rem;
+  right: 5rem;
+  z-index: 4;
+  cursor: pointer;
+}

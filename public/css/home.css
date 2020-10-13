@@ -9,18 +9,15 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.home-title h1 {
+/* .home-title h1 {
   font-size: 10rem;
   line-height: 7rem;
   font-weight: 300;
-}
+} */
 .home-title span {
   font-weight: 500;
 }
-.home-title h2 {
-  font-size: 3.8rem;
-  line-height: 4rem;
-  font-weight: 400;
+.home-title h3 {
   margin-top: 5rem;
 }
 .home-btns {

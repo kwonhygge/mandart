@@ -43,9 +43,79 @@ const themes = [
   },
 ];
 
-const wholeBoxes = document.querySelectorAll('.big-boxes');
+// modal
+
+const plusBtn = document.getElementById('plusBtn');
+const backdrop = document.querySelector('.backdrop');
+const modals = document.querySelectorAll('.modal');
+const SHOWING = 'showing';
+
+const modal1 = document.getElementById('box-modal1');
+const modal2 = document.getElementById('box-modal2');
+const modal3 = document.getElementById('box-modal3');
+const modal4 = document.getElementById('box-modal4');
+const modal5 = document.getElementById('box-modal5');
+const nextBtn1 = document.getElementById('nextBtn1');
+const nextBtn2 = document.getElementById('nextBtn2');
+const nextBtn3 = document.getElementById('nextBtn3');
+const nextBtn4 = document.getElementById('nextBtn4');
+const nextBtn5 = document.getElementById('nextBtn5');
+
+const modalClose = () => {
+  modals.forEach((modal) => {
+    modal.classList.remove(SHOWING);
+  });
+};
+const goModalFive = () => {
+  nextBtn4.addEventListener('click', function () {
+    modal4.classList.remove(SHOWING);
+    modal5.classList.add(SHOWING);
+    goModalFive();
+  });
+};
+
+const goModalFour = () => {
+  nextBtn3.addEventListener('click', function () {
+    modal3.classList.remove(SHOWING);
+    modal4.classList.add(SHOWING);
+    goModalFive();
+  });
+};
+
+const goModalThree = () => {
+  nextBtn2.addEventListener('click', function () {
+    modal2.classList.remove(SHOWING);
+    modal3.classList.add(SHOWING);
+    goModalFour();
+  });
+};
+
+const goModalTwo = () => {
+  nextBtn1.addEventListener('click', function () {
+    modal1.classList.remove(SHOWING);
+    modal2.classList.add(SHOWING);
+    goModalThree();
+  });
+};
+
+const clickPlusBtn = () => {
+  initCloseBtnsEvent();
+  loadBoxes();
+  plusBtn.addEventListener('click', function () {
+    modal1.classList.add(SHOWING);
+    goModalTwo();
+  });
+};
+initCloseBtnsEvent = () => {
+  const closeBtns = document.querySelectorAll('.closeBtn');
+  closeBtns.forEach((btn) => {
+    btn.addEventListener('click', modalClose);
+  });
+};
 
 const loadBoxes = () => {
+  // boxes
+  const wholeBoxes = document.querySelectorAll('.option-container .big-boxes');
   wholeBoxes.forEach((wholeBox, i) => {
     wholeBox.style.background = themes[i].smallPlansBackground;
     wholeBox.style.borderColor = themes[i].borderColor;
@@ -71,7 +141,7 @@ const loadBoxes = () => {
 };
 
 const init = () => {
-  loadBoxes();
+  clickPlusBtn();
 };
 
 init();

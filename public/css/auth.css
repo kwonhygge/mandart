@@ -5,21 +5,11 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.auth-container * {
-  font-family: 'Roboto', sans-serif;
-}
-.auth-container h1 {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 8rem;
-  line-height: 7rem;
+
+.auth-container h2 {
   margin-bottom: 2rem;
 }
-.auth-container h2 {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 3.5rem;
-  line-height: 7rem;
+.auth-container .body2 {
   margin-bottom: 3rem;
 }
 .auth-container h3 {

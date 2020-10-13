@@ -1,29 +1,93 @@
 .list-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 10rem auto;
+  width: 65%;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-}
-.big-boxes {
-  width: 270px;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  align-items: stretch;
 }
 
-.big-line {
+.list-container .box-background {
+  width: 270px;
+  height: 270px;
+  border-radius: 20px;
+  background: rgba(48, 47, 47, 0.4);
+}
+
+.list-container .box-backdrop {
+  position: absolute;
+  border-radius: 20px;
+  background: rgba(48, 47, 47, 0.4);
+}
+
+.list-container .edit-icons {
+  position: absolute;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60%;
+  display: none;
 }
-.small-boxes {
-  width: 90px;
+.box-container .edit-icons img {
+  display: block;
+  cursor: pointer;
 }
-.small-line {
-  border-top: 1px solid black;
+
+.list-container .big-boxes {
+  width: 225px;
+}
+
+.list-container .small-boxes {
+  width: 75px;
+  background-color: #f2f2f2;
+}
+.list-container .small-boxes.middle {
+  background-color: var(--color-dark);
+}
+
+.list-container .small-box {
+  width: 25px;
+  height: 25px;
+}
+
+/* plus btn modal */
+.plusBtncontainer {
+  position: fixed;
+  bottom: 5rem;
+  right: 3rem;
+}
+.plusBtncontainer #plusBtn {
+  cursor: pointer;
+}
+
+/* modals */
+
+.modal-content .order {
+  display: inline;
+}
+.option-container {
+  margin: 6rem auto;
+  width: 45%;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.small-box {
-  width: 30px;
-  height: 30px;
-  border-right: 1px solid black;
+
+.option-container .box-background {
+  width: 21.5rem;
+  height: 21.5rem;
+  border-radius: 20px;
+  background: rgba(48, 47, 47, 0.4);
+}
+
+.option-container .small-boxes {
+  width: 6rem;
+}
+
+.option-container .small-box {
+  width: 2rem;
+  height: 2rem;
+}
+.option-container .name {
+  font-size: 1.5rem;
 }
