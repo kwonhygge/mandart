@@ -67,44 +67,46 @@ const modalClose = () => {
   });
 };
 const goModalFive = () => {
-  nextBtn4.addEventListener('click', function () {
-    modal4.classList.remove(SHOWING);
-    modal5.classList.add(SHOWING);
-    goModalFive();
-  });
+  modalClose();
+  modal4.classList.add(SHOWING);
+  nextBtn5.addEventListener('click', function () {});
 };
 
 const goModalFour = () => {
-  nextBtn3.addEventListener('click', function () {
-    modal3.classList.remove(SHOWING);
-    modal4.classList.add(SHOWING);
+  modalClose();
+  modal4.classList.add(SHOWING);
+  nextBtn4.addEventListener('click', function () {
     goModalFive();
   });
 };
 
 const goModalThree = () => {
-  nextBtn2.addEventListener('click', function () {
-    modal2.classList.remove(SHOWING);
-    modal3.classList.add(SHOWING);
+  modalClose();
+  modal3.classList.add(SHOWING);
+  nextBtn3.addEventListener('click', function () {
     goModalFour();
   });
 };
 
 const goModalTwo = () => {
-  nextBtn1.addEventListener('click', function () {
-    modal1.classList.remove(SHOWING);
-    modal2.classList.add(SHOWING);
+  modalClose();
+  modal2.classList.add(SHOWING);
+  nextBtn2.addEventListener('click', function () {
     goModalThree();
   });
 };
 
+const goModalOne = () => {
+  modalClose();
+  modal1.classList.add(SHOWING);
+  nextBtn1.addEventListener('click', function () {
+    goModalTwo();
+  });
+};
 const clickPlusBtn = () => {
   initCloseBtnsEvent();
   loadBoxes();
-  plusBtn.addEventListener('click', function () {
-    modal1.classList.add(SHOWING);
-    goModalTwo();
-  });
+  goModalOne();
 };
 initCloseBtnsEvent = () => {
   const closeBtns = document.querySelectorAll('.closeBtn');
@@ -141,6 +143,9 @@ const loadBoxes = () => {
 };
 
 const init = () => {
+  plusBtn.addEventListener('click', function () {
+    goModalOne();
+  });
   clickPlusBtn();
 };
 
