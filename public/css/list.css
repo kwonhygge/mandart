@@ -72,6 +72,15 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.option-container input[type='radio'] {
+  display: none;
+}
+.option-container .box-container {
+  cursor: pointer;
+}
+.option-container input[type='radio']:checked ~ label .box-background {
+  background: #ff0000;
+}
 
 .option-container .box-background {
   width: 21.5rem;
