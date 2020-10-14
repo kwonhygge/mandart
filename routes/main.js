@@ -23,11 +23,8 @@ module.exports = function (ps) {
   router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create', { login: true });
   });
-
   router.post('/create', function (req, res) {
-    mainObj = req.body.mainobj;
-    themeColor = req.body.choice;
-    res.redirect('/main/create/mainbox');
+    res.redirect('/main');
   });
 
   router.get('/create/mainbox', ensureAuthenticated, function (req, res) {

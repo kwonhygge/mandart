@@ -57,14 +57,46 @@
   --bigPlan-bg-color: #333333;
   --smallPlan-bg-color: #f2f2f2;
   --box-border-color: #c7d2ce;
-  --bigPlan-font-color: #000;
-  --smallPlan-font-color: #fff;
+  --bigPlan-font-color: #fff;
+  --smallPlan-font-color: #000;
 }
 [data-theme='sky'] {
   --mainObj-bg-color: #ffffff;
   --bigPlan-bg-color: #cedbe3;
   --smallPlan-bg-color: #ffffff;
   --box-border-color: #8f92b0;
+  --bigPlan-font-color: #000;
+  --smallPlan-font-color: #000;
+}
+[data-theme='moonNight'] {
+  --mainObj-bg-color: #323232;
+  --bigPlan-bg-color: #ecd9b9;
+  --smallPlan-bg-color: #323232;
+  --box-border-color: #ffffff;
+  --bigPlan-font-color: #000;
+  --smallPlan-font-color: #fff;
+}
+[data-theme='egyption'] {
+  --mainObj-bg-color: #d7cbb5;
+  --bigPlan-bg-color: #333333;
+  --smallPlan-bg-color: #d7cbb5;
+  --box-border-color: #a99c83;
+  --bigPlan-font-color: #fff;
+  --smallPlan-font-color: #000;
+}
+[data-theme='greenary'] {
+  --mainObj-bg-color: #89a390;
+  --bigPlan-bg-color: #cdd7ca;
+  --smallPlan-bg-color: #89a390;
+  --box-border-color: #cfcfcf;
+  --bigPlan-font-color: #000;
+  --smallPlan-font-color: #000;
+}
+[data-theme='modernBlue'] {
+  --mainObj-bg-color: #f2f2f2;
+  --bigPlan-bg-color: #3e4a6b;
+  --smallPlan-bg-color: #f2f2f2;
+  --box-border-color: #cbcfd0;
   --bigPlan-font-color: #fff;
   --smallPlan-font-color: #000;
 }

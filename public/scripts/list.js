@@ -50,6 +50,7 @@ const chosenThemeImg = document.querySelector('#box-modal5 .footer img');
 const mainTitle = document.querySelector('#box-modal5 .footer .body2');
 const options = document.querySelectorAll('.option input');
 const mainObj = document.querySelector('#box-modal4 .main-obj');
+
 // modal
 
 const plusBtn = document.getElementById('plusBtn');
@@ -70,6 +71,24 @@ const prevBtn2 = document.getElementById('prevBtn2');
 const prevBtn3 = document.getElementById('prevBtn3');
 const prevBtn4 = document.getElementById('prevBtn4');
 
+const saveDataInStorage = (themeId, titleValue) => {
+  window.sessionStorage.setItem('themeId', themeId);
+  window.sessionStorage.setItem('mainTitle', titleValue);
+  window.sessionStorage.setItem('mainObj', mainObjInput.value);
+
+  const smallObjInputs = document.querySelectorAll('#box-modal4 textarea');
+  let smallObjInputValues = [];
+  smallObjInputs.forEach((input) => {
+    smallObjInputValues.push(input.value);
+  });
+  window.sessionStorage.setItem('smallObjs', smallObjInputValues);
+};
+const loadModalFive = (themeId, titleValue) => {
+  chosenThemeImg.src = `/imgs/${themeId}.png`;
+  mainTitle.innerHTML = titleValue;
+  saveDataInStorage(themeId, titleValue);
+};
+
 const modalClose = () => {
   modals.forEach((modal) => {
     modal.classList.remove(SHOWING);
@@ -78,10 +97,14 @@ const modalClose = () => {
 const goModalFive = () => {
   modalClose();
   modal5.classList.add(SHOWING);
+
+  let chosenThemeId = '';
+  let mainTitleValue = mainTitleInput.value;
   options.forEach((option) => {
-    option.checked ? (chosenThemeImg.src = `/imgs/${option.id}.png`) : null;
+    option.checked ? (chosenThemeId = option.id) : null;
   });
-  mainTitle.innerHTML = mainTitleInput.value;
+
+  loadModalFive(chosenThemeId, mainTitleValue);
 };
 
 const goModalFour = () => {
@@ -164,6 +187,7 @@ const loadBoxes = () => {
   });
 };
 
+// init
 const init = () => {
   plusBtn.addEventListener('click', function () {
     clickPlusBtn();

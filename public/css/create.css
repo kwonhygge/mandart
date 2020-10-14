@@ -1,111 +1,50 @@
-/* list ejs */
-
-/* .color-selected {
-  border: 1.5px solid #fff;
-  transform: scale(1.2, 1.2);
+.test-container .test-box {
+  width: 60px;
+  height: 60px;
+  background-color: var(--bigPlan-bg-color);
 }
-
-.showing {
-  display: block;
-}
-
-.create-box {
-  width: 100%;
-  max-width: 560px;
-  padding: 2.5rem;
-  margin: 0 auto;
-  border: 2px solid #fff;
-  box-sizing: border-box;
-  border-radius: 10px;
-}
-
-.back-btn {
-  width: 1.8rem;
-  height: 2.3rem;
-  fill: #fff;
-}
-.back-btn:hover {
-  fill: #000000;
-}
-
-form {
-  color: #fff;
-  text-align: center;
-}
-.obj-create h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  padding: 2.5rem 0.5rem;
-}
-.obj-create h2 {
-  font-size: 1.5rem;
-  font-weight: normal;
-  margin-top: 2rem;
-  padding: 0 1rem;
-}
-
-.main-obj-input {
-  width: 20rem;
-  line-height: 4rem;
-  margin-top: 2.5rem;
-  font-size: 2rem;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.theme-colors {
+.mainbox-container {
   display: flex;
-  width: 20rem;
-  justify-content: space-between;
-  margin: 2rem auto;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.mainbox-container .box-background {
+  width: 80rem;
+  height: 80rem;
+  border-radius: 20px;
+  background: rgba(48, 47, 47, 0.4);
 }
 
-input[type='radio'] {
-  display: none;
+.mainbox-container .big-boxes {
+  width: 72rem;
+  border-left: 1px solid var(--box-border-color);
+  border-bottom: 1px solid var(--box-border-color);
 }
-input[type='radio'] + label span {
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  border-radius: 50%;
+.mainbox-container .big-line {
+  width: 24rem;
 }
-
-input[type='radio'] + label:hover span {
-  cursor: pointer;
+.mainbox-container .small-line {
+  border-top: 1px solid var(--box-border-color);
 }
-
-input[type='radio']:checked + label span {
-  transform: scale(1.5);
-  border: 2px solid #fff;
-}
-
-.arrow-down {
-  background: none;
-  display: inline-block;
-  height: 2rem;
-  width: 2rem;
-  border-style: solid;
-  border-color: #fff;
-  border-width: 0px 1px 1px 0px;
-  margin-top: 2.5rem;
-  transform: rotate(45deg);
+.mainbox-container .small-box {
+  resize: none;
+  width: 8rem;
+  height: 8rem;
+  border: none;
   box-sizing: border-box;
+  border-right: 1px solid var(--box-border-color);
+  background-color: var(--smallPlan-bg-color);
+  color: var(--smallPlan-font-color);
 }
-.arrow-down:hover {
-  border-color: #000;
+.mainbox-container .small-box.small-obj {
+  background-color: var(--bigPlan-bg-color);
+  color: var(--bigPlan-font-color);
 }
-
-/* mobile */
-@media (max-width: 768px) {
-  html {
-    font-size: 10px;
-  }
+.mainbox-container .small-boxes.middle .small-obj {
+  background-color: var(--bigPlan-bg-color);
+  color: var(--bigPlan-font-color);
 }
-
-/* tablet */
-
-@media (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 12px;
-  }
-} */
+.mainbox-container .main-obj {
+  background-color: var(--mainObj-bg-color);
+  color: var(--smallPlan-font-color);
+}

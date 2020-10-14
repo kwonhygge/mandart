@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 <!-- Total Box -->
-<form action="/main/create/mainbox" method="POST">
-  <div class="list-container">
+<form action="/main/list/:id" method="POST">
+  <div id="0" class="list-container">
     <div class="box-container">
       <div class="box-background">
         <div class="edit-box"></div>
@@ -179,1153 +179,1178 @@
     </div>
   </div>
 </form>
-<form action="/main/create" method="get"></form>
 <div class="plusBtncontainer">
   <img id="plusBtn" src="/svg/plusBtn.svg" />
 </div>
-<div id="box-modal1" class="modal">
-  <img class="closeBtn" src="/svg/closeBtn.svg" />
-  <img id="nextBtn1" class="nextBtn" src="/svg/nextArrow.svg" />
-  <div class="backdrop"></div>
-  <div class="modal-content">
-    <div class="header">
-      <h2 class="order">First,</h2>
-      <p class="body1 order">Select Color Type for the plan.</p>
-      <p class="body3">먼저, 계획표의 디자인을 고르세요.</p>
-    </div>
-    <div class="footer">
-      <ul class="option-container">
-        <li class="option">
-          <input type="radio" name="theme" id="theme1" value="Modern" checked />
-          <label class="box-container" for="theme1">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+<form action="/main/create" method="GET">
+  <div id="box-modal1" class="modal">
+    <img class="closeBtn" src="/svg/closeBtn.svg" />
+    <img id="nextBtn1" class="nextBtn" src="/svg/nextArrow.svg" />
+    <div class="backdrop"></div>
+    <div class="modal-content">
+      <div class="header">
+        <h2 class="order">First,</h2>
+        <p class="body1 order">Select Color Type for the plan.</p>
+        <p class="body3">먼저, 계획표의 디자인을 고르세요.</p>
+      </div>
+      <div class="footer">
+        <ul class="option-container">
+          <li class="option">
+            <input
+              type="radio"
+              name="theme"
+              id="modern"
+              value="Modern"
+              checked
+            />
+            <label class="box-container" for="modern">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Modern</p>
-          </label>
-        </li>
-        <li class="option">
-          <input type="radio" name="theme" id="theme2" value="Sky" />
-          <label class="box-container" for="theme2">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+              <p class="name body3">Modern</p>
+            </label>
+          </li>
+          <li class="option">
+            <input type="radio" name="theme" id="sky" value="Sky" />
+            <label class="box-container" for="sky">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Sky</p>
-          </label>
-        </li>
-        <li class="option">
-          <input type="radio" name="theme" id="theme3" value="MoonNight" />
-          <label class="box-container" for="theme3">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+              <p class="name body3">Sky</p>
+            </label>
+          </li>
+          <li class="option">
+            <input type="radio" name="theme" id="moonNight" value="MoonNight" />
+            <label class="box-container" for="moonNight">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Moon Night</p>
-          </label>
-        </li>
-        <li class="option">
-          <input type="radio" name="theme" id="theme4" value="Egyption" />
-          <label class="box-container" for="theme4">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+              <p class="name body3">Moon Night</p>
+            </label>
+          </li>
+          <li class="option">
+            <input type="radio" name="theme" id="egyption" value="Egyption" />
+            <label class="box-container" for="egyption">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Egyption</p>
-          </label>
-        </li>
-        <li class="option">
-          <input type="radio" name="theme" id="theme5" value="Greenary" />
-          <label class="box-container" for="theme5">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+              <p class="name body3">Egyption</p>
+            </label>
+          </li>
+          <li class="option">
+            <input type="radio" name="theme" id="greenary" value="Greenary" />
+            <label class="box-container" for="greenary">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Greenary</p>
-          </label>
-        </li>
-        <li class="option">
-          <input type="radio" name="theme" id="theme6" value="ModernBlue" />
-          <label class="box-container" for="theme6">
-            <div class="box-background">
-              <div class="big-boxes">
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+              <p class="name body3">Greenary</p>
+            </label>
+          </li>
+          <li class="option">
+            <input
+              type="radio"
+              name="theme"
+              id="modernBlue"
+              value="ModernBlue"
+            />
+            <label class="box-container" for="modernBlue">
+              <div class="box-background">
+                <div class="big-boxes">
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="big-line">
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                  <div class="big-line">
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                  </div>
-                  <div class="small-boxes">
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                    </div>
-                    <div class="small-line">
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
-                      <div class="small-box"></div>
+                    <div class="small-boxes">
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
+                      <div class="small-line">
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                        <div class="small-box"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <p class="name body3">Modern Blue</p>
-          </label>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div id="box-modal2" class="modal">
-  <img class="closeBtn" src="/svg/closeBtn.svg" />
-  <img id="nextBtn2" class="nextBtn" src="/svg/nextArrow.svg" />
-  <img id="prevBtn2" class="prevBtn" src="/svg/prevArrow.svg" />
-  <div class="backdrop"></div>
-  <div class="modal-content">
-    <div class="header">
-      <h2 class="order">Second,</h2>
-      <p class="body1 order">Enter a name for the plan</p>
-      <p class="body3">두번째, 계획표의 이름을 정해주세요.</p>
-    </div>
-    <div class="footer">
-      <input
-        type="text"
-        class="mainTitle"
-        value="2020년 목표"
-        placeholder="2020년 목표"
-      />
+              <p class="name body3">Modern Blue</p>
+            </label>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<div id="box-modal3" class="modal">
-  <img class="closeBtn" src="/svg/closeBtn.svg" />
-  <img id="prevBtn3" class="prevBtn" src="/svg/prevArrow.svg" />
-  <div class="backdrop"></div>
-  <div class="modal-content">
-    <div class="header">
-      <h2 class="order">Third,</h2>
-      <p class="body1 order">Enter the main goal for this plan.</p>
-      <p class="body3">세번째, 메인목표를 적어주세요.</p>
+  <div id="box-modal2" class="modal">
+    <img class="closeBtn" src="/svg/closeBtn.svg" />
+    <img id="nextBtn2" class="nextBtn" src="/svg/nextArrow.svg" />
+    <img id="prevBtn2" class="prevBtn" src="/svg/prevArrow.svg" />
+    <div class="backdrop"></div>
+    <div class="modal-content">
+      <div class="header">
+        <h2 class="order">Second,</h2>
+        <p class="body1 order">Enter a name for the plan</p>
+        <p class="body3">두번째, 계획표의 이름을 정해주세요.</p>
+      </div>
+      <div class="footer">
+        <input
+          type="text"
+          class="mainTitle"
+          name="mainTitle"
+          value="2020년 목표"
+          placeholder="2020년 목표"
+        />
+      </div>
     </div>
-    <div class="footer">
-      <div class="main-box">
-        <div class="line">
-          <div class="blank"></div>
-          <div class="blank"></div>
-          <div class="blank"></div>
-        </div>
-        <div class="line">
-          <div class="blank"></div>
-          <div class="blank"></div>
-        </div>
-        <div class="line">
-          <div class="blank"></div>
-          <div class="blank"></div>
-          <div class="blank"></div>
-        </div>
-        <div class="input-box">
-          <textarea class="body3" placeholder="건강한 30대"></textarea>
-          <span id="nextBtn3">OK</span>
+  </div>
+  <div id="box-modal3" class="modal">
+    <img class="closeBtn" src="/svg/closeBtn.svg" />
+    <img id="prevBtn3" class="prevBtn" src="/svg/prevArrow.svg" />
+    <div class="backdrop"></div>
+    <div class="modal-content">
+      <div class="header">
+        <h2 class="order">Third,</h2>
+        <p class="body1 order">Enter the main goal for this plan.</p>
+        <p class="body3">세번째, 메인목표를 적어주세요.</p>
+      </div>
+      <div class="footer">
+        <div class="main-box">
+          <div class="line">
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+          </div>
+          <div class="line">
+            <div class="blank"></div>
+            <div class="blank"></div>
+          </div>
+          <div class="line">
+            <div class="blank"></div>
+            <div class="blank"></div>
+            <div class="blank"></div>
+          </div>
+          <div class="input-box">
+            <textarea
+              class="body3"
+              name="mainObj"
+              placeholder="건강한 30대"
+            ></textarea>
+            <span id="nextBtn3">OK</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div id="box-modal4" class="modal">
-  <img class="closeBtn" src="/svg/closeBtn.svg" />
-  <img id="nextBtn4" class="nextBtn" src="/svg/nextArrow.svg" />
-  <img id="prevBtn4" class="prevBtn" src="/svg/prevArrow.svg" />
-  <div class="backdrop"></div>
-  <div class="modal-content">
-    <div class="header">
-      <h2 class="order">Fourth,</h2>
-      <p class="body1 order">Make a list things to do for the main goal.</p>
-      <p class="body3">네번째, 목표달성을 위해 할 일들을 채워주세요.</p>
-    </div>
-    <div class="footer">
-      <div class="input-boxes">
-        <div class="line">
-          <textarea type="text" placeholder="운동하기"></textarea>
-          <textarea type="text"></textarea>
-          <textarea type="text"></textarea>
-        </div>
-        <div class="line">
-          <textarea type="text"></textarea>
-          <div class="main-obj body3"></div>
-          <textarea type="text"></textarea>
-        </div>
-        <div class="line">
-          <textarea type="text"></textarea>
-          <textarea type="text"></textarea>
-          <textarea type="text"></textarea>
+  <div id="box-modal4" class="modal">
+    <img class="closeBtn" src="/svg/closeBtn.svg" />
+    <img id="nextBtn4" class="nextBtn check" src="/svg/check.svg" />
+    <img id="prevBtn4" class="prevBtn" src="/svg/prevArrow.svg" />
+    <div class="backdrop"></div>
+    <div class="modal-content">
+      <div class="header">
+        <h2 class="order">Fourth,</h2>
+        <p class="body1 order">Make a list things to do for the main goal.</p>
+        <p class="body3">네번째, 목표달성을 위해 할 일들을 채워주세요.</p>
+      </div>
+      <div class="footer">
+        <div class="input-boxes">
+          <div class="line">
+            <textarea
+              name="smallObj"
+              type="text"
+              placeholder="운동하기"
+            ></textarea>
+            <textarea name="smallObj" type="text"></textarea>
+            <textarea name="smallObj" type="text"></textarea>
+          </div>
+          <div class="line">
+            <textarea name="smallObj" type="text"></textarea>
+            <div class="main-obj body3"></div>
+            <textarea name="smallObj" type="text"></textarea>
+          </div>
+          <div class="line">
+            <textarea name="smallObj" type="text"></textarea>
+            <textarea name="smallObj" type="text"></textarea>
+            <textarea name="smallObj" type="text"></textarea>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div id="box-modal5" class="modal">
-  <img class="closeBtn" src="/svg/closeBtn.svg" />
-  <div class="backdrop"></div>
-  <div class="modal-content">
-    <div class="header">
-      <h2 class="order">Successfully Created</h2>
-      <p class="body3">성공적으로 생성되었습니다!</p>
-    </div>
-    <div class="footer">
-      <img src="" alt="box-choosen" />
-      <p class="body2"></p>
+  <div id="box-modal5" class="modal">
+    <button type="submit">
+      <img class="closeBtn" src="/svg/closeBtn.svg" />
+    </button>
+    <div class="backdrop"></div>
+    <div class="modal-content">
+      <div class="header">
+        <h2 class="order">Successfully Created</h2>
+        <p class="body3">성공적으로 생성되었습니다!</p>
+      </div>
+      <div class="footer">
+        <img src="" alt="box-choosen" />
+        <p class="body2"></p>
+      </div>
     </div>
   </div>
-</div>
+</form>
+
 <script type="text/javascript" src="../lib/store/theme.json"></script>
 <script src="/scripts/list.js"></script>
+<script src="/scripts/common/maxLength.js"></script>
 <%- include('partials/footer') %>

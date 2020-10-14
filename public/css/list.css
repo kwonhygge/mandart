@@ -179,7 +179,10 @@
   color: #fff;
   background: #333333;
   padding: 2.4rem;
+  display: flex;
+  align-items: center;
   font-size: 2.4rem;
+  line-height: 3rem;
   resize: none;
 }
 #box-modal4 .main-obj {
@@ -188,6 +191,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
+}
+#box-modal4 .check {
+  width: 8rem;
+  bottom: 5rem;
 }
 
 /* #box-modal5 */

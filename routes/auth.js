@@ -4,7 +4,7 @@ module.exports = function (passport, User) {
 
   router.get('/login', function (req, res) {
     if (req.isAuthenticated()) {
-      res.render('list', { login: true });
+      res.redirect('/main');
     } else {
       const fmsg = req.flash();
       let feedback = '';
@@ -32,7 +32,11 @@ module.exports = function (passport, User) {
   });
 
   router.get('/signup', function (req, res) {
-    res.render('signup', { login: false, type: 'auth' });
+    if (req.isAuthenticated()) {
+      res.redirect('/main');
+    } else {
+      res.render('signup', { login: false, type: 'auth' });
+    }
   });
 
   router.post('/signup', function (req, res, next) {
