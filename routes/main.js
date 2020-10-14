@@ -16,53 +16,54 @@ module.exports = function (ps) {
   }
 
   router.get('/', ensureAuthenticated, function (req, res) {
-    const loginUserName = req.user.username;
     res.render('list', { login: true });
   });
 
   router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create', { login: true });
   });
+
   router.post('/create', function (req, res) {
-    res.redirect('/main');
-  });
-
-  router.get('/create/mainbox', ensureAuthenticated, function (req, res) {
-    res.render('mainbox', { themeColor: themeColor });
-  });
-
-  router.post('/create/mainbox', function (req, res) {
     User.updateOne(
       { _id: req.user._id },
       {
         $push: {
           mainBox: {
-            objective: mainObj,
-            themeColor: themeColor,
+            title: req.body.mainTitle,
+            objective: req.body.mainObj,
+            themeId: req.body.themeId,
             smallPlans: [
               {
                 objective: req.body.TopLeftObj[0],
                 plans: req.body.TopLeftPlan,
               },
               {
-                objective: req.body.TopLeftObj[0],
-                plans: req.body.TopLeftPlan,
+                objective: req.body.TopObj[0],
+                plans: req.body.TopPlan,
               },
               {
-                objective: req.body.TopLeftObj[0],
-                plans: req.body.TopLeftPlan,
+                objective: req.body.TopRightObj[0],
+                plans: req.body.TopRightPlan,
               },
               {
-                objective: req.body.TopLeftObj[0],
-                plans: req.body.TopLeftPlan,
+                objective: req.body.LeftObj[0],
+                plans: req.body.LeftPlan,
               },
               {
-                objective: req.body.TopLeftObj[0],
-                plans: req.body.TopLeftPlan,
+                objective: req.body.RightObj[0],
+                plans: req.body.RightPlan,
               },
               {
-                objective: req.body.TopLeftObj[0],
-                plans: req.body.TopLeftPlan,
+                objective: req.body.BottomLeftObj[0],
+                plans: req.body.BottomLeftPlan,
+              },
+              {
+                objective: req.body.BottomObj[0],
+                plans: req.body.BottomPlan,
+              },
+              {
+                objective: req.body.BottomRightObj[0],
+                plans: req.body.BottomRightPlan,
               },
             ],
           },

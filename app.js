@@ -28,7 +28,7 @@ require('dotenv').config();
 
 app.get('/', function (req, res) {
   if (req.isAuthenticated()) {
-    res.render('list', { login: true });
+    res.redirect('/main');
   } else {
     res.render('home', { login: false, type: 'home' });
   }
