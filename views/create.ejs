@@ -1,175 +1,225 @@
 <%- include("partials/header") -%>
 <body class="main-body">
-  <form action="/main/create" method="post"></form>
-  <div class="mainbox-container">
-    <div class="box-container">
-      <div class="box-background">
-        <div class="big-boxes">
-          <div class="big-line">
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+  <form action="/main/create" method="post">
+    <div class="mainbox-container">
+      <input id="mainTitle" type="hidden" name="mainTitle" />
+      <div class="box-container">
+        <div class="box-background">
+          <div class="big-boxes">
+            <div class="big-line">
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="TopLeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="TopObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="TopRightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
             </div>
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-            </div>
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-            </div>
-          </div>
 
-          <div class="big-line">
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+            <div class="big-line">
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="LeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes middle">
+                <div class="small-line">
+                  <textarea
+                    name="TopLeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea
+                    name="TopObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea
+                    name="TopRightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea
+                    name="LeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box main-obj"></textarea>
+                  <textarea
+                    name="RightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea
+                    name="BottomLeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea
+                    name="BottomObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea
+                    name="BottomRightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="RightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
             </div>
-            <div class="small-boxes middle">
-              <div class="small-line">
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box main-obj"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-              </div>
-            </div>
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-            </div>
-          </div>
 
-          <div class="big-line">
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+            <div class="big-line">
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="BottomLeftObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="BottomObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-            </div>
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-            </div>
-            <div class="small-boxes">
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box small-obj"></textarea>
-                <textarea class="small-box"></textarea>
-              </div>
-              <div class="small-line">
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
-                <textarea class="small-box"></textarea>
+              <div class="small-boxes side">
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea
+                    name="BottomRightObj"
+                    class="small-box small-obj"
+                  ></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
+                <div class="small-line">
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                  <textarea class="small-box"></textarea>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 </body>
 
 <script src="/scripts/create.js"></script>

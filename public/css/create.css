@@ -35,6 +35,10 @@
   border-right: 1px solid var(--box-border-color);
   background-color: var(--smallPlan-bg-color);
   color: var(--smallPlan-font-color);
+  padding: 1rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  transition: all ease 0.2s;
 }
 .mainbox-container .small-box.small-obj {
   background-color: var(--bigPlan-bg-color);
@@ -47,4 +51,9 @@
 .mainbox-container .main-obj {
   background-color: var(--mainObj-bg-color);
   color: var(--smallPlan-font-color);
+}
+.mainbox-container .small-box:focus {
+  transform: scale(1.5);
+  border: 1px solid var(--box-border-color);
+  z-index: 5;
 }

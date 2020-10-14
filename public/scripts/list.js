@@ -81,7 +81,10 @@ const saveDataInStorage = (themeId, titleValue) => {
   smallObjInputs.forEach((input) => {
     smallObjInputValues.push(input.value);
   });
-  window.sessionStorage.setItem('smallObjs', smallObjInputValues);
+  window.sessionStorage.setItem(
+    'smallObjs',
+    JSON.stringify(smallObjInputValues)
+  );
 };
 const loadModalFive = (themeId, titleValue) => {
   chosenThemeImg.src = `/imgs/${themeId}.png`;

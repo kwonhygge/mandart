@@ -55,10 +55,12 @@ const charByteSize = (ch) => {
   }
 };
 textareas.forEach((input) => {
+  input.spellcheck = false;
   input.addEventListener('keydown', cutByteLength);
   input.addEventListener('keyup', cutByteLength);
 });
 inputs.forEach((input) => {
+  input.spellcheck = false;
   input.addEventListener('keydown', cutByteLength);
   input.addEventListener('keyup', cutByteLength);
 });
