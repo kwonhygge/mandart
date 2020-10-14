@@ -5,6 +5,52 @@
 .home-body {
   background-color: var(--color-beige);
 }
+.main-body {
+  background: #eef2f1;
+}
+
+/* header */
+
+nav .profile {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+}
+nav .profile img {
+  width: 6rem;
+  height: 6rem;
+}
+nav .profile .bubble {
+  text-decoration: none;
+  display: none;
+  position: relative;
+  background: #ffffff;
+  color: #000;
+  font-size: 2rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 11rem;
+  height: 4rem;
+  border-radius: 5px;
+  padding: 11px;
+  bottom: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav .profile .bubble::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: #ffffff transparent;
+  border-width: 0 1.4rem 2rem;
+  top: -2rem;
+  left: 50%;
+  margin-left: -1.4rem;
+}
 
 /* BOXES */
 
@@ -40,6 +86,10 @@
 }
 
 /* modal */
+.showing {
+  display: block !important;
+}
+
 .modal {
   display: none;
 }

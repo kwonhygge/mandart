@@ -25,7 +25,7 @@
       integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/bootstrap-social.css" />
+    
     <!-- font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -36,7 +36,15 @@
     <nav>
       <a class="home-logo" href="/"><img src="/imgs/logo.png" /></a>
       <% if(login){%>
-      <a>profile</a>
+
+          <div class="profile">
+            
+            <img src="/svg/profile.svg" alt="profile"> 
+            <a href="/auth/logout" onclick="this.parentNode.submit()" class="bubble body3">Logout</a>     
+          </div>
+        
+        
+      
     </nav>
       <%} else{ if(type==="home"){%>
     </nav>
@@ -108,4 +116,5 @@
     </div>
     <%}%> <%}%>
   </body>
+  <script src="/scripts/common/header.js"></script>
 </html>
