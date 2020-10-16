@@ -1,56 +1,15 @@
-module.exports = function (passport, User) {
-  const express = require('express');
-  const router = express.Router();
-
-  router.get('/login', function (req, res) {
+module.exports = {
+  ensureAuthenticated: function (req, res, next) {
     if (req.isAuthenticated()) {
-      res.redirect('/main');
-    } else {
-      const fmsg = req.flash();
-      let feedback = '';
-      if (fmsg.error) {
-        feedback = fmsg.error[0];
-      }
-      res.render('login', { feedback: feedback, type: 'auth', login: false });
+      return next();
     }
-  });
-
-  router.post(
-    '/login',
-    passport.authenticate('local', {
-      successRedirect: '/main',
-      failureRedirect: '/auth/login',
-      failureFlash: { type: 'error', message: 'Invalid username or password.' },
-    })
-  );
-
-  router.get('/logout', function (req, res) {
-    req.logout();
-    req.session.save(function (err) {
-      res.redirect('/');
-    });
-  });
-
-  router.get('/signup', function (req, res) {
-    if (req.isAuthenticated()) {
-      res.redirect('/main');
-    } else {
-      res.render('signup', { login: false, type: 'auth' });
+    req.flash('error_msg', 'Please log in to view that resource');
+    res.redirect('/auth/login');
+  },
+  forwardAuthenticated: function (req, res, next) {
+    if (!req.isAuthenticated()) {
+      return next();
     }
-  });
-
-  router.post('/signup', function (req, res, next) {
-    User.register(
-      new User({ username: req.body.username }),
-      req.body.password,
-      function (err) {
-        if (err) {
-          return next(err);
-        }
-        res.redirect('/main');
-      }
-    );
-  });
-
-  return router;
+    res.redirect('/main');
+  },
 };

@@ -16,12 +16,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(flash());
 
+// Global variables
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  res.locals.isLogin = req.isAuthenticated();
+  console.log(res.locals.isLogin);
+  next();
+});
+
 //routers
 const mainRouter = require('./routes/main')(passport);
-const authRouter = require('./routes/auth')(passport, User);
+const usersRouter = require('./routes/users')(passport, User);
 
 app.use('/main', mainRouter);
-app.use('/auth', authRouter);
+app.use('/auth', usersRouter);
 
 //dotenv
 require('dotenv').config();
@@ -30,7 +40,7 @@ app.get('/', function (req, res) {
   if (req.isAuthenticated()) {
     res.redirect('/main');
   } else {
-    res.render('home', { login: false, type: 'home' });
+    res.render('home', { type: 'home' });
   }
 });
 

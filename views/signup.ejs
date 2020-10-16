@@ -1,12 +1,13 @@
 <%- include('partials/header') %>
 <body class="auth-body">
   <div class="auth-container">
+    <%- include('partials/messages') %>
     <h2>Sign up</h2>
     <p class="body2">Welcome to Manda La Art!</p>
     <form class="auth-form" action="/auth/signup" method="POST">
       <input
         type="email"
-        name="username"
+        name="email"
         placeholder="Email"
         autocomplete="none"
       />
@@ -25,14 +26,14 @@
         <input
           id="password2"
           type="password"
-          name="password"
+          name="password2"
           placeholder="Confirm Password"
           required
         />
         <span class="confirm-circle"></span>
       </div>
 
-      <input type="submit" class="signup-btn" value="Sign in" />
+      <input type="submit" class="signup-btn" value="Sign Up" />
     </form>
   </div>
 </body>

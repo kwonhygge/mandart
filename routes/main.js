@@ -3,24 +3,14 @@ module.exports = function (ps) {
   const router = express.Router();
   const passport = ps;
   const User = require('../lib/db.js');
-
-  let themeColor = '';
-  let mainObj = '';
-
-  function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-      next();
-    } else {
-      res.redirect('/auth/login');
-    }
-  }
+  const { ensureAuthenticated } = require('./auth');
 
   router.get('/', ensureAuthenticated, function (req, res) {
-    res.render('list', { login: true });
+    res.render('list');
   });
 
   router.get('/create', ensureAuthenticated, function (req, res) {
-    res.render('create', { login: true });
+    res.render('create');
   });
 
   router.post('/create', function (req, res) {
