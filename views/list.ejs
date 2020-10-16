@@ -10,7 +10,10 @@
             <img src="/svg/edit.svg" />
             <img src="/svg/delete.svg" />
           </div>
-
+          <% boxes.forEach(box=>{%>
+          <h1><%= box.title %></h1>
+          <a href="/main/list/<%= box.id %>">Read more</a>
+          <%})%>
           <div class="big-boxes">
             <div class="big-line">
               <div class="small-boxes">

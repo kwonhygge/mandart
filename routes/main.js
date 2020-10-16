@@ -6,9 +6,17 @@ module.exports = function (ps) {
   const { ensureAuthenticated } = require('./auth');
 
   router.get('/', ensureAuthenticated, function (req, res) {
-    res.render('list');
+    const boxes = req.user.mainBox;
+    res.render('list', { boxes });
   });
-
+  router.get('/list/:id', ensureAuthenticated, async function (req, res) {
+    const box = await User.find(
+      { _id: req.user.id },
+      { mainBox: { $elemMatch: { _id: req.params.id } } }
+    );
+    if (box == null) res.redirect('/main');
+    res.render('show', { box: box[0].mainBox[0] });
+  });
   router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create');
   });
