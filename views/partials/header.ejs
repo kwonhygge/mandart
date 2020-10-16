@@ -35,10 +35,9 @@
   <body>
     <nav>
       <a class="home-logo" href="/"><img src="/imgs/logo.png" /></a>
-      <% if(login){%>
+      <% if(isLogin){%>
 
           <div class="profile">
-            
             <img src="/svg/profile.svg" alt="profile"> 
             <a href="/auth/logout" onclick="this.parentNode.submit()" class="bubble body3">Logout</a>     
           </div>
