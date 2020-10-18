@@ -14,8 +14,9 @@ const loadStorageDatas = () => {
   const smallObjs = JSON.parse(sessionStorage.getItem('smallObjs'));
   const mainTitle = sessionStorage.getItem('mainTitle');
   const themeIdInput = document.getElementById('themeId');
-  console.log(mainTitle);
-  mainTitle.value = mainTitle;
+  const mainTitleInput = document.getElementById('mainTitle');
+
+  mainTitleInput.value = mainTitle;
   mainObjInput.value = mainObj;
   themeIdInput.value = themeId;
   for (let i = 0; i < 8; i++) {

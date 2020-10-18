@@ -7,7 +7,6 @@ module.exports = function (ps, User, Box) {
 
   router.get('/', ensureAuthenticated, async function (req, res) {
     const boxes = await Box.find({ createdBy: req.user.id });
-    console.log(boxes);
     res.render('list', { boxes });
   });
   router.get('/list/:id', ensureAuthenticated, async function (req, res) {
@@ -19,7 +18,7 @@ module.exports = function (ps, User, Box) {
     res.render('create');
   });
 
-  router.post('/create', async function (req, res) {
+  router.post('/create', function (req, res) {
     const newbox = new Box({
       title: req.body.mainTitle,
       objective: req.body.mainObj,
