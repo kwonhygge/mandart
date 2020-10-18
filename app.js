@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const flash = require('connect-flash');
 
-const User = require('./lib/db');
-const passport = require('./lib/passport')(app, User);
+const db = require('./lib/db');
+const passport = require('./lib/passport')(app, db.user);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -22,13 +22,12 @@ app.use(function (req, res, next) {
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   res.locals.isLogin = req.isAuthenticated();
-  console.log(res.locals.isLogin);
   next();
 });
 
 //routers
-const mainRouter = require('./routes/main')(passport);
-const usersRouter = require('./routes/users')(passport, User);
+const mainRouter = require('./routes/main')(passport, db.user, db.box);
+const usersRouter = require('./routes/users')(passport, db.user, db.box);
 
 app.use('/main', mainRouter);
 app.use('/auth', usersRouter);
