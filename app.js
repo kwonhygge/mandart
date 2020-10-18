@@ -8,13 +8,14 @@ const app = express();
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const flash = require('connect-flash');
-
+const methodOverride = require('method-override');
 const db = require('./lib/db');
 const passport = require('./lib/passport')(app, db.user);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(flash());
+app.use(methodOverride('_method'));
 
 // Global variables
 app.use(function (req, res, next) {

@@ -14,6 +14,12 @@ module.exports = function (ps, User, Box) {
     if (box == null) res.redirect('/main');
     res.render('show', { box });
   });
+
+  router.delete('/list/:id', async (req, res) => {
+    await Box.findByIdAndDelete(req.params.id);
+    res.redirect('/main');
+  });
+
   router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create');
   });

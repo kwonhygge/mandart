@@ -1,26 +1,28 @@
 <%- include("partials/header") -%>
 <body class="main-body">
-  <form action="/main/list/:id" method="POST">
-    <div id="0" class="list-container">
-      <div class="box-container">
-        <div class="box-background">
-          <div class="edit-box"></div>
-          <div class="box-backdrop"></div>
-          <div class="edit-icons">
-            <img src="/svg/edit.svg" />
-            <img src="/svg/delete.svg" />
-          </div>
+  <div id="0" class="list-container">
+    <div class="box-container">
+      <div class="box-background">
+        <div class="edit-box"></div>
+        <div class="box-backdrop"></div>
+        <div class="edit-icons">
+          <img src="/svg/edit.svg" />
+          <img src="/svg/delete.svg" />
         </div>
-        <% boxes.forEach(box=>{%>
-        <div>
-          <h1><%= box.title %></h1>
-          <a href="/main/list/<%= box.id %>"><%= box.id %>Read more</a>
-        </div>
-
-        <%})%>
       </div>
+      <% boxes.forEach(box=>{%>
+      <div>
+        <h1><%= box.title %></h1>
+        <a href="/main/list/<%= box.id %>"><%= box.id %>Read more</a>
+        <form action="/main/list/<%= box.id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </div>
+
+      <%})%>
     </div>
-  </form>
+  </div>
+
   <div class="plusBtncontainer">
     <img id="plusBtn" src="/svg/plusBtn.svg" />
   </div>
