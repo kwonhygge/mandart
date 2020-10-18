@@ -7,15 +7,27 @@ module.exports = function (ps) {
 
   router.get('/', ensureAuthenticated, function (req, res) {
     const boxes = req.user.mainBox;
+    console.log(boxes);
     res.render('list', { boxes });
   });
   router.get('/list/:id', ensureAuthenticated, async function (req, res) {
+    console.log(req.params.id);
     const box = await User.find(
       { _id: req.user.id },
-      { mainBox: { $elemMatch: { _id: req.params.id } } }
+      {
+        mainBox: {
+          $elemMatch: {
+            _id: req.params.id,
+          },
+        },
+      },
+      {
+        'mainBox.$._id': 0,
+      }
     );
     if (box == null) res.redirect('/main');
-    res.render('show', { box: box[0].mainBox[0] });
+    console.log(box);
+    // res.render('show', { box: box[0].mainBox[0] });
   });
   router.get('/create', ensureAuthenticated, function (req, res) {
     res.render('create');

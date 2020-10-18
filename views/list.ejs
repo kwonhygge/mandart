@@ -11,10 +11,13 @@
             <img src="/svg/delete.svg" />
           </div>
           <% boxes.forEach(box=>{%>
-          <h1><%= box.title %></h1>
-          <a href="/main/list/<%= box.id %>">Read more</a>
+          <div>
+            <h1><%= box.title %></h1>
+            <a href="/main/list/<%= box.id %>"><%= box.id %>Read more</a>
+          </div>
+
           <%})%>
-          <div class="big-boxes">
+          <!-- <div class="big-boxes">
             <div class="big-line">
               <div class="small-boxes">
                 <div class="small-line">
@@ -176,7 +179,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <p class="name body3">Example</p>
       </div>
