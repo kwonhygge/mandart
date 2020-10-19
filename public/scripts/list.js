@@ -194,12 +194,13 @@ const loadBoxes = () => {
     });
   });
 };
-
+// box backdrop
 const showEditBox = (e) => {
   hideEditBox();
   boxBackdrops[e.target.id].classList.toggle(SHOWING);
   editIcons[e.target.id].classList.toggle(SHOWING);
-
+  const themeId = e.target.getAttribute("theme");
+  sessionStorage.setItem("themeId", themeId);
 };
 const hideEditBox = () => {
   for (let i = 0; i < boxBackdrops.length; i++) {
