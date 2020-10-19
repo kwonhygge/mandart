@@ -55,7 +55,6 @@ const mainObj = document.querySelector('#box-modal4 .main-obj');
 const boxBackdrops = document.querySelectorAll('.box-backdrop');
 const editIcons = document.querySelectorAll('.edit-icons');
 const boxContainers = document.querySelectorAll('.box-container');
-let prevBoxIndex = -10;
 
 // modal
 
@@ -197,20 +196,22 @@ const loadBoxes = () => {
 };
 
 const showEditBox = (e) => {
+  hideEditBox();
   boxBackdrops[e.target.id].classList.toggle(SHOWING);
   editIcons[e.target.id].classList.toggle(SHOWING);
-  prevBoxIndex = e.target.id;
+
 };
-const hideEditBox = (i) => {
-  boxBackdrops[i].classList.remove(SHOWING);
-  editIcons[i].classList.remove(SHOWING);
+const hideEditBox = () => {
+  for (let i = 0; i < boxBackdrops.length; i++) {
+    boxBackdrops[i].classList.remove(SHOWING);
+    editIcons[i].classList.remove(SHOWING);
+  }
+
 };
 const addBackdropEvent = () => {
   document.addEventListener('click', (e) => {
     if (e.target.name !== 'box-container') {
-      if (prevBoxIndex >= 0) {
-        hideEditBox(prevBoxIndex);
-      }
+      hideEditBox();
     }
   });
   boxContainers.forEach((box) => {

@@ -1,12 +1,13 @@
 .list-container {
   margin: 3rem auto;
-  width: 70%;
+  width: 910px;
 }
 
 .list-container .box-container {
   display: inline-block;
   margin: 10px 15px;
   text-align: center;
+  cursor: pointer;
 }
 
 .list-container .box-background {
@@ -31,17 +32,16 @@
 
 .list-container .edit-icons {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 60%;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
   display: none;
 }
-.box-container .edit-icons img {
-  display: block;
-  cursor: pointer;
+.list-container .edit-icons .element{
+  display: inline-block;
+  margin-top:2rem;
+  background: none;
 }
-
 /* plus btn modal */
 .plusBtncontainer {
   position: fixed;

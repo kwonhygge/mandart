@@ -1,29 +1,26 @@
 <%- include("partials/header") -%>
+
 <body class="main-body">
   <ul class="list-container">
+    <% boxes.forEach((box,i)=>{%>
+    <li id=<%=i%> class="box-container">
+      <div class="box-background">
+        <div id=<%=i%> class="box-backdrop"></div>
+        <div id=<%=i%> class="edit-icons">
+          <a class="element" href="/main/list/<%= box.id %>"><img src="/svg/edit.svg" /></a>
+          <form action="/main/list/<%= box.id %>?_method=DELETE" method="POST">
+            <button class="element" type="submit"><img src="/svg/delete.svg" /></button>
+          </form>
+        </div>
+        <div class="theme-img">
+          <img name="box-container" id=<%=i%> src="/imgs/<%=box.themeId%>.png" />
+        </div>
+      </div>
+      <h4><%= box.title %></h4>
+    </li>
 
-      <% boxes.forEach((box,i)=>{%>
-        <li id=<%=i%> class="box-container" >
-          <div class="box-background">
-            <div id=<%=i%> class="box-backdrop"></div>
-            <div id=<%=i%> class="edit-icons">
-              <a class="element" href="/main/list/<%= box.id %>"></a><img src="/svg/edit.svg" /></a>
-              <form action="/main/list/<%= box.id %>?_method=DELETE" method="POST">
-                <button type="submit"><img src="/svg/delete.svg" /></button>
-              </form>
-            </div>
-              <div class="theme-img">
-                <img name="box-container" id=<%=i%> src="/imgs/<%=box.themeId%>.png" />
-              </div>
-            
-          </div>
-          <h4><%= box.title %></h4>
-        </li>
-    
-        <%})%>
-
-    
-      </ul>
+    <%})%>
+  </ul>
 
   <div class="plusBtncontainer">
     <img id="plusBtn" src="/svg/plusBtn.svg" />
@@ -44,13 +41,7 @@
         <div class="footer">
           <ul class="option-container">
             <li class="option">
-              <input
-                type="radio"
-                name="theme"
-                id="modern"
-                value="Modern"
-                checked
-              />
+              <input type="radio" name="theme" id="modern" value="Modern" checked />
               <label class="box-container" for="modern">
                 <div class="box-background">
                   <div class="big-boxes">
@@ -392,12 +383,7 @@
               </label>
             </li>
             <li class="option">
-              <input
-                type="radio"
-                name="theme"
-                id="moonNight"
-                value="MoonNight"
-              />
+              <input type="radio" name="theme" id="moonNight" value="MoonNight" />
               <label class="box-container" for="moonNight">
                 <div class="box-background">
                   <div class="big-boxes">
@@ -910,12 +896,7 @@
               </label>
             </li>
             <li class="option">
-              <input
-                type="radio"
-                name="theme"
-                id="modernBlue"
-                value="ModernBlue"
-              />
+              <input type="radio" name="theme" id="modernBlue" value="ModernBlue" />
               <label class="box-container" for="modernBlue">
                 <div class="box-background">
                   <div class="big-boxes">
@@ -1102,13 +1083,7 @@
           <p class="body3">두번째, 계획표의 이름을 정해주세요.</p>
         </div>
         <div class="footer">
-          <input
-            type="text"
-            class="mainTitle"
-            name="mainTitle"
-            value="2020년 목표"
-            placeholder="2020년 목표"
-          />
+          <input type="text" class="mainTitle" name="mainTitle" value="2020년 목표" placeholder="2020년 목표" />
         </div>
       </div>
     </div>
@@ -1140,11 +1115,7 @@
               <div class="blank"></div>
             </div>
             <div class="input-box">
-              <textarea
-                class="body3"
-                name="mainObj"
-                placeholder="건강한 30대"
-              ></textarea>
+              <textarea class="body3" name="mainObj" placeholder="건강한 30대"></textarea>
               <span id="nextBtn3">OK</span>
             </div>
           </div>
@@ -1166,11 +1137,7 @@
         <div class="footer">
           <div class="input-boxes">
             <div class="line">
-              <textarea
-                name="smallObj"
-                type="text"
-                placeholder="운동하기"
-              ></textarea>
+              <textarea name="smallObj" type="text" placeholder="운동하기"></textarea>
               <textarea name="smallObj" type="text"></textarea>
               <textarea name="smallObj" type="text"></textarea>
             </div>
