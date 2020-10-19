@@ -51,6 +51,11 @@ const mainTitle = document.querySelector('#box-modal5 .footer .body2');
 const options = document.querySelectorAll('.option input');
 const mainObj = document.querySelector('#box-modal4 .main-obj');
 
+// box backdrop
+const boxBackdrops = document.querySelectorAll('.box-backdrop');
+const editIcons = document.querySelectorAll('.edit-icons');
+const boxContainers = document.querySelectorAll('.box-container');
+
 // modal
 
 const plusBtn = document.getElementById('plusBtn');
@@ -190,11 +195,36 @@ const loadBoxes = () => {
   });
 };
 
+const showEditBox = (e) => {
+  hideEditBox();
+  boxBackdrops[e.target.id].classList.toggle(SHOWING);
+  editIcons[e.target.id].classList.toggle(SHOWING);
+
+};
+const hideEditBox = () => {
+  for (let i = 0; i < boxBackdrops.length; i++) {
+    boxBackdrops[i].classList.remove(SHOWING);
+    editIcons[i].classList.remove(SHOWING);
+  }
+
+};
+const addBackdropEvent = () => {
+  document.addEventListener('click', (e) => {
+    if (e.target.name !== 'box-container') {
+      hideEditBox();
+    }
+  });
+  boxContainers.forEach((box) => {
+    box.addEventListener('click', showEditBox);
+  });
+};
+
 // init
 const init = () => {
   plusBtn.addEventListener('click', function () {
     clickPlusBtn();
   });
+  addBackdropEvent();
 };
 
 init();
