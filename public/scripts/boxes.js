@@ -1,4 +1,25 @@
+const connectInput = () => {
+    const sideSmallObjs = document.querySelectorAll('.small-boxes.side .small-obj');
+    const middleSmallObjs = document.querySelectorAll(
+        '.small-boxes.middle .small-obj'
+    );
+    for (let i = 0; i < 8; i++) {
+        middleSmallObjs[i].addEventListener('change', function (event) {
+            giveValue(event.target, sideSmallObjs);
+        });
+        sideSmallObjs[i].addEventListener('change', function (event) {
+            giveValue(event.target, middleSmallObjs);
+        });
+    }
+}
 
+const giveValue = (target, other) => {
+    for (let i = 0; i < 8; i++) {
+        if (target.name === other[i].name) {
+            other[i].value = target.value;
+        }
+    }
+}
 
 const applyTheme = () => {
     const themeId = sessionStorage.getItem("themeId");
@@ -20,3 +41,4 @@ const giveNameToBoxes = () => {
 
 applyTheme();
 giveNameToBoxes();
+connectInput();

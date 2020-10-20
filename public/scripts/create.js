@@ -20,27 +20,11 @@ const loadStorageDatas = () => {
     middleSmallObjs[i].value = smallObjs[i];
   }
 };
-function connectInput() {
-  for (let i = 0; i < 8; i++) {
-    middleSmallObjs[i].addEventListener('change', function (event) {
-      giveValue(event.target, sideSmallObjs);
-    });
-    sideSmallObjs[i].addEventListener('change', function (event) {
-      giveValue(event.target, middleSmallObjs);
-    });
-  }
-}
-function giveValue(target, other) {
-  for (let i = 0; i < 8; i++) {
-    if (target.name === other[i].name) {
-      other[i].value = target.value;
-    }
-  }
-}
+
+
 
 const init = () => {
   loadStorageDatas();
-  connectInput();
 };
 
 init();

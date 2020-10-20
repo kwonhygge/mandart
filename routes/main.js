@@ -14,6 +14,50 @@ module.exports = function (ps, User, Box) {
     if (box == null) res.redirect('/main');
     res.render('show', { box, mode: "edit" });
   });
+  router.put("/list/:id", async function (req, res) {
+    const boxId = req.params.id;
+    const updatedBox = {
+      title: req.body.mainTitle,
+      objective: req.body.mainObj,
+      themeId: req.body.themeId,
+      smallPlans: [
+        {
+          objective: req.body.smallObj0[0],
+          plans: req.body.plan0,
+        },
+        {
+          objective: req.body.smallObj1[0],
+          plans: req.body.plan1,
+        },
+        {
+          objective: req.body.smallObj2[0],
+          plans: req.body.plan2,
+        },
+        {
+          objective: req.body.smallObj3[0],
+          plans: req.body.plan3,
+        },
+        {
+          objective: req.body.smallObj4[0],
+          plans: req.body.plan4,
+        },
+        {
+          objective: req.body.smallObj5[0],
+          plans: req.body.plan5,
+        },
+        {
+          objective: req.body.smallObj6[0],
+          plans: req.body.plan6,
+        },
+        {
+          objective: req.body.smallObj7[0],
+          plans: req.body.plan7,
+        },
+      ],
+    }
+    await Box.findByIdAndUpdate(boxId, updatedBox);
+    res.redirect("/main");
+  })
 
   router.delete('/list/:id', async (req, res) => {
     await Box.findByIdAndDelete(req.params.id);

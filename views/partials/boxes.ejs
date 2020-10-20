@@ -1,6 +1,7 @@
 <% if(mode==="edit"){%>
 
 <input id="mainTitle" type="text" name="mainTitle" value=<%= box.title %> />
+<input name="themeId" value="sky" />
 <div class="mainbox-container">
     <div class="box-container">
         <div class="box-background">
@@ -54,8 +55,8 @@
                                 <div class="small-line">
                                     <textarea name="smallObj3" class="small-box small-obj"
                                         value=<%- JSON.stringify(box.smallPlans[3].objective)%>><%= box.smallPlans[3].objective%></textarea>
-                                    <textarea class="small-box main-obj"
-                                        value=<%- JSON.stringify(box.mainObj)%>><%= box.objective %></textarea>
+                                    <textarea class="small-box main-obj" name=mainObj
+                                        value=<%- JSON.stringify(box.objective)%>><%= box.objective %></textarea>
                                     <textarea name="smallObj4" class="small-box small-obj"
                                         value=<%- JSON.stringify(box.smallPlans[4].objective)%>><%= box.smallPlans[4].objective%></textarea>
                                 </div>
@@ -94,7 +95,7 @@
                                     <%}%> </div>
                                 <div class="small-line">
                                     <% for(let j=0;j<3;j++){%>
-                                    <textarea class="small-box"
+                                    <textarea class="small-box small-plan"
                                         value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                     <% bigJ+=1; %>
                                     <%}%> </div>
@@ -240,7 +241,8 @@
                                         <%}%> </div>
                                                                             <div class="small-line">
                                                                                 <% for(let j=0;j<3;j++){%>
-                                                                                <textarea class="small-box"></textarea>
+                                                                                <textarea
+                                                                                    class="small-box small-plan"></textarea>
 
                                                                                 <%}%> </div>
                                     </div>

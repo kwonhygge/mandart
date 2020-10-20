@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 
 <body class="main-body">
-  <form action="/main/create/:id" method="post"><%- include("partials/boxes") -%></form>
+  <form action="/main/list/<%=box.id%>/?_method=PUT" method="post"><%- include("partials/boxes") -%></form>
 
 
   <script src="/scripts/boxes.js"></script>
