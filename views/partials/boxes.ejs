@@ -13,24 +13,25 @@
                         <div class="small-line">
                             <% for(let j=0;j<3;j++){%>
                             <textarea class="small-box small-plan"
-                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                             <% bigJ+=1; %>
-                            <%}%> </div>
-                              <div class="small-line">
-                                <% for(let j=0;j<3;j++){%>
+                            <%}%>
+                        </div>
+                        <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
                             <% if(j===1){%>
                             <textarea class="small-box small-obj"
-                                value=<%= box.smallPlans[bigI].objective %>></textarea>
+                                value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%=box.smallPlans[bigI].objective%></textarea>
                             <%} else if(j===0 || j===2) {%>
                             <textarea class="small-box small-plan"
-                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%=box.smallPlans[bigI].plans[bigJ]%></textarea>
                             <% bigJ+=1; %>
                             <%}%>
                               <%}%> </div>
                         <div class="small-line">
                             <% for(let j=0;j<3;j++){%>
                             <textarea class="small-box small-plan"
-                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                             <% bigJ+=1; %>
                             <%}%> </div>
                           </div>
@@ -44,26 +45,27 @@
                             <div class="small-boxes middle">
                                 <div class="small-line">
                                     <textarea name="smallObj0" class="small-box small-obj"
-                                        value=<%= box.smallPlans[0].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[0].objective)%>><%= box.smallPlans[0].objective%></textarea>
                                     <textarea name="smallObj1" class="small-box small-obj"
-                                        value=<%= box.smallPlans[1].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[1].objective)%>><%= box.smallPlans[1].objective%></textarea>
                                     <textarea name="smallObj2" class="small-box small-obj"
-                                        value=<%= box.smallPlans[2].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[2].objective)%>><%= box.smallPlans[2].objective%></textarea>
                                 </div>
                                 <div class="small-line">
                                     <textarea name="smallObj3" class="small-box small-obj"
-                                        value=<%= box.smallPlans[3].objective%>></textarea>
-                                    <textarea class="small-box main-obj"></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[3].objective)%>><%= box.smallPlans[3].objective%></textarea>
+                                    <textarea class="small-box main-obj"
+                                        value=<%- JSON.stringify(box.mainObj)%>><%= box.objective %></textarea>
                                     <textarea name="smallObj4" class="small-box small-obj"
-                                        value=<%= box.smallPlans[4].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[4].objective)%>><%= box.smallPlans[4].objective%></textarea>
                                 </div>
                                 <div class="small-line">
                                     <textarea name="smallObj5" class="small-box small-obj"
-                                        value=<%= box.smallPlans[5].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[5].objective)%>><%= box.smallPlans[5].objective%></textarea>
                                     <textarea name="smallObj6" class="small-box small-obj"
-                                        value=<%= box.smallPlans[6].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[6].objective)%>><%= box.smallPlans[6].objective%></textarea>
                                     <textarea name="smallObj7" class="small-box small-obj"
-                                        value=<%= box.smallPlans[7].objective%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[7].objective)%>><%= box.smallPlans[7].objective%></textarea>
                                 </div>
                             </div>
                             <%}else if(i===0||i===2){%>
@@ -73,17 +75,17 @@
                                 <div class="small-line">
                                     <% for(let j=0;j<3;j++){%>
                                     <textarea class="small-box small-plan"
-                                        value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                     <% bigJ+=1; %>
                                     <%}%> </div>
                                     <div class="small-line">
                                       <% for(let j=0;j<3;j++){%>
                                     <% if(j===1){%>
                                     <textarea class="small-box small-obj"
-                                        value=<%= box.smallPlans[bigI].objective %>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%= box.smallPlans[bigI].objective %></textarea>
                                     <%} else if(j===0 || j===2) {%>
                                     <textarea class="small-box small-plan"
-                                        value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                     <% bigJ+=1; %>
                                     <%}%>
                                           
@@ -92,8 +94,8 @@
                                     <%}%> </div>
                                 <div class="small-line">
                                     <% for(let j=0;j<3;j++){%>
-                                    <textarea class="small-box" name="TopLeftPlan"
-                                        value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                    <textarea class="small-box"
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                     <% bigJ+=1; %>
                                     <%}%> </div>
                                 </div>
@@ -109,17 +111,17 @@
                                         <div class="small-line">
                                             <% for(let j=0;j<3;j++){%>
                                             <textarea class="small-box small-plan"
-                                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                             <% bigJ+=1; %>
                                             <%}%> </div>
                                         <div class="small-line">
                                           <% for(let j=0;j<3;j++){%>
                                             <% if(j===1){%>
                                             <textarea class="small-box small-obj"
-                                                value=<%= box.smallPlans[bigI].objective %>></textarea>
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%= box.smallPlans[bigI].objective %></textarea>
                                             <%} else if(j===0 || j===2) {%>
                                             <textarea class="small-box small-plan"
-                                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                             <% bigJ+=1; %>
                                             <%}%>
                                               
@@ -129,9 +131,10 @@
                                         <div class="small-line">
                                             <% for(let j=0;j<3;j++){%>
                                             <textarea class="small-box small-plan"
-                                                value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
                                             <% bigJ+=1; %>
-                                            <%}%> </div>
+                                            <%}%> 
+                                        </div>
                                     </div>
                                     <%bigI +=1 ;%>
                                             <%}%>    
@@ -237,8 +240,7 @@
                                         <%}%> </div>
                                                                             <div class="small-line">
                                                                                 <% for(let j=0;j<3;j++){%>
-                                                                                <textarea class="small-box"
-                                                                                    name="TopLeftPlan"></textarea>
+                                                                                <textarea class="small-box"></textarea>
 
                                                                                 <%}%> </div>
                                     </div>
