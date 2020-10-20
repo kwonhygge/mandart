@@ -5,10 +5,6 @@ const middleSmallObjs = document.querySelectorAll(
 );
 const themeId = sessionStorage.getItem('themeId');
 
-const applyTheme = () => {
-  document.documentElement.setAttribute('data-theme', themeId);
-};
-
 const loadStorageDatas = () => {
   const mainObj = sessionStorage.getItem('mainObj');
   const smallObjs = JSON.parse(sessionStorage.getItem('smallObjs'));
@@ -43,7 +39,6 @@ function giveValue(target, other) {
 }
 
 const init = () => {
-  applyTheme();
   loadStorageDatas();
   connectInput();
 };
