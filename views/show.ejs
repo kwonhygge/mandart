@@ -2,187 +2,158 @@
 
 <body class="main-body">
   <form action="/main/create/:id" method="post">
+    <input id="mainTitle" type="text" name="mainTitle" value=<%= box.title %> />
     <div class="mainbox-container">
-      <input id="mainTitle" type="hidden" name="mainTitle" />
-      <input id="themeId" type="hidden" name="themeId" />
       <div class="box-container">
         <div class="box-background">
           <div class="big-boxes">
+            <% let bigI = 0; %>
             <div class="big-line">
+              <% for(let i=0;i<3;i++){%>
               <div class="small-boxes side">
+                <% let bigJ = 0; %>
                 <div class="small-line">
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                </div>
+                  <% for(let j=0;j<3;j++){%>
+                  <textarea class="small-box" name="TopLeftPlan"
+                    value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                  <% bigJ+=1; %>
+                  <%}%> </div>
+                  <div class="small-line">
+                    <% for(let j=0;j<3;j++){%>
+                  <% if(j===1){%>
+                  <textarea name="TopLeftObj" class="small-box small-obj"
+                    value=<%= box.smallPlans[bigI].objective %>></textarea>
+                  <%} else if(j===0 || j===2) {%>
+                  <textarea class="small-box" name="TopLeftPlan"
+                    value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                  <% bigJ+=1; %>
+                  <%}%>
+                        
+
+
+                  <%}%> </div>
                 <div class="small-line">
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                  <textarea name="TopLeftObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                  <textarea class="small-box" name="TopLeftPlan"></textarea>
-                </div>
+                  <% for(let j=0;j<3;j++){%>
+                  <textarea class="small-box" name="TopLeftPlan"
+                    value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                  <% bigJ+=1; %>
+                  <%}%> </div>
               </div>
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                  <textarea class="small-box" name="TopPlan"></textarea>
+              <%bigI +=1 ;%>
+                  <%}%>    
                 </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                  <textarea name="TopObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                  <textarea class="small-box" name="TopPlan"></textarea>
-                </div>
-              </div>
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                  <textarea name="TopRightObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                  <textarea class="small-box" name="TopRightPlan"></textarea>
-                </div>
-              </div>
-            </div>
 
             <div class="big-line">
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                  <textarea name="LeftObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                  <textarea class="small-box" name="LeftPlan"></textarea>
-                </div>
-              </div>
-              <div class="small-boxes middle">
-                <div class="small-line">
-                  <textarea name="TopLeftObj" class="small-box small-obj"></textarea>
-                  <textarea name="TopObj" class="small-box small-obj"></textarea>
-                  <textarea name="TopRightObj" class="small-box small-obj"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea name="LeftObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box main-obj"></textarea>
-                  <textarea name="RightObj" class="small-box small-obj"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea name="BottomLeftObj" class="small-box small-obj"></textarea>
-                  <textarea name="BottomObj" class="small-box small-obj"></textarea>
-                  <textarea name="BottomRightObj" class="small-box small-obj"></textarea>
-                </div>
-              </div>
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                  <textarea name="RightObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                  <textarea class="small-box" name="RightPlan"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <div class="big-line">
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                  <textarea name="BottomLeftObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                  <textarea class="small-box" name="BottomLeftPlan"></textarea>
-                </div>
-              </div>
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                  <textarea name="BottomObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                  <textarea class="small-box" name="BottomPlan"></textarea>
-                </div>
-              </div>
-              <div class="small-boxes side">
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                  <textarea name="BottomRightObj" class="small-box small-obj"></textarea>
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                </div>
-                <div class="small-line">
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
-                  <textarea class="small-box" name="BottomRightPlan"></textarea>
+                  <% for(let i=0;i<3;i++){%>
+                  <%if(i===1){%>
+                  <div class="small-boxes middle">
+                    <div class="small-line">
+                      <textarea name="TopLeftObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[0].objective%>></textarea>
+                      <textarea name="TopObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[1].objective%>></textarea>
+                      <textarea name="TopRightObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[2].objective%>></textarea>
+                    </div>
+                    <div class="small-line">
+                      <textarea name="LeftObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[3].objective%>></textarea>
+                      <textarea class="small-box main-obj"></textarea>
+                      <textarea name="RightObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[4].objective%>></textarea>
+                    </div>
+                    <div class="small-line">
+                      <textarea name="BottomLeftObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[5].objective%>></textarea>
+                      <textarea name="BottomObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[6].objective%>></textarea>
+                      <textarea name="BottomRightObj" class="small-box small-obj"
+                        value=<%= box.smallPlans[7].objective%>></textarea>
+                    </div>
+                  </div>
+                  <%}else if(i===0||i===2){%>
+                  <div class="small-boxes side">
+                    <div class="small-boxes side">
+                      <% let bigJ = 0; %>
+                      <div class="small-line">
+                        <% for(let j=0;j<3;j++){%>
+                        <textarea class="small-box" name="TopLeftPlan"
+                          value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                        <% bigJ+=1; %>
+                        <%}%> </div>
+                        <div class="small-line">
+                          <% for(let j=0;j<3;j++){%>
+                        <% if(j===1){%>
+                        <textarea name="TopLeftObj" class="small-box small-obj"
+                          value=<%= box.smallPlans[bigI].objective %>></textarea>
+                        <%} else if(j===0 || j===2) {%>
+                        <textarea class="small-box" name="TopLeftPlan"
+                          value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                        <% bigJ+=1; %>
+                        <%}%>
+                              
+      
+      
+                        <%}%> </div>
+                      <div class="small-line">
+                        <% for(let j=0;j<3;j++){%>
+                        <textarea class="small-box" name="TopLeftPlan"
+                          value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                        <% bigJ+=1; %>
+                        <%}%> </div>
+                    </div>
+                    </div>
+                    <%bigI +=1 ;%>
+                        <%}%>
+                      <%}%>
+                      </div>
+                      <div class="big-line">
+                        <% for(let i=0;i<3;i++){%>
+                        <div class="small-boxes side">
+                          <% let bigJ = 0; %>
+                          <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
+                            <textarea class="small-box" name="TopLeftPlan"
+                              value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                            <% bigJ+=1; %>
+                            <%}%> </div>
+                            <div class="small-line">
+                              <% for(let j=0;j<3;j++){%>
+                            <% if(j===1){%>
+                            <textarea name="TopLeftObj" class="small-box small-obj"
+                              value=<%= box.smallPlans[bigI].objective %>></textarea>
+                            <%} else if(j===0 || j===2) {%>
+                            <textarea class="small-box" name="TopLeftPlan"
+                              value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                            <% bigJ+=1; %>
+                            <%}%>
+                                  
+          
+          
+                            <%}%> </div>
+                          <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
+                            <textarea class="small-box" name="TopLeftPlan"
+                              value=<%= box.smallPlans[bigI].plans[bigJ]%>></textarea>
+                            <% bigJ+=1; %>
+                            <%}%> </div>
+                        </div>
+                        <%bigI +=1 ;%>
+                            <%}%>    
+                          </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="check" type="submit"><img src="/svg/check.svg" /></button>
+              <button class="check" type="submit"><img src="/svg/check.svg" /></button>
   </form>
   <div>
-    <h1><%= box.title %></h1>
     <h2><%= box.objective %></h2>
-  </div>
-  <script>
-    const themeId = sessionStorage.getItem("themeId")
-    document.documentElement.setAttribute('data-theme', themeId);
-  </script>
+                          </div>
+                          <script>
+                            const themeId = sessionStorage.getItem("themeId")
+                            document.documentElement.setAttribute('data-theme', themeId);
+                          </script>
 </body>
 
 <%- include('partials/footer') %>

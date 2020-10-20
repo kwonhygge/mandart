@@ -12,6 +12,7 @@ module.exports = function (ps, User, Box) {
   router.get('/list/:id', ensureAuthenticated, async function (req, res) {
     const box = await Box.findById(req.params.id);
     if (box == null) res.redirect('/main');
+    console.log(box);
     res.render('show', { box });
   });
 
