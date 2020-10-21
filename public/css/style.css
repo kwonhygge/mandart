@@ -18,6 +18,12 @@
     font-size: 5px;
   }
 }
+@media(max-width:399px){
+  html,
+  body {
+    font-size: 3px;
+  }
+}
 
 /* navbar */
 .navbar-brand {
