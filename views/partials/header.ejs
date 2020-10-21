@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mandart</title>
 
-    <!-- stylesheet -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mandart</title>
 
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/layout.css" />
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/mainbox.css" />
-    <link rel="stylesheet" href="/css/create.css" />
-    <link rel="stylesheet" href="/css/home.css" />
-    <link rel="stylesheet" href="/css/auth.css" />
-    <link rel="stylesheet" href="/css/nav.css" />
-    <link rel="stylesheet" href="/css/list.css" />
+  <!-- stylesheet -->
 
-    <!-- icon -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-    
-    <!-- font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav>
-      <a class="home-logo" href="/"><img src="/imgs/logo.png" /></a>
-      <% if(isLogin){%>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <link rel="stylesheet" href="/css/mainbox.css" />
+  <link rel="stylesheet" href="/css/create.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/auth.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/list.css" />
+  <link rel="stylesheet" href="/css/show.css" />
 
-          <div class="profile">
-            <img src="/svg/profile.svg" alt="profile"> 
-            <a href="/auth/logout" onclick="this.parentNode.submit()" class="bubble body3">Logout</a>     
-          </div>
-        
-        
-      
-    </nav>
-      <%} else{ if(type==="home"){%>
-    </nav>
-    <div class="cubes-container">
-      <div class="cubes">
-        <div class="cube white"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube white"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube"></div>
-        <div class="cube white"></div>
-        <div class="cube"></div>
-        <div class="cube white"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube"></div>
-        <div class="cube white"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cube white falling1"></div>
-      <div class="cube white falling2"></div>
+  <!-- icon -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+
+  <!-- font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <nav>
+    <a class="home-logo" href="/"><img src="/imgs/logo.png" /></a>
+    <% if(isLogin){%>
+
+    <div class="profile">
+      <img src="/svg/profile.svg" alt="profile">
+      <a href="/auth/logout" onclick="this.parentNode.submit()" class="bubble body3">Logout</a>
     </div>
-    <%}else if(type==="auth"){%>
-    </nav>
-    <div class="cubes-container">
-      <div class="cubes">
-        <div class="cube beige"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube beige"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube"></div>
-        <div class="cube beige"></div>
-        <div class="cube"></div>
-        <div class="cube beige"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cubes">
-        <div class="cube"></div>
-        <div class="cube beige"></div>
-        <div class="cube"></div>
-        <div class="cube dark"></div>
-        <div class="cube"></div>
-      </div>
-      <div class="cube beige falling1"></div>
-      <div class="cube beige falling2"></div>
+
+
+
+  </nav>
+  <%} else{ if(type==="home"){%>
+  </nav>
+  <div class="cubes-container">
+    <div class="cubes">
+      <div class="cube white"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube white"></div>
     </div>
-    <%}%> <%}%>
-  </body>
-  <script src="/scripts/common/header.js"></script>
+    <div class="cubes">
+      <div class="cube"></div>
+      <div class="cube white"></div>
+      <div class="cube"></div>
+      <div class="cube white"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cubes">
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cubes">
+      <div class="cube"></div>
+      <div class="cube white"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cube white falling1"></div>
+    <div class="cube white falling2"></div>
+  </div>
+  <%}else if(type==="auth"){%>
+  </nav>
+  <div class="cubes-container">
+    <div class="cubes">
+      <div class="cube beige"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube beige"></div>
+    </div>
+    <div class="cubes">
+      <div class="cube"></div>
+      <div class="cube beige"></div>
+      <div class="cube"></div>
+      <div class="cube beige"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cubes">
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cubes">
+      <div class="cube"></div>
+      <div class="cube beige"></div>
+      <div class="cube"></div>
+      <div class="cube dark"></div>
+      <div class="cube"></div>
+    </div>
+    <div class="cube beige falling1"></div>
+    <div class="cube beige falling2"></div>
+  </div>
+  <%}%> <%}%>
+</body>
+<script src="/scripts/common/header.js"></script>
+
 </html>

@@ -15,6 +15,7 @@ module.exports = function (ps, User, Box) {
     res.render('show', { box, mode: "edit" });
   });
   router.put("/list/:id", async function (req, res) {
+    console.log(req.body);
     const boxId = req.params.id;
     const updatedBox = {
       title: req.body.mainTitle,
@@ -70,7 +71,6 @@ module.exports = function (ps, User, Box) {
   });
 
   router.post('/create', function (req, res) {
-    console.log(req.body);
     const newbox = new Box({
       title: req.body.mainTitle,
       objective: req.body.mainObj,
