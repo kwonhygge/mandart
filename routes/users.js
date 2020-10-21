@@ -23,6 +23,7 @@ module.exports = function (passport, User, Box) {
     const { email, password, password2 } = req.body;
     let errors = [];
 
+
     if (!email || !password || !password2) {
       errors.push({ msg: 'Please Enter all fields' });
     }
@@ -40,6 +41,7 @@ module.exports = function (passport, User, Box) {
         email,
         password,
         password2,
+        type: "auth"
       });
     } else {
       User.findOne({ email: email }).then((user) => {

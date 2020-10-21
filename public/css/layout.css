@@ -138,3 +138,15 @@ nav .profile .bubble::after {
   height: 9rem;
   cursor: pointer;
 }
+
+
+/* messages */
+.alert{
+  padding:1rem 0 0 4rem;
+  width: 48rem;
+  text-align: left;
+}
+
+.alert-success h3{ 
+  color: #89A390 !important;
+}
