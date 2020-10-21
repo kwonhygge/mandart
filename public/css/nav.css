@@ -29,7 +29,7 @@ nav {
 .cube {
   width: 6rem;
   height: 6rem;
-  border-radius: 5px;
+  border-radius: 0.8rem;
 }
 .falling1 {
   position: absolute;

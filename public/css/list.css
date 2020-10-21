@@ -2,20 +2,20 @@
 /* list container */
 .list-container {
   margin: 3rem auto;
-  width: 910px;
+  width: 9.1rem;
 }
 
 .list-container .box-container {
   display: inline-block;
-  margin: 10px 15px;
+  margin: 1rem 1.5rem;
   text-align: center;
   cursor: pointer;
 }
 
 .list-container .box-background {
-  width: 270px;
-  height: 270px;
-  border-radius: 20px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
   background: rgba(48, 47, 47, 0.4);
   position: relative;
 }
@@ -28,7 +28,7 @@
 /* edit icons */
 .list-container .box-backdrop {
   position: absolute;
-  border-radius: 20px;
+  border-radius: 1rem;
   background: rgba(48, 47, 47, 0.4);
 }
 
@@ -46,9 +46,15 @@
 }
 /* plus btn modal */
 .plusBtncontainer {
+  width:20rem;
+  height:20rem;
   position: fixed;
   bottom: 5rem;
   right: 3rem;
+}
+.plusBtncontainer img{
+  width:100%;
+  height:100%;
 }
 .plusBtncontainer #plusBtn {
   cursor: pointer;

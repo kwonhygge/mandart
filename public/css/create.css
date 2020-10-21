@@ -1,9 +1,9 @@
-.test-container .test-box {
-  width: 60px;
-  height: 60px;
-  background-color: var(--bigPlan-bg-color);
-}
 .mainbox-container {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+
   display: flex;
   justify-content: center;
   margin-top: 2rem;
@@ -11,7 +11,7 @@
 .mainbox-container .box-background {
   width: 80rem;
   height: 80rem;
-  border-radius: 20px;
+  border-radius: 2rem;
   background: rgba(48, 47, 47, 0.4);
 }
 
