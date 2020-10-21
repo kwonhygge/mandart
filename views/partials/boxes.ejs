@@ -1,0 +1,296 @@
+<% if(mode==="edit"){%>
+
+
+<div class="mainbox-container">
+    <div class="box-container">
+        <div class="box-background">
+            <div class="big-boxes">
+                <% let bigI = 0; %>
+                <div class="big-line">
+                    <% for(let i=0;i<3;i++){%>
+                    <div class="small-boxes side">
+                        <% let bigJ = 0; %>
+                        <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
+                            <textarea class="small-box small-plan"
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                            <% bigJ+=1; %>
+                            <%}%>
+                        </div>
+                        <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
+                            <% if(j===1){%>
+                            <textarea class="small-box small-obj"
+                                value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%=box.smallPlans[bigI].objective%></textarea>
+                            <%} else if(j===0 || j===2) {%>
+                            <textarea class="small-box small-plan"
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%=box.smallPlans[bigI].plans[bigJ]%></textarea>
+                            <% bigJ+=1; %>
+                            <%}%>
+                              <%}%> </div>
+                        <div class="small-line">
+                            <% for(let j=0;j<3;j++){%>
+                            <textarea class="small-box small-plan"
+                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                            <% bigJ+=1; %>
+                            <%}%> </div>
+                          </div>
+                          <%bigI +=1 ;%>
+                            <%}%>    
+                            </div>
+            
+                        <div class="big-line">
+                              <% for(let i=0;i<3;i++){%>
+                            <%if(i===1){%>
+                            <div class="small-boxes middle">
+                                <div class="small-line">
+                                    <textarea name="smallObj0" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[0].objective)%>><%= box.smallPlans[0].objective%></textarea>
+                                    <textarea name="smallObj1" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[1].objective)%>><%= box.smallPlans[1].objective%></textarea>
+                                    <textarea name="smallObj2" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[2].objective)%>><%= box.smallPlans[2].objective%></textarea>
+                                </div>
+                                <div class="small-line">
+                                    <textarea name="smallObj3" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[3].objective)%>><%= box.smallPlans[3].objective%></textarea>
+                                    <textarea class="small-box main-obj" name=mainObj
+                                        value=<%- JSON.stringify(box.objective)%>><%= box.objective %></textarea>
+                                    <textarea name="smallObj4" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[4].objective)%>><%= box.smallPlans[4].objective%></textarea>
+                                </div>
+                                <div class="small-line">
+                                    <textarea name="smallObj5" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[5].objective)%>><%= box.smallPlans[5].objective%></textarea>
+                                    <textarea name="smallObj6" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[6].objective)%>><%= box.smallPlans[6].objective%></textarea>
+                                    <textarea name="smallObj7" class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[7].objective)%>><%= box.smallPlans[7].objective%></textarea>
+                                </div>
+                            </div>
+                            <%}else if(i===0||i===2){%>
+
+                            <div class="small-boxes side">
+                                <% let bigJ = 0; %>
+                                <div class="small-line">
+                                    <% for(let j=0;j<3;j++){%>
+                                    <textarea class="small-box small-plan"
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                    <% bigJ+=1; %>
+                                    <%}%> </div>
+                                    <div class="small-line">
+                                      <% for(let j=0;j<3;j++){%>
+                                    <% if(j===1){%>
+                                    <textarea class="small-box small-obj"
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%= box.smallPlans[bigI].objective %></textarea>
+                                    <%} else if(j===0 || j===2) {%>
+                                    <textarea class="small-box small-plan"
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                    <% bigJ+=1; %>
+                                    <%}%>
+                                          
+                  
+                  
+                                    <%}%> </div>
+                                <div class="small-line">
+                                    <% for(let j=0;j<3;j++){%>
+                                    <textarea class="small-box small-plan"
+                                        value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                    <% bigJ+=1; %>
+                                    <%}%> </div>
+                                </div>
+            
+                                <%bigI +=1 ;%>
+                                    <%}%>
+                                  <%}%>
+                                </div>
+                                <div class="big-line">
+                                    <% for(let i=0;i<3;i++){%>
+                                    <div class="small-boxes side">
+                                        <% let bigJ = 0; %>
+                                        <div class="small-line">
+                                            <% for(let j=0;j<3;j++){%>
+                                            <textarea class="small-box small-plan"
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                            <% bigJ+=1; %>
+                                            <%}%> </div>
+                                        <div class="small-line">
+                                          <% for(let j=0;j<3;j++){%>
+                                            <% if(j===1){%>
+                                            <textarea class="small-box small-obj"
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].objective) %>><%= box.smallPlans[bigI].objective %></textarea>
+                                            <%} else if(j===0 || j===2) {%>
+                                            <textarea class="small-box small-plan"
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                            <% bigJ+=1; %>
+                                            <%}%>
+                                              
+                      
+                      
+                                        <%}%> </div>
+                                        <div class="small-line">
+                                            <% for(let j=0;j<3;j++){%>
+                                            <textarea class="small-box small-plan"
+                                                value=<%- JSON.stringify(box.smallPlans[bigI].plans[bigJ])%>><%= box.smallPlans[bigI].plans[bigJ]%></textarea>
+                                            <% bigJ+=1; %>
+                                            <%}%> 
+                                        </div>
+                                    </div>
+                                    <%bigI +=1 ;%>
+                                            <%}%>    
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="check" type="submit"><img src="/svg/check.svg" /></button>
+
+        
+    <%} else if(mode==="create"){%>
+
+                                            <div class="mainbox-container">
+                                                <div class="box-container">
+                                                    <div class="box-background">
+                                                        <div class="big-boxes">
+
+                                                            <div class="big-line">
+                                                                <% for(let i=0;i<3;i++){%>
+                                                                <div class="small-boxes side">
+
+                                                                    <div class="small-line">
+                                                                        <% for(let j=0;j<3;j++){%>
+                                                                        <textarea
+                                                                            class="small-box small-plan"></textarea>
+
+                                                                        <%}%> </div>
+                                  <div class="small-line">
+                                    <% for(let j=0;j<3;j++){%>
+                                                                        <% if(j===1){%>
+                                                                        <textarea
+                                                                            class="small-box small-obj"></textarea>
+                                                                        <%} else if(j===0 || j===2) {%>
+                                                                        <textarea
+                                                                            class="small-box small-plan"></textarea>
+
+                                                                        <%}%>
+                                  <%}%> </div>
+                                                                    <div class="small-line">
+                                                                        <% for(let j=0;j<3;j++){%>
+                                                                        <textarea
+                                                                            class="small-box small-plan"></textarea>
+
+                                                                        <%}%> </div>
+                              </div>
+  
+                                        <%}%>
+                                                                    </div>
+
+                                                                    <div class="big-line">
+                                                                        <% for(let i=0;i<3;i++){%>
+                                                                        <%if(i===1){%>
+                                                                        <div class="small-boxes middle">
+                                                                            <div class="small-line">
+                                                                                <textarea name="smallObj0"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <textarea name="smallObj1"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <textarea name="smallObj2"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                            </div>
+                                                                            <div class="small-line">
+                                                                                <textarea name="smallObj3"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <textarea name="mainObj"
+                                                                                    class="small-box main-obj"></textarea>
+                                                                                <textarea name="smallObj4"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                            </div>
+                                                                            <div class="small-line">
+                                                                                <textarea name="smallObj5"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <textarea name="smallObj6"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <textarea name="smallObj7"
+                                                                                    class="small-box small-obj"></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        <%}else if(i===0||i===2){%>
+
+                                                                        <div class="small-boxes side">
+
+                                                                            <div class="small-line">
+                                                                                <% for(let j=0;j<3;j++){%>
+                                                                                <textarea
+                                                                                    class="small-box small-plan"></textarea>
+
+                                                                                <%}%> </div>
+                                        <div class="small-line">
+                                          <% for(let j=0;j<3;j++){%>
+                                                                                <% if(j===1){%>
+                                                                                <textarea
+                                                                                    class="small-box small-obj"></textarea>
+                                                                                <%} else if(j===0 || j===2) {%>
+                                                                                <textarea
+                                                                                    class="small-box small-plan"></textarea>
+
+                                                                                <%}%>
+                                              
+                      
+                      
+                                        <%}%> </div>
+                                                                            <div class="small-line">
+                                                                                <% for(let j=0;j<3;j++){%>
+                                                                                <textarea
+                                                                                    class="small-box small-plan"></textarea>
+
+                                                                                <%}%> </div>
+                                    </div>
+                
+                                                <%}%>
+                                                                                <%}%>
+                                            </div>
+                                            <div class="big-line">
+                                                <% for(let i=0;i<3;i++){%>
+                                                                                <div class="small-boxes side">
+
+                                                                                    <div class="small-line">
+                                                                                        <% for(let j=0;j<3;j++){%>
+                                                                                        <textarea
+                                                                                            class="small-box small-plan"></textarea>
+
+                                                                                        <%}%> </div>
+                                            <div class="small-line">
+                                              <% for(let j=0;j<3;j++){%>
+                                                                                        <% if(j===1){%>
+                                                                                        <textarea
+                                                                                            class="small-box small-obj"></textarea>
+                                                                                        <%} else if(j===0 || j===2) {%>
+                                                                                        <textarea
+                                                                                            class="small-box small-plan"></textarea>
+
+                                                                                        <%}%>
+                                                  
+                          
+                          
+                                            <%}%> </div>
+                                                                                    <div class="small-line">
+                                                                                        <% for(let j=0;j<3;j++){%>
+                                                                                        <textarea
+                                                                                            class="small-box small-plan"></textarea>
+
+                                                                                        <%}%> </div>
+                                        </div>
+                                
+                                                        <%}%>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <button class="check" type="submit"><img
+                                                                            src="/svg/check.svg" /></button>
+
+
+
+
+                                                                    <%}%>

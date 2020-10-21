@@ -136,4 +136,5 @@ nav .profile .bubble::after {
   bottom: 3rem;
   width: 9rem;
   height: 9rem;
+  cursor: pointer;
 }

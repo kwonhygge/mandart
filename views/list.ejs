@@ -1,19 +1,20 @@
 <%- include("partials/header") -%>
 
 <body class="main-body">
+
   <ul class="list-container">
     <% boxes.forEach((box,i)=>{%>
     <li id=<%=i%> class="box-container">
       <div class="box-background">
         <div id=<%=i%> class="box-backdrop"></div>
         <div id=<%=i%> class="edit-icons">
-          <a class="element" href="/main/list/<%= box.id %>"><img src="/svg/edit.svg" /></a>
+          <a class="element" href="/main/list/<%=box.id%>"><img src="/svg/search.svg" /></a>
           <form action="/main/list/<%= box.id %>?_method=DELETE" method="POST">
             <button class="element" type="submit"><img src="/svg/delete.svg" /></button>
           </form>
         </div>
         <div class="theme-img">
-          <img name="box-container" id=<%=i%> src="/imgs/<%=box.themeId%>.png" />
+          <img name="box-container" id=<%=i%> theme=<%=box.themeId%> src="/imgs/<%=box.themeId%>.png" />
         </div>
       </div>
       <h4><%= box.title %></h4>

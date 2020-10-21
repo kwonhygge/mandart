@@ -1,8 +1,50 @@
 <%- include("partials/header") -%>
+
 <body class="main-body">
-  <div>
-    <h1><%= box.title %></h1>
-    <h2><%= box.objective %></h2>
-  </div>
+  <form action="/main/list/<%=box.id%>/?_method=PUT" method="post">
+    <div class="edit-container">
+      <div class="title">
+        <p class="body3">Title</p>
+        <input class="body3" id="mainTitle" type="text" name="mainTitle" value=<%- JSON.stringify(box.title) %> />
+      </div>
+
+      <p class="body3">Color Type</p>
+      <ul class="theme-options">
+        <li class="option">
+          <input id="modern" name="themeId" type="radio" value="modern" />
+          <label for="modern"><span></span></label>
+        </li>
+        <li class="option">
+          <input id="sky" name="themeId" type="radio" value="sky" />
+          <label for="sky"><span></span></label>
+        </li>
+        <li class="option">
+          <input id="moonNight" name="themeId" type="radio" value="moonNight" />
+          <label for="moonNight"><span></span></label>
+        </li>
+        <li class="option">
+          <input id="egyption" name="themeId" type="radio" value="egyption" />
+          <label for="egyption"><span></span></label>
+        </li>
+        <li class="option">
+          <input id="greenary" name="themeId" type="radio" value="greenary" />
+          <label for="greenary"><span></span></label>
+        </li>
+        <li class="option">
+          <input id="modernBlue" name="themeId" type="radio" value="modernBlue" />
+          <label for="modernBlue"><span></span></label>
+        </li>
+
+
+      </ul>
+
+    </div>
+    <%- include("partials/boxes") -%>
+  </form>
+
+
+  <script src="/scripts/boxes.js"></script>
+  <script src="/scripts/show.js"></script>
 </body>
+
 <%- include('partials/footer') %>

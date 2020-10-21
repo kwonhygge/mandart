@@ -5,10 +5,6 @@ const middleSmallObjs = document.querySelectorAll(
 );
 const themeId = sessionStorage.getItem('themeId');
 
-const applyTheme = () => {
-  document.documentElement.setAttribute('data-theme', themeId);
-};
-
 const loadStorageDatas = () => {
   const mainObj = sessionStorage.getItem('mainObj');
   const smallObjs = JSON.parse(sessionStorage.getItem('smallObjs'));
@@ -24,28 +20,11 @@ const loadStorageDatas = () => {
     middleSmallObjs[i].value = smallObjs[i];
   }
 };
-function connectInput() {
-  for (let i = 0; i < 8; i++) {
-    middleSmallObjs[i].addEventListener('change', function (event) {
-      giveValue(event.target, sideSmallObjs);
-    });
-    sideSmallObjs[i].addEventListener('change', function (event) {
-      giveValue(event.target, middleSmallObjs);
-    });
-  }
-}
-function giveValue(target, other) {
-  for (let i = 0; i < 8; i++) {
-    if (target.name === other[i].name) {
-      other[i].value = target.value;
-    }
-  }
-}
+
+
 
 const init = () => {
-  applyTheme();
   loadStorageDatas();
-  connectInput();
 };
 
 init();

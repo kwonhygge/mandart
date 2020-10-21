@@ -12,8 +12,53 @@ module.exports = function (ps, User, Box) {
   router.get('/list/:id', ensureAuthenticated, async function (req, res) {
     const box = await Box.findById(req.params.id);
     if (box == null) res.redirect('/main');
-    res.render('show', { box });
+    res.render('show', { box, mode: "edit" });
   });
+  router.put("/list/:id", async function (req, res) {
+    console.log(req.body);
+    const boxId = req.params.id;
+    const updatedBox = {
+      title: req.body.mainTitle,
+      objective: req.body.mainObj,
+      themeId: req.body.themeId,
+      smallPlans: [
+        {
+          objective: req.body.smallObj0[0],
+          plans: req.body.plan0,
+        },
+        {
+          objective: req.body.smallObj1[0],
+          plans: req.body.plan1,
+        },
+        {
+          objective: req.body.smallObj2[0],
+          plans: req.body.plan2,
+        },
+        {
+          objective: req.body.smallObj3[0],
+          plans: req.body.plan3,
+        },
+        {
+          objective: req.body.smallObj4[0],
+          plans: req.body.plan4,
+        },
+        {
+          objective: req.body.smallObj5[0],
+          plans: req.body.plan5,
+        },
+        {
+          objective: req.body.smallObj6[0],
+          plans: req.body.plan6,
+        },
+        {
+          objective: req.body.smallObj7[0],
+          plans: req.body.plan7,
+        },
+      ],
+    }
+    await Box.findByIdAndUpdate(boxId, updatedBox);
+    res.redirect("/main");
+  })
 
   router.delete('/list/:id', async (req, res) => {
     await Box.findByIdAndDelete(req.params.id);
@@ -21,7 +66,8 @@ module.exports = function (ps, User, Box) {
   });
 
   router.get('/create', ensureAuthenticated, function (req, res) {
-    res.render('create');
+
+    res.render('create', { mode: "create" });
   });
 
   router.post('/create', function (req, res) {
@@ -32,36 +78,36 @@ module.exports = function (ps, User, Box) {
       createdBy: req.user.id,
       smallPlans: [
         {
-          objective: req.body.TopLeftObj[0],
-          plans: req.body.TopLeftPlan,
+          objective: req.body.smallObj0[0],
+          plans: req.body.plan0,
         },
         {
-          objective: req.body.TopObj[0],
-          plans: req.body.TopPlan,
+          objective: req.body.smallObj1[0],
+          plans: req.body.plan1,
         },
         {
-          objective: req.body.TopRightObj[0],
-          plans: req.body.TopRightPlan,
+          objective: req.body.smallObj2[0],
+          plans: req.body.plan2,
         },
         {
-          objective: req.body.LeftObj[0],
-          plans: req.body.LeftPlan,
+          objective: req.body.smallObj3[0],
+          plans: req.body.plan3,
         },
         {
-          objective: req.body.RightObj[0],
-          plans: req.body.RightPlan,
+          objective: req.body.smallObj4[0],
+          plans: req.body.plan4,
         },
         {
-          objective: req.body.BottomLeftObj[0],
-          plans: req.body.BottomLeftPlan,
+          objective: req.body.smallObj5[0],
+          plans: req.body.plan5,
         },
         {
-          objective: req.body.BottomObj[0],
-          plans: req.body.BottomPlan,
+          objective: req.body.smallObj6[0],
+          plans: req.body.plan6,
         },
         {
-          objective: req.body.BottomRightObj[0],
-          plans: req.body.BottomRightPlan,
+          objective: req.body.smallObj7[0],
+          plans: req.body.plan7,
         },
       ],
     });
