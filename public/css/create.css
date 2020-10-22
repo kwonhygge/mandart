@@ -56,3 +56,24 @@
   border: 1px solid var(--box-border-color);
   z-index: 5;
 }
+@media (max-width: 375px) {
+  .mainbox-container .box-background{
+    width:290px;
+    height:290px;
+  }
+  .mainbox-container .big-boxes{
+    width:270px;
+
+  }
+  .mainbox-container .big-line{
+    width:90px;
+
+  }  
+  .mainbox-container .small-box{
+    width:30px;
+    height:30px;
+      font-size: 0.3px;
+      line-height: 10px;
+      padding:5px;
+  }
+}

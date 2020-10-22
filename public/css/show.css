@@ -113,3 +113,13 @@
 .edit-container input[type='radio']:checked~label{
     border: 1px dashed red;
 } 
+
+@media (max-width: 1024px) {
+    .edit-container{
+        position: absolute;
+        top:5%;
+        left:50%;
+        transform:translate(-50%,-5%);
+        height:60%;
+    }
+  }
