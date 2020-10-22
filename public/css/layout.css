@@ -102,40 +102,44 @@ nav .profile .bubble::after {
 }
 .modal .modal-content {
   position: absolute;
-  top: 10%;
+  top: 18%;
   width: 100%;
   text-align: center;
 }
-.modal .closeBtn {
+.modal .footer{
+  margin-bottom:8rem;
+}
+.modal .closeBtn,.modal .nextBtn,
+.modal .prevBtn{
   position: fixed;
-  top: 4rem;
-  right: 4rem;
   z-index: 4;
   width:7rem;
   height:7rem;
   cursor: pointer;
 }
+.modal .closeBtn {
+
+  top: 4rem;
+  right: 4rem;
+
+}
 .modal .nextBtn {
-  position: fixed;
+
   bottom: 9rem;
   right: 5rem;
-  z-index: 4;
-  width:7rem;
-  height:7rem;
-  cursor: pointer;
+  
 }
 
 .modal .prevBtn {
-  position: fixed;
+
   bottom: 9rem;
   left: 5rem;
-  z-index: 4;
-  cursor: pointer;
+
 }
 
 /* icon */
 .main-body .check {
-  position: absolute;
+  position: fixed;
   right: 2rem;
   bottom: 3rem;
   width: 9rem;

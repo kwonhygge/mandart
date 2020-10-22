@@ -18,7 +18,7 @@
 }
 .box-container h4{
   font-size: 3rem;
-  max-width: 35rem;
+
 }
 
 .list-container .box-background {
@@ -82,8 +82,11 @@
   margin: 6rem auto;
   width: 45%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+}
+.option-container .option{
+  margin: 1rem 1.5rem;
 }
 .option-container input[type='radio'] {
   display: none;
@@ -96,9 +99,9 @@
 }
 
 .option-container .box-background {
-  width: 21.5rem;
-  height: 21.5rem;
-  border-radius: 20px;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 2rem;
   background: rgba(48, 47, 47, 0.4);
 }
 
@@ -130,8 +133,8 @@
 
 /* modal3 */
 #box-modal3 .main-box {
-  width: 30%;
-  margin: 3rem auto;
+  width: 55rem;
+  margin: 10rem auto;
   position: relative;
 }
 #box-modal3 .line {
@@ -172,10 +175,12 @@
 
 /* modal4 */
 #box-modal4 .input-boxes {
-  margin: 3rem auto;
+  margin: 10rem auto;
+  width:51rem;
 }
 #box-modal4 .line {
   display: flex;
+
   border-bottom: 1px solid #fff;
 }
 

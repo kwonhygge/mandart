@@ -3,10 +3,9 @@
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
-
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 2rem 0 5rem 0;
 }
 .mainbox-container .box-background {
   width: 80rem;
