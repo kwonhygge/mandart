@@ -111,6 +111,8 @@ nav .profile .bubble::after {
   top: 4rem;
   right: 4rem;
   z-index: 4;
+  width:7rem;
+  height:7rem;
   cursor: pointer;
 }
 .modal .nextBtn {
@@ -118,6 +120,8 @@ nav .profile .bubble::after {
   bottom: 9rem;
   right: 5rem;
   z-index: 4;
+  width:7rem;
+  height:7rem;
   cursor: pointer;
 }
 

@@ -1,25 +1,36 @@
 
 /* list container */
 .list-container {
-  margin: 3rem auto;
-  width: 9.1rem;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .list-container .box-container {
-  display: inline-block;
   margin: 1rem 1.5rem;
   text-align: center;
   cursor: pointer;
+
+}
+.box-container h4{
+  font-size: 3rem;
+  max-width: 35rem;
 }
 
 .list-container .box-background {
-  width: 4rem;
-  height: 4rem;
+  width: 35rem;
+  height: 35rem;
   border-radius: 1rem;
-  background: rgba(48, 47, 47, 0.4);
   position: relative;
 }
-
+.list-container .theme-img{
+  width:35rem;
+  height:35rem;
+}
 .list-container .theme-img img {
   width: 100%;
   height: 100%;
