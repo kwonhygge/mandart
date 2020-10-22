@@ -6,11 +6,16 @@ const circles = document.querySelectorAll(".confirm-circle");
 
 const checkPassword = () => {
   const isLengthProper = checkLength();
-  if (isLengthProper && pass2.value.length > 0) {
-    if (pass1.value === pass2.value) {
-      circle2.style.background = '#89A390';
-    } else {
-      circle1.style.background = '#FF0000';
+  if (pass2.value.length > 0) {
+    if (isLengthProper) {
+      if (pass1.value === pass2.value) {
+        circle2.style.background = '#89A390';
+      } else {
+        circle1.style.background = '#FF0000';
+        circle2.style.background = '#FF0000';
+      }
+    }
+    else {
       circle2.style.background = '#FF0000';
     }
   }
