@@ -6,25 +6,50 @@
   transform: translate(-50%, -50%);
 }
 
-/* .home-title h1 {
-  font-size: 10rem;
-  line-height: 7rem;
-  font-weight: 300;
-} */
 .home-title span {
   font-weight: 500;
 }
 .home-title h3 {
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 .home-btns {
   margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .home-btns button {
   background: transparent;
+  display: flex;
+  align-items: center;
   font-size: 3rem;
   font-weight: 500;
 }
-.home-btns button:nth-last-child(1) {
-  margin-left: 9rem;
+.home-btns button:hover .diamond{
+  -webkit-animation:spin 1100ms infinite linear; -moz-animation:spin 1100ms infinite linear; -ms-animation:spin 1100ms infinite linear; animation:spin 1100ms infinite linear;
+}
+
+
+.diamond{
+  display: inline-block;
+  width:3.5rem;
+  height:3.5rem;
+  transform: rotate(-135deg);
+  border-radius: 0.5rem;
+  background-color: var(--color-dark);
+}
+
+.trial-container{
+  position: fixed;
+  left: 10%;
+  bottom:5%;
+}
+.trial-container button{
+  background: none;
+  display: flex;
+  align-items: center;
+}
+.trial-container button .diamond{
+  width:2rem;
+  height:2rem;
 }

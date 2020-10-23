@@ -1,4 +1,5 @@
 <%- include("partials/header") -%>
+
 <body class="home-body">
   <div class="home-container">
     <div class="home-title">
@@ -6,10 +7,26 @@
       <h3><span>Plan</span> your new dream and <span>realize</span> it</h3>
     </div>
     <div class="home-btns">
-      <button onClick="location.href='/auth/login'">Sign in</button>
-      <button onClick="location.href='/auth/signup'">Sign up</button>
+      <button onClick="location.href='/auth/login'">
+        <div class="diamond"></div>
+        <h3 class="marL_30 bold">Sign in</h3>
+      </button>
+      <button onClick="location.href='/auth/signup'">
+        <div class="diamond white"></div>
+        <h3 class="marL_30 bold">Sign up</h3>
+      </button>
     </div>
   </div>
+  <div class="trial-container">
+    <form action="/auth/login" method="POST">
+      <input type="hidden" name="email" value="trial@gmail.com">
+      <input type="hidden" name="password" value="trial1234~">
+      <button type="submit">
+        <div class="diamond white"></div><span class="body3 marL_20">Trial Version(체험해보기)</span>
+      </button>
+    </form>
+  </div>
+
 </body>
 
 <%- include("partials/footer") -%>

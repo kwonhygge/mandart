@@ -45,7 +45,7 @@
   color: #fff;
 }
 .white {
-  background-color: var(--color-comfortable-white);
+  background-color: var(--color-comfortable-white) !important;
 }
 .beige {
   background-color: var(--color-beige);
@@ -104,82 +104,82 @@
 /* margin */
 
 .marT_10 {
-  margin-top: 10px;
+  margin-top: 1rem;
 }
 .marT_20 {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .marT_30 {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 .marT_40 {
-  margin-top: 40px;
+  margin-top: 4rem;
 }
 .marT_50 {
-  margin-top: 50px;
+  margin-top: 5rem;
 }
 .marT_60 {
-  margin-top: 60px;
+  margin-top: 6rem;
 }
 
 .marB_10 {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .marB_20 {
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .marB_30 {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 .marB_40 {
-  margin-bottom: 40px;
+  margin-bottom: 4rem;
 }
 .marB_45 {
   margin-bottom: 45px;
 }
 .marB_50 {
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 .marB_60 {
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .marR_10 {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 .marR_20 {
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 .marR_30 {
-  margin-right: 30px;
+  margin-right: 3rem;
 }
 .marR_40 {
-  margin-right: 40px;
+  margin-right: 4rem;
 }
 .marR_50 {
-  margin-right: 50px;
+  margin-right: 5rem;
 }
 .marR_60 {
-  margin-right: 60px;
+  margin-right: 6rem;
 }
 
 .marL_10 {
-  margin-left: 10px;
+  margin-left: 1rem;
 }
 .marL_20 {
-  margin-left: 20px;
+  margin-left: 2rem;
 }
 .marL_30 {
-  margin-left: 30px;
+  margin-left: 3rem;
 }
 .marL_40 {
-  margin-left: 40px;
+  margin-left: 4rem;
 }
 .marL_50 {
-  margin-left: 50px;
+  margin-left: 5rem;
 }
 .marL_60 {
-  margin-left: 60px;
+  margin-left: 6rem;
 }
 
 .mar0_auto {
@@ -191,3 +191,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+.bold{
+  font-weight: 500;
+}
+
+
+/* animation */
+
+@-webkit-keyframes spin { 100%{ -webkit-transform: rotate(360deg); } } @-moz-keyframes spin { 100%{ -moz-transform: rotate(360deg); } } @-ms-keyframes spin { 100%{ -ms-transform: rotate(360deg); } } @keyframes spin { 100%{ transform: rotate(360deg); } }
