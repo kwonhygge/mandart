@@ -113,12 +113,12 @@
 | ![logout01](https://user-images.githubusercontent.com/50289067/97407602-43bc1b00-193e-11eb-9387-6eea09d169e8.gif) | <p> 계정 아이콘을 누르고 로그아웃 </p> |
 | ------------------------------- | :--- |
 
-# 반응형
+## 반응형
 
-## 모바일
+#### 모바일
 
-### rem을 사용하여 화면 크기별로 html 폰트 크기 적용(모바일, 태블릿, 노트북, 데스크탑)
-### list로 element를 나열해야 하는 부분에는 flex wrap 을 사용하여 줄바꿈 자동 적용
+- rem을 사용하여 화면 크기별로 html 폰트 크기 적용(모바일, 태블릿, 노트북, 데스크탑)
+- list로 element를 나열해야 하는 부분에는 flex wrap 을 사용하여 줄바꿈 자동 적용
 
 | <img width="313" alt="iphone01" src="https://user-images.githubusercontent.com/50289067/97409263-a9110b80-1940-11eb-90c9-eb779fc055c2.png"> | <img width="315" alt="iphone02" src="https://user-images.githubusercontent.com/50289067/97409278-ae6e5600-1940-11eb-9566-69c4973af71c.png"> | <img width="312" alt="iphone04" src="https://user-images.githubusercontent.com/50289067/97409277-add5bf80-1940-11eb-891c-bcd7bfdb355f.png"> | <img width="308" alt="iphone05" src="https://user-images.githubusercontent.com/50289067/97409276-add5bf80-1940-11eb-97ce-5c2540421f14.png"> |
 | ------ | ----- | ----- | ----- |
