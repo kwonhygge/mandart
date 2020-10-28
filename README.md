@@ -12,19 +12,23 @@
 
 ## 만다라트란?
 
-### 일종의 계획표
+### 목표를 달성하기 위한 세부 목표를 정리하는 계획표이다. 아래는 이해를 돕기 위한 예시이다.
 
-|          <img width="1500" alt="만다라트예시" src="https://user-images.githubusercontent.com/50289067/96837096-d6f9da00-1480-11eb-8ca0-dac09335a80c.png">| 만다라트는 "Manda+La+Art"의 합성어이다.  ‘만다라(曼陀羅)’는 그림이나 도형이 끊임없이 반복되며 펼쳐져 나가는 모양으로 깨달음의 경지를 표현한 불교의 그림에서 착안한 것이라 한다. 이렇게 일정한 패턴을 가진 만다라는 심신을 안정시켜주고, 생각을 정리할 수 있도록 도와준다고 한다.| 
+|          <img width="800" alt="만다라트예시" src="https://user-images.githubusercontent.com/50289067/96837096-d6f9da00-1480-11eb-8ca0-dac09335a80c.png">| 가장 큰 목표는 가운데에 적힌 '취미 가지기'이다. 그 주변의 8칸에 원하는 취미들(수영, 자전거 등)을 적는다. 왼쪽 위부터 세부목표인 '수영'을 위한 8가지 달성방안(수영장 등록, 발차기 30분 등)을 적어나간다. 
 | ------------------------------------------------------- | :--------------|
 
 ---
 ## 기능
-- [메인 화면](#메인 화면)
-- [회원 가입 화면](#회원 가입 화면)
+- [홈](#홈)
+- [회원가입](#회원가입)
+- [로그인](#로그인)
+- [리스트](#리스트)
+- [추가](#추가)
+- [수정/삭제](#수정)
 
 ---
 
-### 메인 화면
+### 홈
 
 구성은 아래와 같으며 마우스를 가져다 댔을 때 버튼의 아이콘이 돌아감
 
@@ -33,7 +37,7 @@
 ---
 
 
-### 회원 가입 화면
+### 회원가입
 
 1. 비밀번호를 입력할 때 조건에 부합하는 지 체크해준다. (부합할 때는 초록색, 아닐때는 빨간색)
 
@@ -50,13 +54,37 @@
 ---
 
 
-### 로그인 화면
+### 로그인
 
 1. 에러 메세지
 
 | 패스워드가 맞지 않을 때 | 등록되지 않은 이메일 |
 | -------------- | ----------------- | 
-| <img width="445" alt="login01" src="https://user-images.githubusercontent.com/50289067/97394890-131cb700-1927-11eb-8668-587c713bba34.png"> | <img width="469" alt="login02" src="https://user-images.githubusercontent.com/50289067/97394887-10ba5d00-1927-11eb-801b-61f3287b94fa.png"> | 
+| <img width="300" alt="login01" src="https://user-images.githubusercontent.com/50289067/97394890-131cb700-1927-11eb-8668-587c713bba34.png"> | <img width="300" alt="login02" src="https://user-images.githubusercontent.com/50289067/97394887-10ba5d00-1927-11eb-801b-61f3287b94fa.png"> | 
+
+### 리스트
+
+1. 예시 계획표 - 회원가입 후 자동으로 생성됨
+![list01](https://user-images.githubusercontent.com/50289067/97397180-02227480-192c-11eb-982e-133ef7717f52.gif)
+
+2. 오른쪽 아래 플러스 버튼을 눌렀을 때 - 만다라트를 잘 몰라도 직관적으로 적어낼 수 있는 단계별 모달창들
+
+| <img width="800" alt="list_modal01" src="https://user-images.githubusercontent.com/50289067/97399932-81667700-1931-11eb-96f7-38b346ae56f1.png"> | 1. 6가지 테마 중 하나를 고른다. |
+| ---------- | ------- |
+| <img width="800" alt="list_modal02" src="https://user-images.githubusercontent.com/50289067/97399929-80cde080-1931-11eb-8447-ea74592bdaff.png"> | 2. 계획표의 주제를 정한다. |
+| <img width="800" alt="list_modal03" src="https://user-images.githubusercontent.com/50289067/97399928-80354a00-1931-11eb-8d2a-f5a40f142264.png"> | 3. 가장 큰 목표를 정한다. |
+| <img width="800" alt="list_modal04" src="https://user-images.githubusercontent.com/50289067/97399925-7f9cb380-1931-11eb-9655-f50dfb8d7bd1.png"> | 4. 그것을 이루기 위한 세부 목표를 정한다. |
+| <img width="800" alt="list_modal05" src="https://user-images.githubusercontent.com/50289067/97399922-7ca1c300-1931-11eb-8bbd-09fc05c5e33c.png"> | 5. 성공적으로 생성 |
+
+---
+
+### 추가
+
+
+
+---
+
+### 수정
 
 
 
