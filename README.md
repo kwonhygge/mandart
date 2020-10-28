@@ -64,11 +64,12 @@
 | <img width="300" alt="login01" src="https://user-images.githubusercontent.com/50289067/97394890-131cb700-1927-11eb-8668-587c713bba34.png"> | <img width="300" alt="login02" src="https://user-images.githubusercontent.com/50289067/97394887-10ba5d00-1927-11eb-801b-61f3287b94fa.png"> | 
 
 ### 리스트
+#### 만들어진 계획표들의 목록을 볼 수 있는 페이지 
 
 1. 예시 계획표 - 회원가입 후 자동으로 생성됨
 ![list01](https://user-images.githubusercontent.com/50289067/97397180-02227480-192c-11eb-982e-133ef7717f52.gif)
 
-2. 오른쪽 아래 플러스 버튼을 눌렀을 때 - 만다라트를 잘 몰라도 직관적으로 적어낼 수 있는 단계별 모달창들
+2. 페이지 오른쪽 아래 플러스 버튼을 눌렀을 때 - 만다라트를 잘 몰라도 직관적으로 적어낼 수 있는 단계별 모달창들
 
 | <img width="800" alt="list_modal01" src="https://user-images.githubusercontent.com/50289067/97399932-81667700-1931-11eb-96f7-38b346ae56f1.png"> | 1. 6가지 테마 중 하나를 고른다. |
 | ---------- | ------- |
@@ -112,7 +113,12 @@
 
 ## 모바일
 
+### rem을 사용하여 화면 크기별로 html 폰트 크기 적용(모바일, 태블릿, 노트북, 데스크탑)
+### list로 element를 나열해야 하는 부분에는 flex wrap 을 사용하여 줄바꿈 자동 적용
 
+| <img width="313" alt="iphone01" src="https://user-images.githubusercontent.com/50289067/97409263-a9110b80-1940-11eb-90c9-eb779fc055c2.png"> | <img width="315" alt="iphone02" src="https://user-images.githubusercontent.com/50289067/97409278-ae6e5600-1940-11eb-9566-69c4973af71c.png"> | <img width="312" alt="iphone04" src="https://user-images.githubusercontent.com/50289067/97409277-add5bf80-1940-11eb-891c-bcd7bfdb355f.png"> | <img width="308" alt="iphone05" src="https://user-images.githubusercontent.com/50289067/97409276-add5bf80-1940-11eb-97ce-5c2540421f14.png"> |
+| ------ | ----- | ----- | ----- |
+| <img width="312" alt="iphone06" src="https://user-images.githubusercontent.com/50289067/97409275-ad3d2900-1940-11eb-906b-4c87b76ad1c9.png"> | <img width="310" alt="iphone07" src="https://user-images.githubusercontent.com/50289067/97409274-aca49280-1940-11eb-9a4e-be8a50049797.png"> | <img width="312" alt="iphone08" src="https://user-images.githubusercontent.com/50289067/97409273-aca49280-1940-11eb-9c32-d62d36d6228a.png"> | <img width="320" alt="iphone09" src="https://user-images.githubusercontent.com/50289067/97409272-ac0bfc00-1940-11eb-87a1-60a9a95d949f.png"> | <img width="325" alt="iphone10" src="https://user-images.githubusercontent.com/50289067/97409271-aadacf00-1940-11eb-96ad-1f4f26b05a30.png"> |
 
 
 ---
