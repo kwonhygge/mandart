@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 .option-container input[type='radio']:checked ~ label .box-background {
-  background: #ff0000;
+  background: var(--color-operation);
 }
 
 .option-container .box-background {
@@ -130,7 +130,7 @@
 #box-modal2 .footer input {
   width: 70rem;
   height: 10rem;
-  border: 3px solid #ff0000;
+  border: 3px solid var(--color-operation);
   border-radius: 30px;
   font-size: 4rem;
   line-height: 7rem;
@@ -156,7 +156,7 @@
 }
 #box-modal3 .main-box textarea {
   resize: none;
-  border: 5px solid #ff0000;
+  border: 5px solid var(--color-operation);
   box-sizing: border-box;
   padding: 3rem;
   width: 24rem;
@@ -176,7 +176,7 @@
   font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
-  background-color: #ff0000;
+  background-color: var(--color-operation);
 }
 
 /* modal4 */
@@ -221,7 +221,7 @@
 
 /* #box-modal5 */
 #box-modal5 .order {
-  color: #ff0000;
+  color: var(--color-operation);
 }
 #box-modal5 .header {
   margin-bottom: 9rem;
