@@ -40,24 +40,24 @@
 ![signup01](https://user-images.githubusercontent.com/50289067/97374186-1dc15700-18fb-11eb-87f0-a146d6d6e8b6.gif)
 
 
-2. 이미 존재하는 이메일일때 에러 메세지
+2. 에러 메세지
 
-![signup02](https://user-images.githubusercontent.com/50289067/97374636-16e71400-18fc-11eb-93e1-82402c191ee8.gif)
+| 이미 존재하는 이메일 | 두개의 패스워드가 매칭되지 않을 때 | 패스워드가 6자리 이하일 때 |
+| -------------- | ----------------- | -------------|
+| <img width="472" alt="signup01" src="https://user-images.githubusercontent.com/50289067/97392556-65f56f00-1925-11eb-8931-eba40d21aa45.png">| <img width="469" alt="signup02" src="https://user-images.githubusercontent.com/50289067/97392554-655cd880-1925-11eb-827d-82553dc04ebb.png"> | <img width="472" alt="signup03" src="https://user-images.githubusercontent.com/50289067/97392549-62fa7e80-1925-11eb-986b-7f56a970e4c9.png"> |
 
-3. 두개의 패스워드가 매칭되지 않을 때
-
-![signup03](https://user-images.githubusercontent.com/50289067/97374900-ca500880-18fc-11eb-90b5-fa9794491b35.gif)
-
-4. 패스워드가 6자리 이하일 때
-
-![signup04](https://user-images.githubusercontent.com/50289067/97375045-231fa100-18fd-11eb-977c-addf2d55749e.gif)
 
 ---
 
 
 ### 로그인 화면
 
-1. 
+1. 에러 메세지
+
+| 패스워드가 맞지 않을 때 | 등록되지 않은 이메일 |
+| -------------- | ----------------- | 
+| <img width="445" alt="login01" src="https://user-images.githubusercontent.com/50289067/97394890-131cb700-1927-11eb-8668-587c713bba34.png"> | <img width="469" alt="login02" src="https://user-images.githubusercontent.com/50289067/97394887-10ba5d00-1927-11eb-801b-61f3287b94fa.png"> | 
+
 
 
 # 반응형
