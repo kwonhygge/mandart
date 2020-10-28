@@ -1,9 +1,8 @@
 # 만다르트
 > node js와 mongo db 이용해서 계획표 만들기
-<img width="1200" alt="만다라트 메인" src="https://user-images.githubusercontent.com/50289067/96835793-04458880-147f-11eb-9291-16689aba45b7.png">
 
 
-
+<img width="1200" alt="메인" src="https://user-images.githubusercontent.com/50289067/96835793-04458880-147f-11eb-9291-16689aba45b7.png">
 
 # 인덱스
 - [기능](#기능)
@@ -13,7 +12,7 @@
 
 ## 만다라트란?
 
-
+### 일종의 계획표
 
 |          <img width="1500" alt="만다라트예시" src="https://user-images.githubusercontent.com/50289067/96837096-d6f9da00-1480-11eb-8ca0-dac09335a80c.png">| 만다라트는 "Manda+La+Art"의 합성어이다.  ‘만다라(曼陀羅)’는 그림이나 도형이 끊임없이 반복되며 펼쳐져 나가는 모양으로 깨달음의 경지를 표현한 불교의 그림에서 착안한 것이라 한다. 이렇게 일정한 패턴을 가진 만다라는 심신을 안정시켜주고, 생각을 정리할 수 있도록 도와준다고 한다.| 
 | ------------------------------------------------------- | :--------------|
@@ -21,7 +20,9 @@
 ---
 ## 기능
 - [메인 화면](#메인 화면)
+- [회원 가입 화면](#회원 가입 화면)
 
+---
 
 ### 메인 화면
 
@@ -29,9 +30,34 @@
 
 ![main](https://user-images.githubusercontent.com/50289067/97372276-9a9e0200-18f6-11eb-805b-c29e930f4dbf.gif)
 
+---
 
+
+### 회원 가입 화면
+
+1. 비밀번호를 입력할 때 조건에 부합하는 지 체크해준다. (부합할 때는 초록색, 아닐때는 빨간색)
+
+![signup01](https://user-images.githubusercontent.com/50289067/97374186-1dc15700-18fb-11eb-87f0-a146d6d6e8b6.gif)
+
+
+2. 이미 존재하는 이메일일때 에러 메세지
+
+![signup02](https://user-images.githubusercontent.com/50289067/97374636-16e71400-18fc-11eb-93e1-82402c191ee8.gif)
+
+3. 두개의 패스워드가 매칭되지 않을 때
+
+![signup03](https://user-images.githubusercontent.com/50289067/97374900-ca500880-18fc-11eb-90b5-fa9794491b35.gif)
+
+4. 패스워드가 6자리 이하일 때
+
+![signup04](https://user-images.githubusercontent.com/50289067/97375045-231fa100-18fd-11eb-977c-addf2d55749e.gif)
 
 ---
+
+
+### 로그인 화면
+
+1. 
 
 
 # 반응형
