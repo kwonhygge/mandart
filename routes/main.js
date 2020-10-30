@@ -6,6 +6,7 @@ module.exports = function (ps, User, Box) {
   const { ensureAuthenticated } = require('./auth');
 
   router.get('/', ensureAuthenticated, async function (req, res) {
+
     const boxes = await Box.find({ createdBy: req.user.id });
     res.render('list', { boxes });
   });
@@ -15,7 +16,7 @@ module.exports = function (ps, User, Box) {
     res.render('show', { box, mode: "edit" });
   });
   router.put("/list/:id", async function (req, res) {
-    console.log(req.body);
+
     const boxId = req.params.id;
     const updatedBox = {
       title: req.body.mainTitle,
@@ -59,6 +60,8 @@ module.exports = function (ps, User, Box) {
     await Box.findByIdAndUpdate(boxId, updatedBox);
     res.redirect("/main");
   })
+
+
 
   router.delete('/list/:id', async (req, res) => {
     await Box.findByIdAndDelete(req.params.id);

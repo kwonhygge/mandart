@@ -4,6 +4,8 @@ module.exports = function (passport, User, Box) {
   const router = express.Router();
   const { forwardAuthenticated } = require('./auth');
 
+
+
   router.get('/login', forwardAuthenticated, function (req, res) {
     res.render('login', { type: 'auth' });
   });
@@ -15,6 +17,18 @@ module.exports = function (passport, User, Box) {
       failureFlash: true,
     })(req, res, next);
   });
+  // trial reset
+  router.get("/trial/reset", function (req, res) {
+    User.findByIdAndDelete(`${req.user.id}`, function (err, docs) {
+      if (err) {
+        console.log("err is", err);
+      } else {
+        console.log("docs is", docs);
+      }
+    });
+    res.redirect("/auth/signup");
+  })
+
   router.get('/signup', forwardAuthenticated, function (req, res) {
     res.render('signup', { type: 'auth' });
   });
