@@ -9,6 +9,7 @@
 - [DEMO](#DEMO)
 - [사용스택](#사용스택)
 - [반응형](#반응형)
+- [DB](#DB)
 
 ### 만다라트란?
 
@@ -148,6 +149,34 @@
   - Figma로 [디자이너](https://kwonhygge.github.io/portfolio_sohee/)와 협업
 
 ---
+
+## DB
+#### Mongo 스키마
+
+1. User Schema
+```javascript
+const userSchema = new mongoose.Schema({
+  email: String,
+  password: String,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+```
+
+2. Box Schema
+```javascript
+const boxSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  objective: String,
+  themeId: String,
+  smallPlans: [{ objective: String, plans: Array }],
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'user' },
+  createdOn: { type: Date, default: Date.now },
+});
+```
+
 
 ## DEMO
 https://mandart.herokuapp.com/
