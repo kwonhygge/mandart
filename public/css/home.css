@@ -39,11 +39,30 @@
   background-color: var(--color-dark);
 }
 
-.trial-container{
+/* footer */
+
+.home-footer{
   position: fixed;
-  left: 10%;
-  bottom:5%;
+  bottom: 10%;
+  left:50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
 }
+
+
+.design-info-container>a{
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+
+}
+.design-info-container>a>span{
+  text-decoration: underline;
+}
+
 .trial-container button{
   background: none;
   display: flex;
